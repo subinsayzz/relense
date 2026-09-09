@@ -3,29 +3,31 @@
 @tailwind utilities;
 
 @layer utilities {
-  /* Angled cut corners matching the Dribbble inspiration */
-  .cut-corner-card {
+  /* Angled cut corners matching the exact Dribbble screenshot */
+  .cut-top-right {
     clip-path: polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%);
   }
   
-  .cut-corner-card-alt {
+  .cut-top-left {
     clip-path: polygon(32px 0, 100% 0, 100% 100%, 0 100%, 0 32px);
   }
 
+  .cut-corner-card {
+    clip-path: polygon(0 0, calc(100% - 36px) 0, 100% 36px, 100% 100%, 0 100%);
+  }
+
+  .cut-corner-card-alt {
+    clip-path: polygon(36px 0, 100% 0, 100% 100%, 0 100%, 0 36px);
+  }
+
+  .cut-both-top {
+    clip-path: polygon(28px 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%, 0 28px);
+  }
+
   .cut-corner-badge {
-    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
   }
 
-  .cut-corner-pill {
-    clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px);
-  }
-
-  .bg-noise {
-    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 0);
-    background-size: 24px 24px;
-  }
-
-  /* Hide scrollbar for horizontal swipe pills */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
@@ -40,7 +42,7 @@
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-8px) rotate(1.5deg);
+    transform: translateY(-8px) rotate(1.2deg);
   }
 }
 
@@ -49,7 +51,7 @@
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-12px) rotate(-1.5deg);
+    transform: translateY(-10px) rotate(-1.2deg);
   }
 }
 
@@ -58,20 +60,20 @@
 }
 
 .animate-float-delayed {
-  animation: float-delayed 7s ease-in-out infinite 2s;
+  animation: float-delayed 7s ease-in-out infinite 1.5s;
 }
 
 /* Custom smooth scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #F6F5F2;
+  background: #EBF3FA;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D5CFC3;
+  background: #B9D5ED;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B8B0A2;
+  background: #90BEE3;
 }

@@ -7,25 +7,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream: {
-          50: '#FDFDFB',
-          100: '#F7F6F2',
-          200: '#EFECE6',
-          300: '#E5E1D8',
-          400: '#D5CFC3',
+        skycream: {
+          50: '#F5F9FD',
+          100: '#EBF3FA',
+          200: '#DFEDF8',
+          300: '#D0E3F3',
+          400: '#B9D5ED',
+        },
+        electric: {
+          500: '#1D77FF',
+          600: '#0066FF',
+          700: '#0052CC',
         },
         obsidian: {
-          900: '#0F1012',
-          800: '#181A1D',
-          700: '#23262A',
-          600: '#34383E',
+          950: '#090D14',
+          900: '#0D1520',
+          800: '#15202E',
+          700: '#213042',
+          600: '#32465C',
         },
         accent: {
           gold: '#C59A6F',
           amber: '#E09F3E',
           teal: '#2A9D8F',
-          terracotta: '#E76F51',
-          sky: '#3B82F6',
+          blue: '#1A73E8',
         }
       },
       fontFamily: {
@@ -33,14 +38,11 @@ export default {
         sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'soft': '0 20px 40px -15px rgba(0, 0, 0, 0.05)',
-        'card': '0 10px 30px -5px rgba(0, 0, 0, 0.04)',
-        'elevated': '0 25px 60px -15px rgba(0, 0, 0, 0.12)',
-        'glow': '0 0 30px -5px rgba(197, 154, 111, 0.3)',
+        'soft': '0 20px 45px -12px rgba(14, 55, 105, 0.07)',
+        'card': '0 12px 35px -8px rgba(14, 55, 105, 0.06)',
+        'elevated': '0 25px 65px -15px rgba(14, 55, 105, 0.12)',
+        'glow-blue': '0 0 35px -5px rgba(29, 119, 255, 0.25)',
       },
-      borderRadius: {
-        'cut': '20px',
-      }
     },
   },
   plugins: [],
