@@ -13,7 +13,8 @@ export const ReLensCalculator: React.FC = () => {
 
   const RX_OPTIONS = [
     { id: 'single', name: 'Single Vision', desc: 'Distance correction or dedicated reading lenses', price: 49 },
-    { id: 'progressive', name: 'Progressive No-Line', desc: 'Seamless multi-focal transition from distance to reading', price: 139 },
+    { id: 'progressive', name: 'Standard Progressive No-Line', desc: 'Seamless multi-focal transition from distance to reading', price: 139 },
+    { id: 'shamir', name: 'Shamir Auto Intelligence™ Digital Progressive', desc: 'Supreme wide-corridor high-tech digital optics with zero edge distortion', price: 189 },
     { id: 'bifocal', name: 'Lined Bifocal FT-28', desc: 'Traditional split line for distance and reading power', price: 89 },
     { id: 'plano', name: 'Plano / Non-Prescription', desc: 'Fashion frames, blue light protection, or pure sun lenses', price: 39 },
   ];
@@ -26,6 +27,8 @@ export const ReLensCalculator: React.FC = () => {
 
   const TREATMENT_OPTIONS = [
     { id: 'ar', name: 'Diamond Anti-Reflective', desc: 'Cuts night driving glares and reflection in photos', price: 25 },
+    { id: 'glacier', name: 'Glacier Expressions™ AR', desc: 'High-tech anti-reflective with maximum light transmission & oleophobic shield', price: 45 },
+    { id: 'clipon', name: 'Custom Magnetic Mirrored Clip-On', desc: 'Precision hand-fabricated magnetic clip-on sun lenses tailored to your frame', price: 55 },
     { id: 'bluelight', name: 'Digital Blue Light Filter', desc: 'Filters 420nm high-energy blue-violet rays', price: 30 },
     { id: 'polarized', name: 'Polarized Sunglasses Tint', desc: '100% UV400 shield with glare elimination', price: 45 },
     { id: 'transitions', name: 'Photochromic Transitions', desc: 'Clear indoors, automatically turns dark under UV sunlight', price: 55 },
@@ -335,9 +338,15 @@ export const ReLensCalculator: React.FC = () => {
             </div>
 
             {/* ReLense Guarantee badges */}
-            <div className="bg-white rounded-2xl p-4 border border-blue-100/80 shadow-card flex items-center space-x-3 text-xs text-neutral-600">
-              <ShieldCheck className="w-5 h-5 text-electric-600 flex-shrink-0" />
-              <span>HSA / FSA Accepted · 1-Year Delamination Lab Warranty included.</span>
+            <div className="bg-white rounded-2xl p-4 border border-blue-100/80 shadow-card space-y-2 text-xs text-neutral-600">
+              <div className="flex items-center space-x-2.5">
+                <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                <span>CareCredit Financing & HSA/FSA Flex Accepted</span>
+              </div>
+              <div className="flex items-center space-x-2.5 text-neutral-500">
+                <Sparkles className="w-4 h-4 text-electric-600 flex-shrink-0" />
+                <span>1-Year Lab Warranty · Convenient Municipal Parking Across Street</span>
+              </div>
             </div>
           </div>
 

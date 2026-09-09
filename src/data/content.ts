@@ -1,9 +1,12 @@
 export interface Testimonial {
   name: string;
-  location: string;
+  timeAgo: string;
+  location?: string;
   rating: number;
   text: string;
   tag: string;
+  isLocalGuide?: boolean;
+  category: 'speed' | 'care' | 'optics' | 'family';
 }
 
 export interface FAQItem {
@@ -13,14 +16,29 @@ export interface FAQItem {
 }
 
 export const SITE_INFO = {
-  name: 'ReLense',
+  name: 'Relense Optical Store',
+  keyContact: 'Mauricio',
+  role: 'Master Optician & Owner',
+  ratingText: '5.0 / 5.0 Stars',
+  ratingCount: 17,
   locationCity: 'Freeport, New York',
-  address: '37 Guy Lombardo Ave Unit 1, Freeport, NY 11520',
+  address: '37B Guy Lombardo Ave, Freeport, NY 11520',
+  parkingNote: 'Convenient municipal parking right across the street',
   phone: '347-878-5064',
   phoneFormatted: '(347) 878-5064',
   email: 'ceo@relense.com',
   orderContactsUrl: 'https://secure.yourlens.com/DID52349/',
   experienceYears: '20+',
+  financing: 'CareCredit Accepted · HSA / FSA Eligible',
+  specialties: [
+    'Same-Day & 24-Hour Emergency Turnaround',
+    'Shamir Auto Intelligence™ Digital Progressives',
+    'Glacier Expressions™ Anti-Reflective Coatings',
+    'Custom Magnetic Mirrored Clip-On Lenses',
+    'Children’s Prescription Sports Goggles & Severe Astigmatism',
+    'Official NY DMV 5-Minute Vision Registry',
+    'Hablamos Español Fluido',
+  ],
   locationsCount: '1 NY Location',
   hours: 'Open 24/7 for Inquiries · In-Store Shopping · Curbside Pickup · Delivery',
   social: {
@@ -38,108 +56,228 @@ export const SITE_INFO = {
 
 export const SERVICES = [
   {
+    id: 'emergency-repairs',
+    title: 'Same-Day & 24h Emergency Repairs',
+    description: 'Broke your glasses or lost a pair? Mauricio delivers replacement lenses and urgent frame repairs within 24 hours or same day at the best prices.',
+    badge: 'Lightning 24h Service',
+    icon: 'Clock',
+    startingAt: '$25',
+  },
+  {
+    id: 'shamir-progressives',
+    title: 'Shamir Auto Intelligence™ Progressives',
+    description: 'High-tech digital progressive optics with Glacier Expressions anti-reflective coating for seamless distance, computer, and reading vision.',
+    badge: 'Advanced Optical Tech',
+    icon: 'Sparkles',
+    startingAt: '$149',
+  },
+  {
+    id: 'custom-clipons',
+    title: 'Custom Magnetic Clip-On Lenses',
+    description: 'Precision custom-fabricated magnetic sunglasses clip-ons, polarized filters, and mirrored tints tailored specifically to your frames.',
+    badge: 'Custom Fabricated',
+    icon: 'Sun',
+    startingAt: '$55',
+  },
+  {
+    id: 'kids-goggles',
+    title: 'Children’s Goggles & Severe Astigmatism',
+    description: 'Dedicated patient guidance on high-index cylinder corrections for severe astigmatism and impact-resistant sports goggles for children.',
+    badge: 'Pediatric & Sports Optics',
+    icon: 'ShieldCheck',
+    startingAt: '$69',
+  },
+  {
     id: 'relensing',
-    title: 'Precision Re-Lensing',
-    description: 'Breathe new life into your cherished frames. We cut and mount brand new custom prescription or tinted lenses in-house.',
+    title: 'Precision Re-Lensing & Frame Swaps',
+    description: 'Keep the frames you love. We hand-bevel and fit new digital lenses into your existing frames, saving up to 70% off retail.',
     badge: 'Eco-Friendly & Budget-Smart',
     icon: 'RefreshCw',
     startingAt: '$49',
   },
   {
     id: 'dmv-exams',
-    title: 'NY DMV Eye Exams',
-    description: 'Fast, seamless driver license renewal eye test. Administered on-site by Mauricio with instant electronic reporting to NY DMV.',
-    badge: 'Walk-Ins Welcome',
+    title: 'Official NY DMV Eye Exams',
+    description: 'Skip long DMV lines! Mauricio conducts your 5-minute official driver license eye exam with instant electronic registry sync.',
+    badge: '5-Minute Walk-Ins',
     icon: 'Eye',
     startingAt: '$25',
-  },
-  {
-    id: 'designer-frames',
-    title: 'Curated Eyewear & Optics',
-    description: 'Hand-selected Italian acetate, titanium minimal wire frames, and bespoke sunglasses tailored to your facial geometry.',
-    badge: 'Bespoke Fit',
-    icon: 'Glasses',
-    startingAt: '$119',
-  },
-  {
-    id: 'repair-adjustments',
-    title: 'Frame Repairs & Tune-Ups',
-    description: 'Laser hinge welding, screw replacement, ultrasonic deep cleaning, and precision temple adjustment for flawless comfort.',
-    badge: 'Expert Craft',
-    icon: 'Wrench',
-    startingAt: '$20',
-  },
-  {
-    id: 'nationwide-shipping',
-    title: 'Nationwide Mail-In Lab',
-    description: 'Live outside Long Island? Mail your frames safely from anywhere in the US. We inspect, fit new lenses, and ship back tracked.',
-    badge: 'Coast-to-Coast',
-    icon: 'PackageCheck',
-    startingAt: 'Free Shipping Over $99',
-  },
-  {
-    id: 'contact-lenses',
-    title: 'Contact Lens Ordering',
-    description: 'Order daily, bi-weekly, or monthly contact lenses delivered straight to your door via our secure YourLens optical portal.',
-    badge: 'Direct Portal',
-    icon: 'Sparkles',
-    startingAt: 'Direct Lab Pricing',
   }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: 'Elizabeth P.',
-    location: 'Bay Shore, NY',
+    name: 'Dwayne',
+    timeAgo: '1 month ago',
     rating: 5,
-    text: 'These guys are awesome!!! They offer so many options for sunglasses too. The lenses are high quality and the turn around time is wonderful. I highly recommend!',
-    tag: 'Sunglasses & Turnaround'
+    text: 'Highly recommends the shop for fast service (glasses ready in 24 hours) and great customer service.',
+    tag: '24-Hour Turnaround',
+    category: 'speed',
   },
   {
-    name: 'Mary S.',
-    location: 'Freeport, NY',
+    name: 'REYNALDO MUNOZ',
+    timeAgo: '3 months ago',
     rating: 5,
-    text: 'Mauricio was great. Took care of us right away. Fast easy drivers license eye test. Would highly recommend.',
-    tag: 'DMV Vision Test'
+    text: 'Had an emergency and received replacement glasses within 24 hours at the best prices.',
+    tag: 'Emergency Glasses',
+    category: 'speed',
   },
   {
-    name: 'Jenny M.',
-    location: 'Freeport, NY',
+    name: 'Dina alfaro',
+    timeAgo: '5 months ago',
     rating: 5,
-    text: 'I could not be happier with my new lenses and the attention that Mauricio provides. He explains everything in detail and makes sure your new glasses fit perfectly.',
-    tag: 'Custom Re-Lensing'
-  }
+    text: 'Mauricio provided fast, kind, and patient assistance to replace lost glasses for her daughter with severe astigmatism.',
+    tag: 'Severe Astigmatism',
+    category: 'family',
+  },
+  {
+    name: 'Alysha Edelman',
+    timeAgo: '5 months ago',
+    rating: 5,
+    isLocalGuide: true,
+    text: 'Praised Mauricio for being knowledgeable, honest, patient, and providing dedicated one-on-one care without rushing.',
+    tag: 'Dedicated 1-on-1 Care',
+    category: 'care',
+  },
+  {
+    name: 'Carmela Travers',
+    timeAgo: '6 months ago',
+    rating: 5,
+    isLocalGuide: true,
+    text: 'Originally went in for a quick frame repair and ended up buying two pairs within her budget. Appreciated the neighborly service and convenient municipal parking across the street.',
+    tag: 'Frame Repair & Budget',
+    category: 'care',
+  },
+  {
+    name: 'Ronald James',
+    timeAgo: '6 months ago',
+    rating: 5,
+    text: 'Rated 10/10 for excellent frame selection, clear communication, and customer service. Plans to return for backup frames.',
+    tag: '10/10 Frame Selection',
+    category: 'care',
+  },
+  {
+    name: 'Frances Sendrowitz',
+    timeAgo: '8 months ago',
+    rating: 5,
+    text: 'Felt welcomed immediately; highlighted the great frame selection, affordable pricing, and accommodating service.',
+    tag: 'Affordable & Welcoming',
+    category: 'care',
+  },
+  {
+    name: 'Andree Louissaint',
+    timeAgo: '9 months ago',
+    rating: 5,
+    text: 'Longtime customer whose broken glasses were fixed overnight. Describes Mauricio as quick, reliable, and trustworthy for the whole family.',
+    tag: 'Overnight Repair',
+    category: 'speed',
+  },
+  {
+    name: 'Steph Gutt.',
+    timeAgo: '9 months ago',
+    rating: 5,
+    text: 'Excellent experience purchasing children’s eye goggles with precise, patient, and clear guidance on fit.',
+    tag: 'Children’s Eye Goggles',
+    category: 'family',
+  },
+  {
+    name: 'obineche nwade',
+    timeAgo: '9 months ago',
+    rating: 5,
+    text: 'Personal recommendation for Mauricio, highlighting his family-like treatment, attentiveness to vision needs, and willingness to go above and beyond.',
+    tag: 'Family-Like Treatment',
+    category: 'care',
+  },
+  {
+    name: 'Jenny Lazare',
+    timeAgo: '10 months ago',
+    rating: 5,
+    text: 'Fast and professional service. Noted that the store accepts CareCredit and appreciated Mauricio taking the time to explain lens add-ons.',
+    tag: 'CareCredit & Honesty',
+    category: 'care',
+  },
+  {
+    name: 'ira stengel',
+    timeAgo: '10 months ago',
+    rating: 5,
+    text: 'Found new frames for existing lenses within minutes at a very reasonable price.',
+    tag: 'New Frames for Lenses',
+    category: 'speed',
+  },
+  {
+    name: 'Jamaican Rudy',
+    timeAgo: '1 year ago',
+    rating: 5,
+    isLocalGuide: true,
+    text: 'Received same-day service on new glasses and lenses at a great price.',
+    tag: 'Same-Day Glasses',
+    category: 'speed',
+  },
+  {
+    name: 'M Sofia',
+    timeAgo: '1 year ago',
+    rating: 5,
+    text: 'Came in on her family\'s long-standing recommendation after getting a new prescription and had a fantastic experience.',
+    tag: 'Family Recommendation',
+    category: 'family',
+  },
+  {
+    name: 'Aidan Alfaro',
+    timeAgo: '1 year ago',
+    rating: 5,
+    text: 'Repeat customer praising Mauricio’s attention to detail, specifically highlighting custom-made clip-on lenses.',
+    tag: 'Custom Clip-On Lenses',
+    category: 'optics',
+  },
+  {
+    name: 'David Kurman',
+    timeAgo: '1 year ago',
+    rating: 5,
+    isLocalGuide: true,
+    text: 'Mauricio saw him within an hour of calling to resolve a problem with loose lenses promptly and clearly.',
+    tag: 'Seen Within 1 Hour',
+    category: 'speed',
+  },
+  {
+    name: 'L Colon Bomani',
+    timeAgo: '2 years ago',
+    rating: 5,
+    isLocalGuide: true,
+    text: 'Praised Mauricio’s professional care and praised high-tech optics, including Shamir progressive lenses with Glacier Expressions anti-reflective coating and custom magnetic mirrored clip-ons.',
+    tag: 'Shamir High-Tech Optics',
+    category: 'optics',
+  },
 ];
 
 export const FAQS: FAQItem[] = [
   {
-    question: 'What does the re-lensing process cost?',
-    answer: 'Patient costs vary depending on your prescription (single vision, bifocal, progressive) and the lens treatments you select (anti-reflective, blue light shield, high-index, or polarized sunglasses). Because every order is customized in our lab, use our interactive calculator below or contact Mauricio for a quick personalized quote.',
+    question: 'How fast can I get replacement glasses or emergency repairs?',
+    answer: 'Mauricio specializes in same-day and 24-hour turnaround for urgent frame repairs and replacement prescription lenses. Call (347) 878-5064 or walk in to 37B Guy Lombardo Ave in Freeport for immediate emergency care.',
     category: 'Process'
   },
   {
-    question: 'What types of frames can be relensed?',
-    answer: 'Patients can place new lenses into almost any eyeglasses or Rx-able sunglasses—including acetate, horn, metal wire, semi-rimless, and luxury designer frames you already own and love.',
-    category: 'Frames'
-  },
-  {
-    question: 'What if my frames are very old or vintage?',
-    answer: 'Patients with older or delicate vintage frames will have their frame evaluated by our master opticians to ensure structural integrity before cutting. You can easily send a photo or video to ceo@relense.com or text (347) 878-5064 prior to visiting or mailing.',
-    category: 'Frames'
-  },
-  {
-    question: 'Can you fix or polish scratched lenses?',
-    answer: 'Unfortunately, optical lenses cannot be buffed or polished once scratched, as polishing alters the optical curvature and prescription accuracy. Relense will gladly fabricate a brand new pair of scratch-resistant coated lenses directly fitted to your frame.',
-    category: 'Process'
-  },
-  {
-    question: 'Can I purchase lenses if I do not have a physical copy of my prescription?',
-    answer: 'Yes! Contact us directly. We can assist in contacting your doctor, reading the prescription off your existing lenses using our digital lensometer, or scheduling a visit to verify your vision.',
+    question: 'Do you offer Shamir progressive lenses and anti-reflective coatings?',
+    answer: 'Yes! We craft high-tech progressive optics including Shamir Auto Intelligence™ with Glacier Expressions™ premium anti-reflective and scratch-resistant coatings for supreme optical clarity.',
     category: 'Prescriptions'
   },
   {
-    question: 'Do you offer NY DMV eye tests for driver licenses?',
-    answer: 'Yes! We administer fast, official NY DMV vision tests in our Freeport shop. No appointments are mandatory—walk-ins are welcome, and we upload your test results directly to the NY State DMV system instantly.',
+    question: 'Do you make custom magnetic clip-on lenses and sports goggles?',
+    answer: 'Yes. Mauricio custom-fabricates magnetic mirrored clip-ons tailored to your exact frame shape, as well as impact-resistant children\'s prescription sports goggles and specialized lenses for severe astigmatism.',
+    category: 'Frames'
+  },
+  {
+    question: 'What payment and financing methods do you accept?',
+    answer: 'We accept CareCredit financing, FSA/HSA flex spending debit cards, all major credit cards, and cash. We pride ourselves on budget-friendly, transparent optical pricing with zero pressure.',
+    category: 'Process'
+  },
+  {
+    question: 'Where can I park when visiting the Freeport optical store?',
+    answer: 'There is very convenient municipal parking located directly across the street from our shop at 37B Guy Lombardo Ave in Freeport, NY, as well as direct curbside pickup.',
+    category: 'Shipping'
+  },
+  {
+    question: 'Do you administer official NY DMV vision tests?',
+    answer: 'Yes! Mauricio is an authorized NY DMV Vision Registry Provider. We administer official 5-minute vision tests for $25 on a walk-in basis with immediate electronic reporting to the NY DMV registry.',
     category: 'Process'
   }
 ];
