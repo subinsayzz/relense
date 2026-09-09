@@ -106,9 +106,9 @@ export const Hero: React.FC = () => {
               <div className="relative rounded-[32px] p-2 bg-gradient-to-b from-white to-[#E8E4DC] shadow-elevated">
                 <div className="relative overflow-hidden rounded-[26px] cut-corner-card bg-neutral-200 aspect-[4/5]">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=85"
-                    alt="Man wearing stylish prescription frames"
-                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                    src="/assets/hero_model.jpg"
+                    alt="Model wearing titanium prescription eyewear"
+                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
                   />
                   {/* Subtle Gradient Vignette */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
