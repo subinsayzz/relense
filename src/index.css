@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Angled cut corners matching the Dribbble inspiration */
+  .cut-corner-card {
+    clip-path: polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%);
+  }
+  
+  .cut-corner-card-alt {
+    clip-path: polygon(32px 0, 100% 0, 100% 100%, 0 100%, 0 32px);
+  }
+
+  .cut-corner-badge {
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  }
+
+  .cut-corner-pill {
+    clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px);
+  }
+
+  .bg-noise {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(-1.5deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 7s ease-in-out infinite 2s;
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F6F5F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D5CFC3;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B8B0A2;
+}
