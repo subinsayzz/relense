@@ -44,13 +44,13 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onSelectProductF
             </p>
           </div>
 
-          {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2">
+          {/* Filter Pills with Horizontal Swipe on Mobile */}
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all ${
+                className={`px-3.5 sm:px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all whitespace-nowrap flex-shrink-0 ${
                   activeCategory === cat.id
                     ? 'bg-obsidian-900 text-white shadow-sm ring-2 ring-black/10'
                     : 'bg-[#F6F5F2] text-neutral-600 hover:bg-neutral-200'
@@ -63,37 +63,43 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onSelectProductF
         </div>
 
         {/* Product Cards Grid matching Dribbble inspiration */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="group bg-[#FAF9F6] rounded-3xl p-6 border border-black/5 hover:border-black/15 transition-all duration-300 hover:shadow-elevated flex flex-col justify-between relative overflow-hidden"
+              className="group bg-[#FAF9F6] rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-black/5 hover:border-black/15 transition-all duration-300 hover:shadow-elevated flex flex-col justify-between relative overflow-hidden"
             >
               {/* Top Card Badge */}
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-neutral-400">
                   Rx Style
                 </span>
                 {product.badge && (
-                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-white text-obsidian-900 border border-black/5 shadow-sm">
+                  <span className="text-[10px] sm:text-[11px] font-bold px-2 sm:px-2.5 py-0.5 rounded-full bg-white text-obsidian-900 border border-black/5 shadow-sm">
                     {product.badge}
                   </span>
                 )}
               </div>
 
               {/* Product Image on clean pedestal backdrop */}
-              <div className="relative aspect-[16/11] rounded-2xl bg-white p-4 flex items-center justify-center overflow-hidden mb-6 group-hover:bg-[#F2EFE9] transition-colors">
+              <div
+                onClick={() => setSelectedProduct(product)}
+                className="cursor-pointer relative aspect-[16/11] rounded-xl sm:rounded-2xl bg-white p-3 sm:p-4 flex items-center justify-center overflow-hidden mb-4 sm:mb-6 group-hover:bg-[#F2EFE9] transition-colors"
+              >
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover rounded-lg sm:rounded-xl transition-transform duration-500 group-hover:scale-105"
                 />
                 
-                {/* Floating Quick Actions */}
-                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 backdrop-blur-[2px]">
+                {/* Floating Quick Actions (Hover on Desktop) */}
+                <div className="hidden sm:flex absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity items-center justify-center gap-3 backdrop-blur-[2px]">
                   <a
                     href="#studio-3d"
-                    onClick={() => onSelectProductFor3D?.(product)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onSelectProductFor3D?.(product);
+                    }}
                     className="p-3 rounded-full bg-white text-obsidian-900 hover:bg-accent-gold hover:text-white transition shadow-elevated font-medium text-xs flex items-center space-x-1.5"
                     title="Inspect in 3D"
                   >
@@ -101,7 +107,10 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onSelectProductF
                     <span>3D View</span>
                   </a>
                   <button
-                    onClick={() => setSelectedProduct(product)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedProduct(product);
+                    }}
                     className="p-3 rounded-full bg-obsidian-900 text-white hover:bg-black transition shadow-elevated font-medium text-xs flex items-center space-x-1.5"
                   >
                     <span>Details</span>
@@ -144,6 +153,25 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onSelectProductF
                   <span className="text-[11px] font-mono text-neutral-400">
                     {product.dimensions}
                   </span>
+                </div>
+
+                {/* Mobile-only Quick Action Buttons */}
+                <div className="sm:hidden pt-3 mt-1 border-t border-black/5 flex items-center gap-2">
+                  <button
+                    onClick={() => setSelectedProduct(product)}
+                    className="flex-1 py-2 rounded-xl bg-obsidian-900 text-white text-xs font-semibold text-center"
+                  >
+                    View Specs
+                  </button>
+                  <a
+                    href="#studio-3d"
+                    onClick={() => onSelectProductFor3D?.(product)}
+                    className="px-3 py-2 rounded-xl border border-black/15 text-obsidian-900 text-xs font-semibold flex items-center justify-center"
+                    title="Try in 3D"
+                  >
+                    <Eye className="w-3.5 h-3.5 mr-1 text-accent-gold" />
+                    <span>3D</span>
+                  </a>
                 </div>
               </div>
             </div>

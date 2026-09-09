@@ -28,7 +28,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F6F5F2] text-[#141618] selection:bg-obsidian-900 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#F6F5F2] text-[#141618] selection:bg-obsidian-900 selection:text-white pb-20 sm:pb-0">
       {/* Top Header */}
       <Navbar />
 

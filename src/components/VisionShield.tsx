@@ -100,11 +100,31 @@ export const VisionShield: React.FC = () => {
                 <div className="absolute inset-x-0 bottom-0 flex justify-center">
                   <a
                     href="#dmv-section"
-                    className="px-6 py-2.5 rounded-full bg-obsidian-900 text-white text-xs font-semibold hover:bg-neutral-800 transition shadow-elevated flex items-center space-x-1.5"
+                    className="px-5 sm:px-6 py-2 sm:py-2.5 rounded-full bg-obsidian-900 text-white text-[11px] sm:text-xs font-semibold hover:bg-neutral-800 transition shadow-elevated flex items-center space-x-1.5"
                   >
                     <Eye className="w-3.5 h-3.5 text-accent-gold" />
                     <span>Test Your Eyes / DMV Exam</span>
                   </a>
+                </div>
+              </div>
+
+              {/* Mobile Feature Callouts */}
+              <div className="sm:hidden grid grid-cols-1 gap-2.5 pt-2">
+                <div className="bg-[#FAF9F6] p-3 rounded-2xl border border-black/5 text-left">
+                  <div className="text-xs font-bold uppercase tracking-wider text-obsidian-900">
+                    Sleek Metals & Acetate
+                  </div>
+                  <div className="text-[11px] text-neutral-500 mt-0.5">
+                    Skin-friendly, hypoallergenic materials that blend style & strength.
+                  </div>
+                </div>
+                <div className="bg-[#FAF9F6] p-3 rounded-2xl border border-black/5 text-left">
+                  <div className="text-xs font-bold uppercase tracking-wider text-accent-teal">
+                    Coastal Clear Coating
+                  </div>
+                  <div className="text-[11px] text-neutral-500 mt-0.5">
+                    UV400 defense + 99.8% blue-light filtration from digital displays.
+                  </div>
                 </div>
               </div>
 

@@ -160,7 +160,7 @@ export const ContactLocation: React.FC = () => {
                     placeholder="Jane Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/10 text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/10 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
                   />
                 </div>
 
@@ -175,7 +175,7 @@ export const ContactLocation: React.FC = () => {
                       placeholder="jane@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-black/10 text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-black/10 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
                     />
                   </div>
 
@@ -188,7 +188,7 @@ export const ContactLocation: React.FC = () => {
                       placeholder="(347) 000-0000"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-black/10 text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-black/10 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
                     />
                   </div>
                 </div>
@@ -203,7 +203,7 @@ export const ContactLocation: React.FC = () => {
                     placeholder="Tell us about your frames or what kind of lenses you are looking for..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/10 text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/10 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
                   />
                 </div>
 

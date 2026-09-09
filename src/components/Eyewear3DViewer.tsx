@@ -364,31 +364,31 @@ export const Eyewear3DViewer: React.FC<Eyewear3DViewerProps> = ({
   const currentLensInfo = LENS_OPTIONS.find((l) => l.id === lensTypeKey);
 
   return (
-    <div className="relative w-full bg-gradient-to-b from-[#F2EFE9] to-[#E9E4DB] rounded-3xl p-6 sm:p-8 shadow-card border border-black/5 overflow-hidden">
+    <div className="relative w-full bg-gradient-to-b from-[#F2EFE9] to-[#E9E4DB] rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-card border border-black/5 overflow-hidden">
       {/* Top Controls Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-4 z-20 relative">
+      <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 z-20 relative">
         <div className="flex items-center space-x-2">
-          <span className="inline-flex items-center justify-center px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-white/90 text-obsidian-900 shadow-sm border border-black/5 backdrop-blur-md">
-            <Sparkles className="w-3 h-3 text-accent-gold mr-1.5" />
-            Interactive 3D Studio
+          <span className="inline-flex items-center justify-center px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-semibold uppercase tracking-wider rounded-full bg-white/90 text-obsidian-900 shadow-sm border border-black/5 backdrop-blur-md">
+            <Sparkles className="w-3 h-3 text-accent-gold mr-1" />
+            3D Studio
           </span>
-          <span className="hidden sm:inline-block text-xs text-neutral-500 font-medium">
-            360° Drag to rotate
+          <span className="text-[11px] sm:text-xs text-neutral-500 font-medium">
+            360° Drag to view
           </span>
         </div>
 
-        <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-black/5 shadow-sm">
+        <div className="flex items-center space-x-1.5 sm:space-x-2 bg-white/80 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-full border border-black/5 shadow-sm">
           <button
             onClick={() => setIsAutoRotating(!isAutoRotating)}
-            className={`flex items-center space-x-1.5 px-2.5 py-1 text-xs font-medium rounded-full transition-all ${
+            className={`flex items-center space-x-1 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-medium rounded-full transition-all ${
               isAutoRotating ? 'bg-obsidian-900 text-white shadow-sm' : 'text-neutral-600 hover:text-black'
             }`}
             title="Toggle Auto Rotation"
           >
-            <RotateCw className={`w-3.5 h-3.5 ${isAutoRotating ? 'animate-spin' : ''}`} style={{ animationDuration: '6s' }} />
-            <span>{isAutoRotating ? 'Rotating' : 'Paused'}</span>
+            <RotateCw className={`w-3 h-3 ${isAutoRotating ? 'animate-spin' : ''}`} style={{ animationDuration: '6s' }} />
+            <span>{isAutoRotating ? 'Rotate' : 'Pause'}</span>
           </button>
-          <div className="w-px h-3.5 bg-black/10 mx-1" />
+          <div className="w-px h-3 bg-black/10 mx-0.5" />
           <button
             onClick={() => handleZoom('in')}
             className="p-1 text-neutral-600 hover:text-black hover:bg-black/5 rounded-full transition"
@@ -409,21 +409,21 @@ export const Eyewear3DViewer: React.FC<Eyewear3DViewerProps> = ({
       {/* 3D Canvas Mount */}
       <div
         ref={mountRef}
-        className="w-full h-[320px] sm:h-[420px] cursor-grab active:cursor-grabbing relative flex items-center justify-center select-none"
+        className="w-full h-[270px] sm:h-[420px] cursor-grab active:cursor-grabbing relative flex items-center justify-center select-none touch-pan-y"
       />
 
       {/* Hotspots Callouts */}
-      <div className="absolute inset-x-6 top-24 pointer-events-none flex justify-between">
+      <div className="absolute inset-x-3 sm:inset-x-6 top-16 sm:top-24 pointer-events-none flex justify-between">
         <div className="pointer-events-auto">
           <button
             onClick={() => setActiveHotspot(activeHotspot === 1 ? null : 1)}
-            className="group flex items-center space-x-2 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-black/5 shadow-card hover:scale-105 transition"
+            className="group flex items-center space-x-1.5 bg-white/90 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-black/5 shadow-card hover:scale-105 transition"
           >
             <span className="w-2 h-2 rounded-full bg-accent-gold animate-ping" />
-            <span className="text-xs font-semibold text-neutral-800">Precision Lab Lenses</span>
+            <span className="text-[11px] sm:text-xs font-semibold text-neutral-800">Precision Lenses</span>
           </button>
           {activeHotspot === 1 && (
-            <div className="mt-2 w-56 p-3 bg-white/95 rounded-2xl shadow-elevated border border-black/5 text-xs text-neutral-600 backdrop-blur-md">
+            <div className="mt-2 w-48 sm:w-56 p-2.5 sm:p-3 bg-white/95 rounded-2xl shadow-elevated border border-black/5 text-[11px] sm:text-xs text-neutral-600 backdrop-blur-md">
               Diamond AR coating applied in our Freeport laboratory with zero aberration optical curves.
             </div>
           )}
@@ -432,13 +432,13 @@ export const Eyewear3DViewer: React.FC<Eyewear3DViewerProps> = ({
         <div className="pointer-events-auto text-right">
           <button
             onClick={() => setActiveHotspot(activeHotspot === 2 ? null : 2)}
-            className="group inline-flex items-center space-x-2 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-black/5 shadow-card hover:scale-105 transition"
+            className="group inline-flex items-center space-x-1.5 bg-white/90 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-black/5 shadow-card hover:scale-105 transition"
           >
-            <span className="text-xs font-semibold text-neutral-800">Re-Lense Any Frame</span>
+            <span className="text-[11px] sm:text-xs font-semibold text-neutral-800">Re-Lense Any Frame</span>
             <span className="w-2 h-2 rounded-full bg-accent-teal animate-pulse" />
           </button>
           {activeHotspot === 2 && (
-            <div className="mt-2 w-56 p-3 bg-white/95 rounded-2xl shadow-elevated border border-black/5 text-xs text-neutral-600 backdrop-blur-md ml-auto text-left">
+            <div className="mt-2 w-48 sm:w-56 p-2.5 sm:p-3 bg-white/95 rounded-2xl shadow-elevated border border-black/5 text-[11px] sm:text-xs text-neutral-600 backdrop-blur-md ml-auto text-left">
               Send us your existing frames and save up to 70% compared to traditional retail opticians.
             </div>
           )}
@@ -446,29 +446,29 @@ export const Eyewear3DViewer: React.FC<Eyewear3DViewerProps> = ({
       </div>
 
       {/* Customizer Bottom Shelf */}
-      <div className="mt-4 pt-4 border-t border-black/10 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="mt-3 pt-3 sm:mt-4 sm:pt-4 border-t border-black/10 grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Frame Color Swatches */}
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-neutral-500 block mb-2">
+          <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-neutral-500 block mb-2">
             Frame Material & Tone
           </span>
-          <div className="flex items-center space-x-2.5">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-2.5">
             {FRAME_OPTIONS.map((opt) => (
               <button
                 key={opt.id}
                 onClick={() => updateFrameMaterial(opt.id)}
-                className={`flex items-center space-x-2 px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+                className={`flex items-center justify-center sm:justify-start space-x-1.5 sm:space-x-2 px-2.5 py-1.5 sm:px-3 rounded-full text-[11px] sm:text-xs font-medium border transition-all ${
                   frameColorKey === opt.id
                     ? 'bg-obsidian-900 text-white border-obsidian-900 shadow-sm ring-2 ring-black/10'
                     : 'bg-white/70 text-neutral-700 border-black/5 hover:bg-white'
                 }`}
               >
                 <span
-                  className="w-3.5 h-3.5 rounded-full border border-black/20"
+                  className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full border border-black/20 flex-shrink-0"
                   style={{ backgroundColor: `#${opt.color.toString(16).padStart(6, '0')}` }}
                 />
-                <span>{opt.name}</span>
-                {frameColorKey === opt.id && <Check className="w-3 h-3 text-white" />}
+                <span className="truncate">{opt.name}</span>
+                {frameColorKey === opt.id && <Check className="w-3 h-3 text-white flex-shrink-0" />}
               </button>
             ))}
           </div>

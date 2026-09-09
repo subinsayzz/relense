@@ -289,7 +289,7 @@ export const ReLensCalculator: React.FC = () => {
                     placeholder="Your Name"
                     value={customerName}
                     onChange={(e) => setCustomerName(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-xs focus:outline-none focus:ring-2 focus:ring-accent-gold"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-base sm:text-xs focus:outline-none focus:ring-2 focus:ring-accent-gold"
                   />
                   <input
                     type="text"
@@ -297,7 +297,7 @@ export const ReLensCalculator: React.FC = () => {
                     placeholder="Phone or Email"
                     value={customerContact}
                     onChange={(e) => setCustomerContact(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-xs focus:outline-none focus:ring-2 focus:ring-accent-gold"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-base sm:text-xs focus:outline-none focus:ring-2 focus:ring-accent-gold"
                   />
                   <button
                     type="submit"

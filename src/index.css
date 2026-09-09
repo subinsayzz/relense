@@ -24,6 +24,15 @@
     background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 0);
     background-size: 24px 24px;
   }
+
+  /* Hide scrollbar for horizontal swipe pills */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 @keyframes float-slow {

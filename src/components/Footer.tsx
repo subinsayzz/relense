@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 rounded-full bg-white/10 border border-white/15 text-xs text-white placeholder-cream-400/60 focus:outline-none focus:ring-2 focus:ring-accent-gold"
+                  className="w-full px-4 py-3 rounded-full bg-white/10 border border-white/15 text-base sm:text-xs text-white placeholder-cream-400/60 focus:outline-none focus:ring-2 focus:ring-accent-gold"
                 />
                 <button
                   type="submit"

@@ -101,7 +101,7 @@ export const DmvExamSection: React.FC = () => {
                       placeholder="Jane Doe"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-black/15 text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-black/15 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
                     />
                   </div>
 
@@ -115,7 +115,7 @@ export const DmvExamSection: React.FC = () => {
                       placeholder="(347) 000-0000"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-black/15 text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-black/15 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
                     />
                   </div>
 
@@ -126,7 +126,7 @@ export const DmvExamSection: React.FC = () => {
                     <select
                       value={preferredTime}
                       onChange={(e) => setPreferredTime(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-black/15 text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900 bg-white"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-black/15 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900 bg-white"
                     >
                       <option>Today / Walk-In</option>
                       <option>Tomorrow Morning (10am - 1pm)</option>
