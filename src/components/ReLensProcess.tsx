@@ -115,6 +115,110 @@ export const ReLensProcess: React.FC = () => {
           })}
         </div>
 
+        {/* Real Freeport Lab & Showroom Gallery */}
+        <div className="mt-16 space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+            <div>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-electric-600">
+                Inside Our Freeport Shop
+              </span>
+              <h3 className="font-serif text-2xl sm:text-3xl text-obsidian-900 font-medium">
+                Authentic Craftsmanship & Care
+              </h3>
+            </div>
+            <p className="text-xs text-neutral-500 max-w-md sm:text-right">
+              Every frame is inspected and hand-beveled right here at 37 Guy Lombardo Ave in Freeport, Long Island.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Real Photo 1: Freeport Showroom */}
+            <div className="bg-white rounded-3xl overflow-hidden shadow-card border border-blue-100/80 group flex flex-col">
+              <div className="aspect-[4/3] overflow-hidden bg-neutral-100 relative">
+                <img
+                  src="/assets/relense_store_counter.jpg"
+                  alt="ReLense Optical Boutique Showroom in Freeport NY"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+                <span className="absolute top-3 left-3 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-black/60 text-white backdrop-blur-xs">
+                  Showroom Counter
+                </span>
+              </div>
+              <div className="p-5 space-y-1 flex-1 flex flex-col justify-between">
+                <div>
+                  <h4 className="font-serif text-lg text-obsidian-900 font-semibold">
+                    Freeport Boutique & Studio
+                  </h4>
+                  <p className="text-xs text-neutral-600 mt-1 leading-relaxed">
+                    Walk in for in-person consultation, custom frame adjustments, and same-day optical fittings with Mauricio.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-neutral-100 text-[11px] font-semibold text-electric-700 flex items-center justify-between">
+                  <span>37 Guy Lombardo Ave Unit 1</span>
+                  <span>Walk-Ins Welcome →</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Real Photo 2: Lens Swatch Kit */}
+            <div className="bg-white rounded-3xl overflow-hidden shadow-card border border-blue-100/80 group flex flex-col">
+              <div className="aspect-[4/3] overflow-hidden bg-neutral-100 relative">
+                <img
+                  src="/assets/relense_lens_kit.jpg"
+                  alt="ReLense Lens Tint Swatch Kit and Optical Cleaners"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+                <span className="absolute top-3 left-3 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-black/60 text-white backdrop-blur-xs">
+                  Lens Swatches & Care
+                </span>
+              </div>
+              <div className="p-5 space-y-1 flex-1 flex flex-col justify-between">
+                <div>
+                  <h4 className="font-serif text-lg text-obsidian-900 font-semibold">
+                    Custom Tints & Diamond Coatings
+                  </h4>
+                  <p className="text-xs text-neutral-600 mt-1 leading-relaxed">
+                    Explore our physical tint swatch library (emerald, sapphire, vintage amber, gradient) and Peeps carbon care tools.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-neutral-100 text-[11px] font-semibold text-electric-700 flex items-center justify-between">
+                  <span>UV400 & Polarized Swatches</span>
+                  <span>From $49 →</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Real Photo 3: Mauricio DMV Exam */}
+            <div className="bg-white rounded-3xl overflow-hidden shadow-card border border-blue-100/80 group flex flex-col">
+              <div className="aspect-[4/3] overflow-hidden bg-neutral-100 relative">
+                <img
+                  src="/assets/mauricio_dmv_exam.jpg"
+                  alt="Master Optician Mauricio conducting vision test in Freeport"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+                <span className="absolute top-3 left-3 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-emerald-700 text-white backdrop-blur-xs flex items-center space-x-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                  <span>5-Min NY DMV Exam</span>
+                </span>
+              </div>
+              <div className="p-5 space-y-1 flex-1 flex flex-col justify-between">
+                <div>
+                  <h4 className="font-serif text-lg text-obsidian-900 font-semibold">
+                    Master Optician Personal Care
+                  </h4>
+                  <p className="text-xs text-neutral-600 mt-1 leading-relaxed">
+                    Skip DMV lines. Mauricio conducts official 5-minute electronic vision tests and uploads instantly to NY State registry.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-neutral-100 text-[11px] font-semibold text-electric-700 flex items-center justify-between">
+                  <span>Official NY Registry Provider</span>
+                  <span>$25 Walk-In →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Store Trust & Guarantees Ribbon */}
         <div className="mt-12 p-7 sm:p-8 rounded-3xl bg-obsidian-900 text-white shadow-elevated grid grid-cols-2 md:grid-cols-4 gap-6 text-center border border-white/10">
           <div className="space-y-1">

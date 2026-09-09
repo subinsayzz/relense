@@ -66,7 +66,29 @@ export const DmvExamSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="pt-4 flex flex-wrap items-center gap-4 text-xs text-blue-200/80">
+              {/* Authentic Photo of Mauricio conducting DMV Vision Test */}
+              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-elevated group bg-black/20">
+                <img
+                  src="/assets/mauricio_dmv_exam.jpg"
+                  alt="Master Optician Mauricio conducting official NY DMV vision exam at ReLense Freeport"
+                  className="w-full h-48 sm:h-56 object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B131E]/95 via-[#0B131E]/30 to-transparent flex items-end p-4">
+                  <div className="flex items-center space-x-2.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
+                    <div>
+                      <div className="text-xs font-semibold text-white tracking-wide">
+                        Freeport Lab: Mauricio Conducting Official 5-Min DMV Exam
+                      </div>
+                      <div className="text-[11px] text-blue-200/80">
+                        Electronic test apparatus with instant NY DMV registry upload
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-blue-200/80">
                 <div className="flex items-center">
                   <MapPin className="w-4 h-4 text-electric-400 mr-1.5" />
                   <span>37 Guy Lombardo Ave, Freeport, NY</span>

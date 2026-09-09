@@ -127,6 +127,30 @@ export const ContactLocation: React.FC = () => {
 
             </div>
 
+            {/* Authentic Freeport Showroom Photo */}
+            <div className="rounded-3xl overflow-hidden border border-blue-100/80 shadow-card bg-white relative group">
+              <div className="aspect-[16/10] overflow-hidden bg-neutral-100 relative">
+                <img
+                  src="/assets/relense_store_counter.jpg"
+                  alt="ReLense Optical Boutique Showroom Counter in Freeport NY"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent flex items-end p-4">
+                  <div className="text-white space-y-0.5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-blue-200 bg-white/20 backdrop-blur-xs px-2 py-0.5 rounded-full">
+                      Freeport Boutique & Lab Showroom
+                    </span>
+                    <h4 className="font-serif text-lg font-medium text-white">
+                      In-Person Styling & Dispensing Counter
+                    </h4>
+                    <p className="text-[11px] text-blue-100/80">
+                      Walk-ins welcome · 37 Guy Lombardo Ave Unit 1, Freeport NY
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Google Maps Visual Embed */}
             <div className="rounded-3xl overflow-hidden border border-blue-100/80 shadow-card h-52 relative">
               <iframe

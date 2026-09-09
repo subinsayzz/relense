@@ -75,14 +75,28 @@ export const Testimonials: React.FC = () => {
           ))}
         </div>
 
-        {/* Highlight Mauricio Note */}
-        <div className="mt-12 bg-white rounded-3xl p-7 border border-blue-100/80 shadow-card max-w-2xl mx-auto text-center space-y-2">
-          <div className="text-xs font-bold uppercase tracking-wider text-electric-600">
-            Personal Care Promise from Mauricio
+        {/* Highlight Mauricio Note with Real Photo Avatar */}
+        <div className="mt-12 bg-white rounded-3xl p-7 border border-blue-100/80 shadow-card max-w-2xl mx-auto flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-5 text-center sm:text-left">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-blue-100 flex-shrink-0 shadow-xs">
+            <img
+              src="/assets/mauricio_dmv_exam.jpg"
+              alt="Master Optician Mauricio at ReLense"
+              className="w-full h-full object-cover object-top"
+            />
           </div>
-          <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed">
-            "We explain everything in detail and guarantee your new lenses fit your existing frames with micron precision. Whether you are re-lensing a favorite vintage frame or taking a quick NY DMV eye test, you are treated like family."
-          </p>
+          <div className="space-y-1.5">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-electric-600">
+                Personal Care Promise from Mauricio
+              </span>
+              <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-blue-50 text-electric-700">
+                Master Optician · 20+ Yrs
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed italic">
+              "We explain everything in detail and guarantee your new lenses fit your existing frames with micron precision. Whether you are re-lensing a favorite vintage frame or taking a quick NY DMV eye test, you are treated like family."
+            </p>
+          </div>
         </div>
 
       </div>

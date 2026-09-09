@@ -200,22 +200,22 @@ export const Hero: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Box: 'Eye Protecting Tools' with Leather Box Case matching screenshot */}
+            {/* Right Box: 'Eye Protecting & Lab Tools' with Authentic ReLense Lens Swatches Kit */}
             <div className="lg:col-span-3 flex justify-center lg:justify-end">
-              <div className="w-full max-w-[220px] bg-white rounded-3xl p-4 shadow-card border border-blue-100/80 space-y-3">
-                <div className="text-xs font-bold text-neutral-700 flex items-center justify-between">
-                  <span>Eye Protecting Tools</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-electric-600" />
+              <div className="w-full max-w-[230px] bg-white rounded-3xl p-4 shadow-card border border-blue-100/80 space-y-3 group">
+                <div className="text-xs font-bold text-neutral-800 flex items-center justify-between">
+                  <span>Eye Protecting & Lab Tools</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-electric-600 animate-pulse" />
                 </div>
-                <div className="aspect-[4/3] rounded-xl overflow-hidden bg-cream-100">
+                <div className="aspect-[4/3] rounded-xl overflow-hidden bg-blue-50/50">
                   <img
-                    src="/assets/eyewear_case.jpg"
-                    alt="Leather eyewear case tools"
-                    className="w-full h-full object-cover"
+                    src="/assets/relense_lens_kit.jpg"
+                    alt="Authentic ReLense Lens Tint Swatch Kit & Optical Care"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="text-[11px] text-neutral-500 text-center">
-                  Full protective case & microfiber kit with every order
+                <div className="text-[11px] text-neutral-500 text-center leading-tight">
+                  Custom lens swatches, Peeps carbon cleaner & Diamond AR care
                 </div>
               </div>
             </div>
