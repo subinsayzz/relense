@@ -1,15 +1,83 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, ExternalLink, MessageSquare } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, ExternalLink, MessageSquare, Sparkles, Eye, ShieldCheck, Camera } from 'lucide-react';
 import { SITE_INFO } from '../data/content';
 
 export const ContactLocation: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [activeStoreView, setActiveStoreView] = useState<'window' | 'street' | 'showroom' | 'dmv'>('window');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: '',
   });
+
+  const STORE_VIEWS = [
+    {
+      id: 'window',
+      title: 'Storefront Window & Signs',
+      badge: 'Authentic 37B Guy Lombardo Ave',
+      image: '/assets/relense_storefront_real.jpg',
+      aspect: 'aspect-[4/3] sm:aspect-[16/10]',
+      tagline: 'Signature Blue Neon & Carl Zeiss Optical Verification',
+      desc: 'The exact illuminated storefront of ReLense at 37B Guy Lombardo Ave in Freeport. Features the authentic handcrafted blue neon "Relense" sign, luminous green LED perimeter, warm illuminated canopy, red neon OPEN, and official Zeiss optics.',
+      highlights: [
+        'Custom Blue Neon "Relense" Insignia',
+        'Luminous Green LED Window Border',
+        'Carl Zeiss Authorized Optics Sign',
+        'Warm Illuminated Overhead Canopy',
+        'ReLense Optical: (347) 878-5064',
+        'Hablamos Español Fluido',
+      ],
+    },
+    {
+      id: 'street',
+      title: 'Guy Lombardo Ave Street View',
+      badge: 'Freeport Downtown District',
+      image: '/assets/relense_streetview_real.jpg',
+      aspect: 'aspect-[16/10]',
+      tagline: 'Convenient Street Access & Curbside Pickup',
+      desc: 'Our real storefront location on Guy Lombardo Ave in Freeport, Long Island. Conveniently situated with easy street parking, curbside drop-off and pickup, and walking distance to the Freeport LIRR station.',
+      highlights: [
+        'Prime Downtown Freeport Location',
+        'Easy Curbside Frame Drop-Off',
+        'Street Parking Right in Front',
+        'Walk-Ins Welcome Everyday',
+      ],
+    },
+    {
+      id: 'showroom',
+      title: 'Interior Showroom Counter',
+      badge: 'Dispensing & Fitting Desk',
+      image: '/assets/relense_store_counter.jpg',
+      aspect: 'aspect-[4/3] sm:aspect-[16/10]',
+      tagline: 'Personalized Eyewear Consultations',
+      desc: 'Inside the boutique showroom featuring personalized eyewear styling, custom tortoise frame displays, computerized lensometer prescription reading, and personal consultations with Master Optician Mauricio.',
+      highlights: [
+        'Personalized Frame Styling Desk',
+        'Custom Acetate Frame Adjustments',
+        'Ultrasonic Frame Deep Cleaning',
+        'In-House Lensometer Verification',
+      ],
+    },
+    {
+      id: 'dmv',
+      title: 'In-Store DMV Vision Lab',
+      badge: 'Official NY State Registry',
+      image: '/assets/mauricio_dmv_exam.jpg',
+      aspect: 'aspect-[16/10]',
+      tagline: '5-Minute Official Vision Testing',
+      desc: 'Master Optician Mauricio personally conducting official 5-minute New York State Driver License vision tests with instant electronic submission to the NY DMV registry database.',
+      highlights: [
+        '5-Minute Walk-In Vision Test',
+        '$25 Official Examination Fee',
+        'Direct Electronic NY DMV Upload',
+        'Skip the Long DMV Lines',
+      ],
+    },
+  ];
+
+  const currentView = STORE_VIEWS.find((v) => v.id === activeStoreView) || STORE_VIEWS[0];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,55 +106,121 @@ export const ContactLocation: React.FC = () => {
           </p>
         </div>
 
-        {/* Dreamy Flagship Storefront Showcase */}
-        <div className="mb-14 rounded-3xl overflow-hidden border border-blue-100/80 shadow-elevated bg-white group relative">
-          <div className="relative aspect-[21/9] sm:aspect-[2.2/1] min-h-[300px] overflow-hidden bg-obsidian-900">
-            <img
-              src="/assets/relense_dreamy_storefront.jpg"
-              alt="Dreamy ReLense Optical Flagship Storefront at 37 Guy Lombardo Ave"
-              className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-1000"
-            />
-            {/* Ambient vignette */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+        {/* Authentic Interactive Storefront & Shop Showcase */}
+        <div className="mb-14 rounded-3xl overflow-hidden border border-blue-100/80 shadow-elevated bg-[#0B131E] text-white group relative">
+          
+          {/* Ambient Glows matching real neon colors: electric cyan and vibrant emerald */}
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
 
-            {/* Floating Architectural Callout Badges */}
-            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10 flex items-center space-x-2 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-card border border-black/5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[11px] font-bold text-obsidian-900 uppercase tracking-wider">
-                Flagship Boutique Studio · 37 Guy Lombardo Ave
-              </span>
+          {/* Top Bar: Live Badge & View Selector Tabs */}
+          <div className="p-4 sm:p-6 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
+            <div>
+              <div className="flex items-center space-x-2 text-xs text-blue-200">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="font-semibold uppercase tracking-wider text-[11px]">
+                  Authentic Freeport Storefront & Optical Lab
+                </span>
+              </div>
+              <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal mt-0.5">
+                37B Guy Lombardo Ave · Freeport, NY
+              </h3>
             </div>
 
-            {/* Bottom Caption Strip */}
-            <div className="absolute bottom-4 inset-x-4 sm:bottom-6 sm:inset-x-8 z-10 flex flex-col sm:flex-row sm:items-end justify-between text-white gap-3">
-              <div className="space-y-1 max-w-xl">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-blue-200">
-                  Architectural Reimagining & Freeport Showroom
+            {/* View Switching Tabs */}
+            <div className="flex flex-wrap items-center gap-2">
+              {STORE_VIEWS.map((view) => (
+                <button
+                  key={view.id}
+                  onClick={() => setActiveStoreView(view.id as any)}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition flex items-center space-x-1.5 ${
+                    activeStoreView === view.id
+                      ? 'bg-white text-obsidian-900 shadow-md'
+                      : 'bg-white/10 hover:bg-white/20 text-blue-100/80 border border-white/10'
+                  }`}
+                >
+                  <Camera className="w-3 h-3 text-cyan-400" />
+                  <span>{view.title}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Main Display Area */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-4 sm:p-8 items-center relative z-10">
+            
+            {/* Left: Authentic Real Photo with Dreamy Neon Glow Vignette */}
+            <div className="lg:col-span-7">
+              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-black/40 group/img">
+                <div className={`${currentView.aspect} overflow-hidden bg-black/30`}>
+                  <img
+                    key={currentView.id}
+                    src={currentView.image}
+                    alt={currentView.title}
+                    className="w-full h-full object-cover object-center group-hover/img:scale-102 transition-transform duration-700 animate-in fade-in"
+                  />
+                </div>
+                {/* Floating Real-World Tag */}
+                <div className="absolute top-3 left-3 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-white border border-white/20 flex items-center space-x-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>{currentView.badge}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Rich Authentic Details */}
+            <div className="lg:col-span-5 space-y-5">
+              <div className="space-y-2">
+                <span className="text-[10px] font-mono tracking-widest text-cyan-300 uppercase">
+                  {currentView.tagline}
                 </span>
-                <h3 className="font-serif text-xl sm:text-3xl text-white font-medium">
-                  Where Craftsmanship Meets Dreamy Modern Design
-                </h3>
-                <p className="text-xs sm:text-sm text-blue-100/80 line-clamp-2">
-                  Featuring floor-to-ceiling architectural glass, warm illuminated linear canopy, custom travertine pedestals, and Mauricio's in-house precision optical laboratory.
+                <h4 className="font-serif text-2xl sm:text-3xl text-white font-medium leading-snug">
+                  {currentView.title}
+                </h4>
+                <p className="text-xs sm:text-sm text-blue-100/80 leading-relaxed">
+                  {currentView.desc}
                 </p>
               </div>
 
-              <div className="flex items-center space-x-2">
+              {/* Highlight Bullets with Real Elements */}
+              <div className="space-y-2 pt-2 border-t border-white/10">
+                <div className="text-[11px] font-bold text-blue-200 uppercase tracking-wider">
+                  Verified Real-World Details
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-blue-100/90">
+                  {currentView.highlights.map((item, i) => (
+                    <div key={i} className="flex items-center space-x-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="pt-3 flex flex-wrap items-center gap-3">
                 <a
                   href={`tel:${SITE_INFO.phone}`}
-                  className="px-5 py-2.5 rounded-full bg-white text-obsidian-900 text-xs font-bold hover:bg-blue-50 transition shadow-elevated"
+                  className="px-5 py-2.5 rounded-full bg-electric-600 hover:bg-electric-500 text-white text-xs font-bold transition shadow-elevated flex items-center space-x-1.5"
                 >
-                  Call Mauricio
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>Call Mauricio: {SITE_INFO.phoneFormatted}</span>
                 </a>
                 <a
-                  href="#dmv-section"
-                  className="px-5 py-2.5 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border border-white/30 text-xs font-semibold transition"
+                  href="https://maps.google.com/?q=37+Guy+Lombardo+Ave+Freeport+NY+11520"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-semibold text-white transition flex items-center space-x-1.5"
                 >
-                  Book Walk-In
+                  <MapPin className="w-3.5 h-3.5 text-cyan-300" />
+                  <span>Get Directions</span>
                 </a>
               </div>
+
             </div>
+
           </div>
+
         </div>
 
         {/* Two-Column Grid: Location & Details on Left, Message Form on Right */}
