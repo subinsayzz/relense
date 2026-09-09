@@ -6,42 +6,42 @@ export const VisionShield: React.FC = () => {
     <section id="vision-shield" className="py-16 sm:py-20 bg-gradient-to-b from-[#EAF3FA] to-[#E2EFF8] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* EYE PROTECT Layout matching Screenshot */}
+        {/* EYE PROTECT / VISION SHIELD Layout matching Screenshot */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Left Column: Man Model Card with Electric Blue Banner matching Screenshot */}
+          {/* Left Column: Woman Model Card with 'Vision crafted by experience' matching Screenshot */}
           <div className="lg:col-span-4 flex flex-col">
             <div className="bg-white rounded-3xl overflow-hidden shadow-card border border-blue-100/80 flex-1 flex flex-col justify-between">
               
               {/* Model Image */}
               <div className="aspect-[4/4.5] overflow-hidden bg-sky-100">
                 <img
-                  src="/assets/eyeprotect_man.jpg"
-                  alt="Stories live behind every lens"
+                  src="/assets/hero_woman.jpg"
+                  alt="Vision crafted by experience"
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
                 />
               </div>
 
-              {/* Electric Blue Bottom Box matching Screenshot */}
-              <div className="bg-electric-600 text-white p-5 sm:p-6 space-y-1">
+              {/* Bottom Box matching Screenshot */}
+              <div className="p-5 sm:p-6 space-y-1 bg-white text-obsidian-900 border-t border-neutral-100">
                 <div className="flex items-center justify-between mb-1">
-                  <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white">
+                  <div className="w-7 h-7 rounded-full bg-neutral-100 flex items-center justify-center text-obsidian-900">
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
-                  <span className="text-[10px] font-mono tracking-wider uppercase text-blue-100">
+                  <span className="text-[10px] font-mono tracking-wider uppercase text-neutral-400">
                     Skin-friendly materials
                   </span>
                 </div>
-                <h3 className="font-serif text-xl sm:text-2xl text-white font-medium leading-snug">
-                  Stories live behind every lens
+                <h3 className="font-serif text-xl sm:text-2xl text-obsidian-900 font-medium leading-snug">
+                  Vision crafted by experience
                 </h3>
               </div>
 
             </div>
           </div>
 
-          {/* Right Column: Giant Faceted 'EYE PROTECT' Card matching Screenshot */}
-          <div className="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-10 shadow-card border border-blue-100/80 cut-both-top flex flex-col justify-between relative overflow-hidden">
+          {/* Right Column: Giant Faceted 'VISION SHIELD' Card matching Screenshot */}
+          <div className="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-10 shadow-card border border-blue-100/80 cut-top-left flex flex-col justify-between relative overflow-hidden">
             
             {/* Top Subtitle matching Screenshot */}
             <div className="flex items-center justify-between">
@@ -54,50 +54,50 @@ export const VisionShield: React.FC = () => {
               </span>
             </div>
 
-            {/* Giant Title: 'EYE PROTECT' */}
+            {/* Giant Title matching screenshot: 'VISION SHIELD' */}
             <div className="text-center my-4">
               <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-obsidian-900 tracking-tight font-light">
-                EYE PROTECT
+                VISION SHIELD
               </h2>
             </div>
 
             {/* Central Glasses Showcase with Exact Callout Pointers */}
             <div className="relative py-4 my-2 flex items-center justify-center">
               <img
-                src="/assets/glasses.jpg"
-                alt="Eye Protect Eyewear"
-                className="w-full max-w-lg h-auto object-cover rounded-2xl shadow-soft"
+                src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1000&q=80"
+                alt="Vision Shield Eyewear"
+                className="w-full max-w-md h-auto object-cover rounded-2xl"
               />
 
               {/* Callout Left matching Screenshot: SLEEK METALS */}
-              <div className="hidden sm:block absolute left-0 top-1/4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-card border border-blue-100/80 text-left max-w-[190px]">
+              <div className="hidden sm:block absolute left-0 top-1/3 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-2xl shadow-card border border-blue-100/80 text-left max-w-[190px]">
                 <div className="text-[10px] font-bold uppercase tracking-wider text-obsidian-900 flex items-center">
                   <span className="w-1.5 h-1.5 rounded-full bg-electric-600 mr-1.5" />
                   <span>SLEEK METALS</span>
                 </div>
-                <div className="text-[10px] text-neutral-500 mt-0.5 leading-tight">
+                <div className="text-[10px] text-neutral-500 mt-1 leading-tight">
                   Skin-friendly materials that blend style & endurance.
                 </div>
               </div>
 
               {/* Callout Right matching Screenshot: CRYSTAL-CLEAR */}
-              <div className="hidden sm:block absolute right-0 top-1/4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-card border border-blue-100/80 text-left max-w-[190px]">
+              <div className="hidden sm:block absolute right-0 top-1/3 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-2xl shadow-card border border-blue-100/80 text-left max-w-[190px]">
                 <div className="text-[10px] font-bold uppercase tracking-wider text-electric-600 flex items-center">
                   <span className="w-1.5 h-1.5 rounded-full bg-electric-600 mr-1.5" />
                   <span>CRYSTAL-CLEAR</span>
                 </div>
-                <div className="text-[10px] text-neutral-500 mt-0.5 leading-tight">
+                <div className="text-[10px] text-neutral-500 mt-1 leading-tight">
                   UV and blue light filtering with zero optical distortion.
                 </div>
               </div>
 
-              {/* Center Pill Button matching Screenshot: 'Order Now ►' */}
+              {/* Center Pill Button matching Screenshot: 'Test Your Eye' */}
               <div className="absolute inset-x-0 -bottom-3 flex justify-center">
                 <a
-                  href="#calculator"
+                  href="#dmv-section"
                   className="px-6 py-2.5 rounded-full bg-obsidian-900 text-white text-xs font-semibold hover:bg-neutral-800 transition shadow-elevated flex items-center space-x-1.5 group"
                 >
-                  <span>Order Now</span>
+                  <span>Test Your Eye</span>
                   <Play className="w-2.5 h-2.5 fill-white text-white transition-transform group-hover:translate-x-0.5" />
                 </a>
               </div>

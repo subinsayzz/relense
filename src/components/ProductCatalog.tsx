@@ -106,7 +106,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onSelectProductF
           {showcaseProducts.map((prod) => (
             <div
               key={prod.id}
-              className="group bg-white rounded-3xl p-6 sm:p-7 shadow-card border border-blue-100/80 hover:shadow-elevated transition-all duration-300 flex flex-col justify-between cut-top-right relative"
+              className="group bg-white rounded-3xl p-6 sm:p-7 shadow-card border border-blue-100/80 hover:shadow-elevated transition-all duration-300 flex flex-col justify-between cut-top-left relative"
             >
               <div>
                 {/* Top Style Tag matching Screenshot */}
