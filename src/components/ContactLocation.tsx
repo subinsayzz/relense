@@ -38,6 +38,57 @@ export const ContactLocation: React.FC = () => {
           </p>
         </div>
 
+        {/* Dreamy Flagship Storefront Showcase */}
+        <div className="mb-14 rounded-3xl overflow-hidden border border-blue-100/80 shadow-elevated bg-white group relative">
+          <div className="relative aspect-[21/9] sm:aspect-[2.2/1] min-h-[300px] overflow-hidden bg-obsidian-900">
+            <img
+              src="/assets/relense_dreamy_storefront.jpg"
+              alt="Dreamy ReLense Optical Flagship Storefront at 37 Guy Lombardo Ave"
+              className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-1000"
+            />
+            {/* Ambient vignette */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+
+            {/* Floating Architectural Callout Badges */}
+            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10 flex items-center space-x-2 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-card border border-black/5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-[11px] font-bold text-obsidian-900 uppercase tracking-wider">
+                Flagship Boutique Studio · 37 Guy Lombardo Ave
+              </span>
+            </div>
+
+            {/* Bottom Caption Strip */}
+            <div className="absolute bottom-4 inset-x-4 sm:bottom-6 sm:inset-x-8 z-10 flex flex-col sm:flex-row sm:items-end justify-between text-white gap-3">
+              <div className="space-y-1 max-w-xl">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-blue-200">
+                  Architectural Reimagining & Freeport Showroom
+                </span>
+                <h3 className="font-serif text-xl sm:text-3xl text-white font-medium">
+                  Where Craftsmanship Meets Dreamy Modern Design
+                </h3>
+                <p className="text-xs sm:text-sm text-blue-100/80 line-clamp-2">
+                  Featuring floor-to-ceiling architectural glass, warm illuminated linear canopy, custom travertine pedestals, and Mauricio's in-house precision optical laboratory.
+                </p>
+              </div>
+
+              <div className="flex items-center space-x-2">
+                <a
+                  href={`tel:${SITE_INFO.phone}`}
+                  className="px-5 py-2.5 rounded-full bg-white text-obsidian-900 text-xs font-bold hover:bg-blue-50 transition shadow-elevated"
+                >
+                  Call Mauricio
+                </a>
+                <a
+                  href="#dmv-section"
+                  className="px-5 py-2.5 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border border-white/30 text-xs font-semibold transition"
+                >
+                  Book Walk-In
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Two-Column Grid: Location & Details on Left, Message Form on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
