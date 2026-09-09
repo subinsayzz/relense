@@ -56,20 +56,25 @@ export const ReLensCalculator: React.FC = () => {
   };
 
   return (
-    <section id="calculator" className="py-20 bg-[#F6F5F2] relative">
+    <section id="calculator" className="py-20 bg-gradient-to-b from-[#DFEDF8] via-[#E8F2FA] to-[#DFEDF8] relative overflow-hidden">
+      
+      {/* Soft Ambient Sky Blurs */}
+      <div className="absolute top-10 left-1/4 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-white/60 rounded-full blur-3xl pointer-events-none -z-10" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white border border-black/5 text-xs font-semibold uppercase tracking-wider text-obsidian-900 shadow-sm">
-            <Calculator className="w-3.5 h-3.5 text-accent-gold" />
-            <span>Interactive Quote Estimator</span>
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-blue-200/60 shadow-xs text-xs font-semibold uppercase tracking-wider text-obsidian-900">
+            <Calculator className="w-3.5 h-3.5 text-electric-600" />
+            <span>Transparent Lab Pricing & Calculator</span>
           </div>
-          <h2 className="font-serif text-4xl sm:text-5xl text-obsidian-900">
-            Customize Your Lenses & Pricing
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-obsidian-900 tracking-tight">
+            Customize Lenses & Store Pricing
           </h2>
-          <p className="text-neutral-600 text-sm sm:text-base">
-            Transparent New York optical laboratory pricing with zero hidden retail markups. Configure your specs and lock in your price.
+          <p className="text-neutral-600 text-sm sm:text-base max-w-xl mx-auto">
+            Direct New York optical laboratory pricing with zero retail markup. Choose your frame, select digital prescription power, and lock in your price.
           </p>
         </div>
 
@@ -77,16 +82,16 @@ export const ReLensCalculator: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Configurator Form */}
-          <div className="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 shadow-card border border-black/5 space-y-8">
+          <div className="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 shadow-card border border-blue-100/80 space-y-8">
             
             {/* Step 1: Frame Source */}
             <div>
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">
-                  Step 1 · Frame Source
+                  Step 1 · Frame Selection
                 </span>
-                <span className="text-xs font-semibold text-accent-teal">
-                  {frameOption === 'existing' ? '★ Most Popular & Eco-Friendly' : 'Curated Boutique Selection'}
+                <span className="text-xs font-semibold text-electric-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200/60">
+                  {frameOption === 'existing' ? '★ Most Popular: $0 Frame Fee' : 'Boutique Handcrafted Frame'}
                 </span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -95,18 +100,18 @@ export const ReLensCalculator: React.FC = () => {
                   onClick={() => setFrameOption('existing')}
                   className={`p-4 rounded-2xl border text-left transition-all ${
                     frameOption === 'existing'
-                      ? 'border-obsidian-900 bg-[#FBF9F5] ring-2 ring-black/5'
-                      : 'border-black/10 hover:border-black/25'
+                      ? 'border-electric-600 bg-blue-50/60 ring-2 ring-electric-500/20'
+                      : 'border-neutral-200 hover:border-blue-200 bg-white'
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-semibold text-sm text-obsidian-900">Re-Lens My Own Frame</span>
-                    <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-accent-teal/15 text-accent-teal">
-                      $0 Frame Fee
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-blue-100 text-electric-700">
+                      $0 Fee
                     </span>
                   </div>
                   <p className="text-xs text-neutral-500 mt-1">
-                    Send or bring any pair of glasses or sunglasses you already own.
+                    Send or bring any eyeglasses or sunglasses you already own to our Freeport lab.
                   </p>
                 </button>
 
@@ -115,16 +120,16 @@ export const ReLensCalculator: React.FC = () => {
                   onClick={() => setFrameOption('new')}
                   className={`p-4 rounded-2xl border text-left transition-all ${
                     frameOption === 'new'
-                      ? 'border-obsidian-900 bg-[#FBF9F5] ring-2 ring-black/5'
-                      : 'border-black/10 hover:border-black/25'
+                      ? 'border-electric-600 bg-blue-50/60 ring-2 ring-electric-500/20'
+                      : 'border-neutral-200 hover:border-blue-200 bg-white'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-sm text-obsidian-900">Choose New Handcrafted Frame</span>
-                    <span className="text-xs font-bold text-neutral-700">+$129</span>
+                    <span className="font-semibold text-sm text-obsidian-900">Choose New Boutique Frame</span>
+                    <span className="text-xs font-bold text-obsidian-900">+$129</span>
                   </div>
                   <p className="text-xs text-neutral-500 mt-1">
-                    Select from our Italian acetate or lightweight titanium collection.
+                    Select from our Italian acetate and featherweight titanium boutique collection.
                   </p>
                 </button>
               </div>
@@ -133,7 +138,7 @@ export const ReLensCalculator: React.FC = () => {
             {/* Step 2: Prescription Type */}
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-neutral-400 block mb-3">
-                Step 2 · Prescription Vision Type
+                Step 2 · Prescription Vision Power
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {RX_OPTIONS.map((item) => (
@@ -143,8 +148,8 @@ export const ReLensCalculator: React.FC = () => {
                     onClick={() => setRxType(item.id)}
                     className={`p-4 rounded-2xl border text-left transition-all flex flex-col justify-between ${
                       rxType === item.id
-                        ? 'border-obsidian-900 bg-[#FBF9F5] ring-2 ring-black/5'
-                        : 'border-black/10 hover:border-black/25'
+                        ? 'border-electric-600 bg-blue-50/60 ring-2 ring-electric-500/20'
+                        : 'border-neutral-200 hover:border-blue-200 bg-white'
                     }`}
                   >
                     <div className="flex items-center justify-between w-full mb-1">
@@ -160,7 +165,7 @@ export const ReLensCalculator: React.FC = () => {
             {/* Step 3: Lens Material */}
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-neutral-400 block mb-3">
-                Step 3 · Optical Lens Material
+                Step 3 · Optical Lens Material Index
               </span>
               <div className="grid grid-cols-1 gap-3">
                 {MATERIAL_OPTIONS.map((item) => (
@@ -170,8 +175,8 @@ export const ReLensCalculator: React.FC = () => {
                     onClick={() => setLensMaterial(item.id)}
                     className={`p-4 rounded-2xl border text-left transition-all flex items-center justify-between ${
                       lensMaterial === item.id
-                        ? 'border-obsidian-900 bg-[#FBF9F5] ring-2 ring-black/5'
-                        : 'border-black/10 hover:border-black/25'
+                        ? 'border-electric-600 bg-blue-50/60 ring-2 ring-electric-500/20'
+                        : 'border-neutral-200 hover:border-blue-200 bg-white'
                     }`}
                   >
                     <div>
@@ -201,16 +206,16 @@ export const ReLensCalculator: React.FC = () => {
                       onClick={() => toggleTreatment(item.id)}
                       className={`p-4 rounded-2xl border text-left transition-all flex items-start justify-between ${
                         isSelected
-                          ? 'border-accent-gold bg-accent-gold/5 ring-1 ring-accent-gold'
-                          : 'border-black/10 hover:border-black/25'
+                          ? 'border-electric-600 bg-blue-50/70 ring-1 ring-electric-500/30'
+                          : 'border-neutral-200 hover:border-blue-200 bg-white'
                       }`}
                     >
                       <div className="space-y-0.5">
-                        <div className="flex items-center space-x-1.5">
+                        <div className="flex items-center space-x-2">
                           <div
                             className={`w-4 h-4 rounded flex items-center justify-center border transition ${
                               isSelected
-                                ? 'bg-accent-gold border-accent-gold text-white'
+                                ? 'bg-electric-600 border-electric-600 text-white'
                                 : 'border-neutral-300'
                             }`}
                           >
@@ -220,7 +225,7 @@ export const ReLensCalculator: React.FC = () => {
                             {item.name}
                           </span>
                         </div>
-                        <p className="text-[11px] text-neutral-500 pl-5">{item.desc}</p>
+                        <p className="text-[11px] text-neutral-500 pl-6">{item.desc}</p>
                       </div>
                       <span className="text-xs font-bold text-obsidian-900 flex-shrink-0">
                         +${item.price}
@@ -239,24 +244,24 @@ export const ReLensCalculator: React.FC = () => {
               
               <div className="flex items-center justify-between pb-4 border-b border-white/10">
                 <div>
-                  <span className="text-xs uppercase tracking-wider text-cream-400 font-medium">
-                    Estimated Lab Cost
+                  <span className="text-xs uppercase tracking-wider text-blue-200/80 font-medium">
+                    Estimated Lab Total
                   </span>
-                  <div className="font-serif text-4xl sm:text-5xl text-accent-gold mt-1">
+                  <div className="font-serif text-4xl sm:text-5xl text-white mt-1">
                     ${totalPrice}
                   </div>
                 </div>
-                <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-accent-gold">
+                <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-blue-200">
                   <Sparkles className="w-6 h-6" />
                 </div>
               </div>
 
               {/* Breakdown List */}
-              <div className="space-y-2.5 text-xs text-cream-300">
+              <div className="space-y-2.5 text-xs text-blue-100/70">
                 <div className="flex justify-between">
                   <span>Frame:</span>
                   <span className="text-white font-medium">
-                    {frameOption === 'existing' ? 'Existing Frame ($0)' : 'New Handcrafted Frame ($129)'}
+                    {frameOption === 'existing' ? 'Customer Frame ($0)' : 'Boutique Frame ($129)'}
                   </span>
                 </div>
                 <div className="flex justify-between">
@@ -282,36 +287,36 @@ export const ReLensCalculator: React.FC = () => {
               {/* Quick Inquiry Form */}
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-3 pt-4 border-t border-white/10">
-                  <div className="text-xs font-semibold text-white">Lock In Your Quote with Mauricio</div>
+                  <div className="text-xs font-semibold text-white">Lock In Quote & Request Mail-In Kit</div>
                   <input
                     type="text"
                     required
-                    placeholder="Your Name"
+                    placeholder="Your Full Name"
                     value={customerName}
                     onChange={(e) => setCustomerName(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-base sm:text-xs focus:outline-none focus:ring-2 focus:ring-accent-gold"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-base sm:text-xs focus:outline-none focus:ring-2 focus:ring-electric-500"
                   />
                   <input
                     type="text"
                     required
-                    placeholder="Phone or Email"
+                    placeholder="Phone or Email Address"
                     value={customerContact}
                     onChange={(e) => setCustomerContact(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-base sm:text-xs focus:outline-none focus:ring-2 focus:ring-accent-gold"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-base sm:text-xs focus:outline-none focus:ring-2 focus:ring-electric-500"
                   />
                   <button
                     type="submit"
-                    className="w-full py-3 rounded-xl bg-accent-gold hover:bg-[#d8a87b] text-obsidian-900 font-bold text-xs uppercase tracking-wider transition shadow-sm flex items-center justify-center space-x-1.5"
+                    className="w-full py-3.5 rounded-xl bg-electric-600 hover:bg-electric-500 text-white font-bold text-xs uppercase tracking-wider transition shadow-elevated flex items-center justify-center space-x-2"
                   >
-                    <span>Request Lab Order</span>
+                    <span>Request Lab Box & Quote</span>
                     <Send className="w-3.5 h-3.5" />
                   </button>
                 </form>
               ) : (
                 <div className="p-4 rounded-2xl bg-white/10 border border-white/20 text-center space-y-2 animate-in fade-in">
-                  <div className="text-accent-gold font-bold text-sm">Quote Requested!</div>
-                  <p className="text-xs text-cream-300">
-                    Thank you {customerName}! Mauricio will contact you at {customerContact} to review your frame and prescription.
+                  <div className="text-blue-200 font-bold text-sm">Quote Requested!</div>
+                  <p className="text-xs text-blue-100/70">
+                    Thank you {customerName}! Mauricio will contact you at {customerContact} to finalize frame details and send your prepaid kit.
                   </p>
                 </div>
               )}
@@ -320,19 +325,19 @@ export const ReLensCalculator: React.FC = () => {
               <div className="pt-2 text-center">
                 <a
                   href={`tel:${SITE_INFO.phone}`}
-                  className="inline-flex items-center text-xs text-cream-300 hover:text-white transition"
+                  className="inline-flex items-center text-xs text-blue-200/80 hover:text-white transition"
                 >
-                  <Phone className="w-3 h-3 mr-1.5 text-accent-gold" />
-                  Prefer to call? Speak with Mauricio: {SITE_INFO.phoneFormatted}
+                  <Phone className="w-3 h-3 mr-1.5 text-electric-400" />
+                  Call Mauricio directly: {SITE_INFO.phoneFormatted}
                 </a>
               </div>
 
             </div>
 
-            {/* ReLense Guarantee badge */}
-            <div className="bg-white rounded-2xl p-4 border border-black/5 shadow-card flex items-center space-x-3 text-xs text-neutral-600">
-              <ShieldCheck className="w-5 h-5 text-accent-gold flex-shrink-0" />
-              <span>Includes 1-year lens warranty against peeling or delamination.</span>
+            {/* ReLense Guarantee badges */}
+            <div className="bg-white rounded-2xl p-4 border border-blue-100/80 shadow-card flex items-center space-x-3 text-xs text-neutral-600">
+              <ShieldCheck className="w-5 h-5 text-electric-600 flex-shrink-0" />
+              <span>HSA / FSA Accepted · 1-Year Delamination Lab Warranty included.</span>
             </div>
           </div>
 

@@ -118,9 +118,9 @@ export const Hero: React.FC = () => {
               <div className="relative rounded-[32px] p-2 bg-gradient-to-b from-white to-blue-50/60 shadow-elevated">
                 <div className="relative overflow-hidden rounded-[26px] cut-corner-card-alt bg-neutral-100 aspect-[4/5]">
                   <img
-                    src="/assets/hero_woman.jpg"
-                    alt="Woman wearing stylish optical eyeglasses"
-                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                    src="/assets/hero_model.jpg"
+                    alt="Model wearing titanium prescription eyewear"
+                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
                   />
                   {/* Soft Light Vignette */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />

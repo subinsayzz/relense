@@ -191,7 +191,7 @@ export const BentoFeatures: React.FC = () => {
             <div className="md:col-span-4 bg-white rounded-3xl p-6 shadow-card border border-blue-100/80 flex flex-col justify-between">
               <div className="aspect-[4/4] rounded-2xl overflow-hidden bg-cream-100 mb-4">
                 <img
-                  src="/assets/hero_model.jpg"
+                  src="/assets/hero_woman.jpg"
                   alt="Model wearing optical frames"
                   className="w-full h-full object-cover object-top"
                 />

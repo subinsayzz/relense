@@ -10,20 +10,24 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-[#F6F5F2] relative">
+    <section className="py-20 bg-gradient-to-b from-[#DFEDF8] via-[#E8F2FA] to-[#DFEDF8] relative overflow-hidden">
+      
+      {/* Soft Ambient Sky Blurs */}
+      <div className="absolute top-10 right-1/4 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none -z-10" />
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center mb-14 space-y-3">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white border border-black/5 text-xs font-semibold uppercase tracking-wider text-obsidian-900 shadow-sm">
-            <HelpCircle className="w-3.5 h-3.5 text-accent-gold" />
-            <span>Common Optical Inquiries</span>
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-blue-200/60 shadow-xs text-xs font-semibold uppercase tracking-wider text-obsidian-900">
+            <HelpCircle className="w-3.5 h-3.5 text-electric-600" />
+            <span>Common Optical & Re-Lensing Inquiries</span>
           </div>
-          <h2 className="font-serif text-4xl sm:text-5xl text-obsidian-900">
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-obsidian-900 tracking-tight">
             Frequently Asked Questions
           </h2>
-          <p className="text-neutral-600 text-sm">
-            Everything you need to know about re-lensing your frames, prescriptions, and our Freeport lab.
+          <p className="text-neutral-600 text-sm max-w-xl mx-auto">
+            Everything you need to know about mail-in re-lensing, prescription guarantees, and our Freeport, NY optical laboratory.
           </p>
         </div>
 
@@ -35,7 +39,7 @@ export const FaqSection: React.FC = () => {
               <div
                 key={idx}
                 className={`bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${
-                  isOpen ? 'border-black/20 shadow-card' : 'border-black/5 hover:border-black/15'
+                  isOpen ? 'border-electric-400/80 shadow-card ring-1 ring-electric-500/15' : 'border-blue-100/80 hover:border-blue-200 shadow-xs'
                 }`}
               >
                 <button
@@ -46,8 +50,8 @@ export const FaqSection: React.FC = () => {
                     {faq.question}
                   </span>
                   <div
-                    className={`w-7 h-7 rounded-full bg-cream-200 flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180 bg-obsidian-900 text-white' : 'text-obsidian-900'
+                    className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${
+                      isOpen ? 'rotate-180 bg-obsidian-900 text-white' : 'bg-blue-50 text-electric-600'
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -55,12 +59,12 @@ export const FaqSection: React.FC = () => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm text-neutral-600 leading-relaxed border-t border-black/5 animate-in fade-in duration-200">
+                  <div className="px-6 pb-6 pt-1 text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 animate-in fade-in duration-200">
                     <p>{faq.answer}</p>
                     {idx === 2 && (
-                      <div className="mt-3 p-3 rounded-xl bg-cream-100 text-xs text-neutral-700 flex items-center justify-between">
+                      <div className="mt-3 p-3 rounded-xl bg-blue-50 border border-blue-200/60 text-xs text-neutral-700 flex items-center justify-between">
                         <span>Have vintage frames? Email a photo to <strong>{SITE_INFO.email}</strong></span>
-                        <a href={`mailto:${SITE_INFO.email}`} className="text-accent-gold font-bold underline">
+                        <a href={`mailto:${SITE_INFO.email}`} className="text-electric-600 font-bold hover:underline">
                           Send Photo
                         </a>
                       </div>
@@ -75,10 +79,10 @@ export const FaqSection: React.FC = () => {
         {/* Bottom Help CTA */}
         <div className="mt-12 text-center text-xs text-neutral-500">
           Still have questions? Give Mauricio a call at{' '}
-          <a href={`tel:${SITE_INFO.phone}`} className="font-bold text-obsidian-900 hover:underline">
+          <a href={`tel:${SITE_INFO.phone}`} className="font-bold text-obsidian-900 hover:text-electric-600 underline">
             {SITE_INFO.phoneFormatted}
           </a>{' '}
-          or visit us in Freeport, NY.
+          or stop by our Freeport, NY optical shop.
         </div>
 
       </div>

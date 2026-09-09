@@ -17,37 +17,46 @@ export const ContactLocation: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white relative">
+    <section id="contact" className="py-20 bg-gradient-to-b from-[#DFEDF8] via-[#E8F2FA] to-[#DFEDF8] relative overflow-hidden">
+      
+      {/* Soft Ambient Sky Blurs */}
+      <div className="absolute top-10 left-10 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none -z-10" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-cream-200 text-obsidian-900 text-xs font-semibold uppercase tracking-wider">
-            <MapPin className="w-3.5 h-3.5 text-accent-gold" />
-            <span>Freeport, Long Island NY</span>
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-blue-200/60 shadow-xs text-xs font-semibold uppercase tracking-wider text-obsidian-900">
+            <MapPin className="w-3.5 h-3.5 text-electric-600" />
+            <span>Freeport, Long Island NY Optical Shop</span>
           </div>
-          <h2 className="font-serif text-4xl sm:text-5xl text-obsidian-900">
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-obsidian-900 tracking-tight">
             Visit Our Optical Shop & Lab
           </h2>
-          <p className="text-neutral-600 text-sm">
-            Conveniently located in Nassau County, NY. Walk-ins welcome for DMV exams and frame consultations.
+          <p className="text-neutral-600 text-sm sm:text-base max-w-xl mx-auto">
+            Conveniently located in Nassau County, NY. Walk-ins welcome for DMV exams, frame styling, and personalized lens fittings with Mauricio.
           </p>
         </div>
 
         {/* Two-Column Grid: Location & Details on Left, Message Form on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* Left Column: Contact Cards & Map Info */}
           <div className="lg:col-span-6 space-y-6">
             
-            <div className="bg-[#FAF9F6] rounded-3xl p-8 border border-black/5 space-y-6">
-              <h3 className="font-serif text-2xl text-obsidian-900">
-                ReLense Eyewear
-              </h3>
+            <div className="bg-white rounded-3xl p-8 border border-blue-100/80 shadow-card space-y-6">
+              <div className="flex items-center justify-between">
+                <h3 className="font-serif text-2xl text-obsidian-900">
+                  ReLense Eyewear
+                </h3>
+                <span className="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-50 text-electric-700 border border-blue-200/60">
+                  Unit 1 · Freeport
+                </span>
+              </div>
 
               <div className="space-y-4 text-sm text-neutral-700">
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-white flex items-center justify-center text-accent-gold shadow-sm border border-black/5 flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-electric-600 shadow-xs border border-blue-100/60 flex-shrink-0">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
@@ -58,14 +67,14 @@ export const ContactLocation: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-white flex items-center justify-center text-accent-gold shadow-sm border border-black/5 flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-electric-600 shadow-xs border border-blue-100/60 flex-shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
                     <div className="font-bold text-obsidian-900">Telephone</div>
                     <a
                       href={`tel:${SITE_INFO.phone}`}
-                      className="text-neutral-900 hover:text-accent-gold font-medium"
+                      className="text-obsidian-900 hover:text-electric-600 font-medium transition"
                     >
                       {SITE_INFO.phoneFormatted}
                     </a>
@@ -74,14 +83,14 @@ export const ContactLocation: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-white flex items-center justify-center text-accent-gold shadow-sm border border-black/5 flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-electric-600 shadow-xs border border-blue-100/60 flex-shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="font-bold text-obsidian-900">Email Inquiry</div>
+                    <div className="font-bold text-obsidian-900">Email Desk</div>
                     <a
                       href={`mailto:${SITE_INFO.email}`}
-                      className="text-neutral-900 hover:text-accent-gold font-medium"
+                      className="text-obsidian-900 hover:text-electric-600 font-medium transition"
                     >
                       {SITE_INFO.email}
                     </a>
@@ -89,7 +98,7 @@ export const ContactLocation: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-white flex items-center justify-center text-accent-gold shadow-sm border border-black/5 flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-electric-600 shadow-xs border border-blue-100/60 flex-shrink-0">
                     <Clock className="w-4 h-4" />
                   </div>
                   <div>
@@ -101,25 +110,25 @@ export const ContactLocation: React.FC = () => {
               </div>
 
               {/* Order Contacts Banner */}
-              <div className="pt-4 border-t border-black/10">
+              <div className="pt-4 border-t border-neutral-100">
                 <a
                   href={SITE_INFO.orderContactsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3 px-4 rounded-2xl bg-white border border-black/10 hover:border-black/30 shadow-sm flex items-center justify-between group transition"
+                  className="w-full py-3.5 px-4 rounded-2xl bg-blue-50/50 border border-blue-200/60 hover:border-blue-300 shadow-xs flex items-center justify-between group transition"
                 >
                   <div className="text-left">
                     <div className="text-xs font-bold text-obsidian-900">Need Contact Lenses?</div>
                     <div className="text-[11px] text-neutral-500">Order online via our secure YourLens lab portal</div>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-accent-gold transition-transform group-hover:translate-x-0.5" />
+                  <ExternalLink className="w-4 h-4 text-electric-600 transition-transform group-hover:translate-x-0.5" />
                 </a>
               </div>
 
             </div>
 
             {/* Google Maps Visual Embed */}
-            <div className="rounded-3xl overflow-hidden border border-black/5 shadow-card h-52 relative">
+            <div className="rounded-3xl overflow-hidden border border-blue-100/80 shadow-card h-52 relative">
               <iframe
                 title="ReLense Freeport Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.854580556132!2d-73.58280622346618!3d40.63584807140513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c27b0ea7ee2885%3A0xc3b8fb359a35e709!2s37%20Guy%20Lombardo%20Ave%2C%20Freeport%2C%20NY%2011520!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
@@ -135,10 +144,10 @@ export const ContactLocation: React.FC = () => {
           </div>
 
           {/* Right Column: Interactive Contact Form */}
-          <div className="lg:col-span-6 bg-[#FAF9F6] rounded-3xl p-8 border border-black/5 space-y-6">
+          <div className="lg:col-span-6 bg-white rounded-3xl p-8 border border-blue-100/80 shadow-card space-y-6">
             <div className="space-y-1">
-              <span className="text-xs font-bold uppercase tracking-wider text-accent-gold">
-                Send a Message
+              <span className="text-xs font-bold uppercase tracking-wider text-electric-600">
+                Send a Direct Message
               </span>
               <h3 className="font-serif text-2xl text-obsidian-900">
                 Contact Mauricio & The Lab
@@ -160,7 +169,7 @@ export const ContactLocation: React.FC = () => {
                     placeholder="Jane Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/10 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAFD] border border-neutral-200 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-electric-500"
                   />
                 </div>
 
@@ -175,7 +184,7 @@ export const ContactLocation: React.FC = () => {
                       placeholder="jane@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-black/10 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F8FAFD] border border-neutral-200 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-electric-500"
                     />
                   </div>
 
@@ -188,7 +197,7 @@ export const ContactLocation: React.FC = () => {
                       placeholder="(347) 000-0000"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-black/10 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F8FAFD] border border-neutral-200 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-electric-500"
                     />
                   </div>
                 </div>
@@ -203,21 +212,21 @@ export const ContactLocation: React.FC = () => {
                     placeholder="Tell us about your frames or what kind of lenses you are looking for..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/10 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-obsidian-900"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAFD] border border-neutral-200 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-electric-500"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-xl bg-obsidian-900 text-white font-semibold text-xs uppercase tracking-wider hover:bg-black transition shadow-elevated flex items-center justify-center space-x-2"
+                  className="w-full py-3.5 rounded-xl bg-obsidian-900 text-white font-semibold text-xs uppercase tracking-wider hover:bg-neutral-800 transition shadow-elevated flex items-center justify-center space-x-2"
                 >
-                  <Send className="w-3.5 h-3.5 text-accent-gold" />
-                  <span>Submit Message to ReLense</span>
+                  <Send className="w-3.5 h-3.5 text-blue-200" />
+                  <span>Submit Message to Mauricio</span>
                 </button>
               </form>
             ) : (
-              <div className="py-12 text-center space-y-3 bg-white rounded-2xl border border-black/5 p-6 animate-in fade-in">
-                <div className="w-12 h-12 rounded-full bg-accent-teal/15 text-accent-teal mx-auto flex items-center justify-center">
+              <div className="py-12 text-center space-y-3 bg-blue-50/50 rounded-2xl border border-blue-200/60 p-6 animate-in fade-in">
+                <div className="w-12 h-12 rounded-full bg-blue-100 text-electric-600 mx-auto flex items-center justify-center">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
                 <h4 className="font-serif text-2xl text-obsidian-900">
@@ -231,7 +240,7 @@ export const ContactLocation: React.FC = () => {
 
             <div className="text-center pt-2 text-xs text-neutral-400">
               Prefer direct email? Reach our executive desk at{' '}
-              <a href={`mailto:${SITE_INFO.email}`} className="text-obsidian-900 font-semibold underline">
+              <a href={`mailto:${SITE_INFO.email}`} className="text-obsidian-900 font-semibold underline hover:text-electric-600">
                 {SITE_INFO.email}
               </a>
             </div>
