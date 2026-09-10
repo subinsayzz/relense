@@ -4,7 +4,7 @@ import { SITE_INFO } from '../data/content';
 
 export const ContactLocation: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [activeStoreView, setActiveStoreView] = useState<'window' | 'street' | 'showroom' | 'dmv'>('window');
+  const [activeStoreView, setActiveStoreView] = useState<'storefront' | 'showroom' | 'dmv'>('storefront');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,35 +14,20 @@ export const ContactLocation: React.FC = () => {
 
   const STORE_VIEWS = [
     {
-      id: 'window',
-      title: 'Storefront Window & Signs',
+      id: 'storefront',
+      title: 'Storefront & Exterior',
       badge: 'Authentic 37B Guy Lombardo Ave',
       image: '/assets/relense_storefront_real.jpg',
-      aspect: 'aspect-[4/3] sm:aspect-[16/10]',
-      tagline: 'Signature Blue Neon & Carl Zeiss Optical Verification',
-      desc: 'The exact illuminated storefront of ReLense at 37B Guy Lombardo Ave in Freeport. Features the authentic handcrafted blue neon "Relense" sign, luminous green LED perimeter, warm illuminated canopy, red neon OPEN, and official Zeiss optics.',
+      aspect: 'aspect-[6/7] sm:aspect-[4/5] max-h-[580px]',
+      tagline: 'Signature Blue Canopy & Illuminated Window',
+      desc: 'The official storefront of ReLense Optical at 37B Guy Lombardo Avenue in Freeport, NY. Featuring our signature royal blue awning, illuminated overhead canopy, luminous green LED window perimeter, red OPEN beacon, custom blue neon "Relense" sign, and Carl Zeiss precision optical certification.',
       highlights: [
-        'Custom Blue Neon "Relense" Insignia',
-        'Luminous Green LED Window Border',
-        'Carl Zeiss Authorized Optics Sign',
-        'Warm Illuminated Overhead Canopy',
-        'ReLense Optical: (347) 878-5064',
-        'Hablamos Español Fluido',
-      ],
-    },
-    {
-      id: 'street',
-      title: 'Guy Lombardo Ave Street View',
-      badge: 'Freeport Downtown District',
-      image: '/assets/relense_streetview_real.jpg',
-      aspect: 'aspect-[16/10]',
-      tagline: 'Convenient Street Access & Curbside Pickup',
-      desc: 'Our real storefront location on Guy Lombardo Ave in Freeport, Long Island. Conveniently situated with easy street parking, curbside drop-off and pickup, and walking distance to the Freeport LIRR station.',
-      highlights: [
-        'Prime Downtown Freeport Location',
-        'Easy Curbside Frame Drop-Off',
-        'Street Parking Right in Front',
-        'Walk-Ins Welcome Everyday',
+        'Signature Royal Blue Overhead Awning',
+        'Warm Illuminated Canopy & Street Entrance',
+        'Luminous Green LED Window Perimeter',
+        'Handcrafted Blue Neon "Relense" Insignia',
+        'Carl Zeiss Authorized Optical Partner',
+        'Direct Phone: (347) 878-5064 (Hablamos Español)',
       ],
     },
     {
@@ -50,7 +35,7 @@ export const ContactLocation: React.FC = () => {
       title: 'Interior Showroom Counter',
       badge: 'Dispensing & Fitting Desk',
       image: '/assets/relense_store_counter.jpg',
-      aspect: 'aspect-[4/3] sm:aspect-[16/10]',
+      aspect: 'aspect-[4/3] sm:aspect-[16/10] max-h-[580px]',
       tagline: 'Personalized Eyewear Consultations',
       desc: 'Inside the boutique showroom featuring personalized eyewear styling, custom tortoise frame displays, computerized lensometer prescription reading, and personal consultations with Master Optician Mauricio.',
       highlights: [
@@ -65,7 +50,7 @@ export const ContactLocation: React.FC = () => {
       title: 'In-Store DMV Vision Lab',
       badge: 'Official NY State Registry',
       image: '/assets/mauricio_dmv_exam.jpg',
-      aspect: 'aspect-[16/10]',
+      aspect: 'aspect-[16/10] max-h-[580px]',
       tagline: '5-Minute Official Vision Testing',
       desc: 'Master Optician Mauricio personally conducting official 5-minute New York State Driver License vision tests with instant electronic submission to the NY DMV registry database.',
       highlights: [
@@ -150,9 +135,9 @@ export const ContactLocation: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-4 sm:p-8 items-center relative z-10">
             
             {/* Left: Authentic Real Photo with Dreamy Neon Glow Vignette */}
-            <div className="lg:col-span-7">
-              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-black/40 group/img">
-                <div className={`${currentView.aspect} overflow-hidden bg-black/30`}>
+            <div className="lg:col-span-7 flex justify-center items-center">
+              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-black/40 group/img w-full max-w-lg">
+                <div className={`${currentView.aspect} overflow-hidden bg-black/30 flex items-center justify-center`}>
                   <img
                     key={currentView.id}
                     src={currentView.image}
@@ -161,7 +146,7 @@ export const ContactLocation: React.FC = () => {
                   />
                 </div>
                 {/* Floating Real-World Tag */}
-                <div className="absolute top-3 left-3 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-white border border-white/20 flex items-center space-x-1.5">
+                <div className="absolute top-3 left-3 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-white border border-white/20 flex items-center space-x-1.5 shadow-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   <span>{currentView.badge}</span>
                 </div>
