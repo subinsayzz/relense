@@ -19,55 +19,55 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-6 relative flex justify-center lg:justify-start">
             <div className="relative w-full max-w-[460px]">
               
-              {/* Floating Badge: Upper-Left 'PRO LENS - The Ultimate Duo - Clarity & Confidence' */}
+              {/* Floating Badge: Upper-Left 'MASTER OPTICIAN - In-House Optical Lab - Mauricio's Custom Fitting' */}
               <div className="absolute -top-5 -left-3 sm:-left-6 z-30 bg-white/95 backdrop-blur-md px-3.5 py-2.5 rounded-2xl shadow-card border border-blue-100/80 flex items-center space-x-2.5 animate-float-slow">
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-electric-700 tracking-wider">
-                  PRO LENS
+                  MASTER OPTICIAN
                 </span>
                 <div className="text-left">
-                  <div className="text-[10px] text-neutral-400 font-medium leading-none">The Ultimate Duo —</div>
-                  <div className="text-[11px] font-bold text-obsidian-900 mt-0.5">Clarity & Confidence</div>
+                  <div className="text-[10px] text-neutral-400 font-medium leading-none">In-House Optical Lab —</div>
+                  <div className="text-[11px] font-bold text-obsidian-900 mt-0.5">Mauricio's Precision Craft</div>
                 </div>
               </div>
 
-              {/* Floating Badge: Lower-Left Circular Avatar 'PRECISION IN MOTION, ELEGANCE IN FORM.' */}
+              {/* Floating Badge: Lower-Left Circular Avatar 'PRECISION IN MOTION, FREEPORT OPTICAL LAB.' */}
               <div className="absolute -bottom-4 -left-3 sm:-left-6 z-30 bg-white/95 backdrop-blur-md px-3 py-2 rounded-2xl shadow-card border border-blue-100/80 flex items-center space-x-2 animate-float-delayed">
                 <div className="w-7 h-7 rounded-full overflow-hidden border border-black/10 flex-shrink-0">
                   <img
-                    src="/assets/striped_shirt_model.jpg"
-                    alt="Optician"
-                    className="w-full h-full object-cover"
+                    src="/assets/mauricio_dmv_exam.jpg"
+                    alt="Master Optician Mauricio"
+                    className="w-full h-full object-cover object-[75%_25%]"
                   />
                 </div>
                 <div className="text-[9px] font-mono tracking-wider text-neutral-600 uppercase font-semibold">
                   PRECISION IN MOTION, <br />
-                  ELEGANCE IN FORM.
+                  FREEPORT OPTICAL LAB.
                 </div>
               </div>
 
-              {/* Main Model Photo with Chamfered Top-Left Cut Corner matching screenshot */}
+              {/* Main Photo: Master Optician Mauricio with Chamfered Top-Left Cut Corner */}
               <div className="relative rounded-[32px] p-2 bg-gradient-to-b from-white to-blue-50/60 shadow-elevated">
-                <div className="relative overflow-hidden rounded-[26px] cut-top-left bg-neutral-100 aspect-[4/5]">
+                <div className="relative overflow-hidden rounded-[26px] cut-top-left bg-neutral-100 aspect-[4/3] sm:aspect-[4/3]">
                   <img
-                    src="/assets/hero_model.jpg"
-                    alt="Model wearing titanium prescription eyewear"
-                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
+                    src="/assets/mauricio_dmv_exam.jpg"
+                    alt="Master Optician Mauricio conducting precision optical vision examination at ReLense"
+                    className="w-full h-full object-cover object-[65%_center] hover:scale-105 transition-transform duration-700"
                   />
                   {/* Soft Light Vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
                   {/* Overlaid Bottom Card Badge */}
-                  <div className="absolute bottom-3 inset-x-3 bg-white/90 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-black/5 shadow-card flex items-center justify-between">
+                  <div className="absolute bottom-3 inset-x-3 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-black/5 shadow-card flex items-center justify-between">
                     <div>
                       <div className="text-[10px] font-bold tracking-wider uppercase text-neutral-400">
-                        In-House Optician
+                        Master Optician & Owner
                       </div>
                       <div className="text-xs font-bold text-obsidian-900">
                         Mauricio's Precision Fitting
                       </div>
                     </div>
                     <span className="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-blue-100 text-electric-700">
-                      Freeport, NY
+                      Freeport, NY · 5.0 ★
                     </span>
                   </div>
                 </div>
