@@ -115,13 +115,17 @@ export const VisionShield: React.FC = () => {
               </div>
             </div>
 
-            {/* Bottom Mini Specs Strip */}
-            <div className="pt-6 border-t border-blue-100 flex flex-wrap items-center justify-between text-xs text-neutral-500 gap-2 mt-4">
-              <span>99.8% Light Transmission</span>
+            {/* Bottom Mini Specs Strip - SEO Enriched */}
+            <div className="pt-6 border-t border-blue-100 flex flex-wrap items-center justify-between text-xs text-neutral-500 gap-2 mt-4 font-medium">
+              <span>Shamir Auto Intelligence™</span>
               <span>•</span>
-              <span>Multi-Layer Anti-Reflective</span>
+              <span>Glacier Expressions™ AR</span>
               <span>•</span>
-              <span>Hydrophobic Nano-Shield</span>
+              <span>Custom Magnetic Clip-Ons</span>
+              <span>•</span>
+              <span>Severe Astigmatism Rx</span>
+              <span>•</span>
+              <span>Kids Sports Goggles</span>
             </div>
 
           </div>

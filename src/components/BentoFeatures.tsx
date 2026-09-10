@@ -53,7 +53,7 @@ export const BentoFeatures: React.FC = () => {
             {/* Center Card: Model in Striped Shirt matching Screenshot */}
             <div className="md:col-span-4 flex flex-col justify-between space-y-3">
               <p className="text-xs text-neutral-600 leading-relaxed px-1">
-                See your world clearly. Our <strong className="text-obsidian-900">advanced eye testing</strong> gives your vision the focus and care it deserves.
+                See your world clearly. Master Optician Mauricio provides <strong className="text-obsidian-900">24-hour emergency glasses</strong>, severe astigmatism care, and official 5-minute NY DMV vision testing.
               </p>
 
               <div className="bg-white rounded-3xl p-3 shadow-card border border-blue-100/80 flex-1 flex flex-col justify-between">
@@ -192,25 +192,36 @@ export const BentoFeatures: React.FC = () => {
                 </div>
               </div>
 
-              {/* Spec Pill: BLB */}
+              {/* Spec Pill: Shamir Auto Intelligence */}
               <div className="bg-white rounded-2xl p-4 shadow-card border border-blue-100/80 flex items-center space-x-3.5">
                 <div className="w-9 h-9 rounded-xl bg-blue-50 text-electric-600 flex items-center justify-center flex-shrink-0 font-bold text-xs">
-                  BLB
+                  SAI
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-obsidian-900">BLB Filter ⌵</div>
-                  <div className="text-[11px] text-neutral-500">Protect your eyes from digital screen strain</div>
+                  <div className="text-xs font-bold text-obsidian-900">Shamir Auto Intelligence™ ⌵</div>
+                  <div className="text-[11px] text-neutral-500">High-tech digital progressive optics with zero edge blur</div>
                 </div>
               </div>
 
-              {/* Spec Pill: Anti-reflective */}
+              {/* Spec Pill: Glacier Expressions Anti-reflective */}
               <div className="bg-white rounded-2xl p-4 shadow-card border border-blue-100/80 flex items-center space-x-3.5">
                 <div className="w-9 h-9 rounded-xl bg-blue-50 text-electric-600 flex items-center justify-center flex-shrink-0">
                   <Sun className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-obsidian-900">Anti-reflective ⌵</div>
-                  <div className="text-[11px] text-neutral-500">Blue light blocking lenses filter harmful screen rays</div>
+                  <div className="text-xs font-bold text-obsidian-900">Glacier Expressions™ AR ⌵</div>
+                  <div className="text-[11px] text-neutral-500">Eliminates headlight glares with 99.8% light transmission</div>
+                </div>
+              </div>
+
+              {/* Spec Pill: Custom Magnetic Clip-Ons */}
+              <div className="bg-white rounded-2xl p-4 shadow-card border border-blue-100/80 flex items-center space-x-3.5">
+                <div className="w-9 h-9 rounded-xl bg-blue-50 text-electric-600 flex items-center justify-center flex-shrink-0">
+                  <Sparkles className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-obsidian-900">Custom Magnetic Clip-Ons ⌵</div>
+                  <div className="text-[11px] text-neutral-500">Mirrored & polarized clip-ons custom-fit to your exact frame</div>
                 </div>
               </div>
 

@@ -107,50 +107,66 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 3: Services */}
+          {/* Col 3: Specialized Optical Services */}
           <div className="space-y-3">
             <div className="font-semibold text-white uppercase tracking-wider text-[11px]">
-              Services
+              Specialized Services
             </div>
             <ul className="space-y-2 text-slate-400">
-              <li><a href="#relensing" className="hover:text-white transition">Health Insurance</a></li>
-              <li><a href="#dmv-section" className="hover:text-white transition">Eye Insurance</a></li>
-              <li><a href="#best-sellers" className="hover:text-white transition">Vision Insurance</a></li>
-              <li><a href="#relensing" className="hover:text-white transition">Rx Insurance</a></li>
+              <li><a href="#relensing" className="hover:text-white transition">⚡ Same-Day & 24h Emergency Glasses</a></li>
+              <li><a href="#calculator" className="hover:text-white transition">🔬 Shamir Auto Intelligence™ Progressives</a></li>
+              <li><a href="#calculator" className="hover:text-white transition">🕶️ Custom Magnetic Clip-On Lenses</a></li>
+              <li><a href="#reviews" className="hover:text-white transition">👶 Children's Goggles & Astigmatism</a></li>
+              <li><a href="#relensing" className="hover:text-white transition">♻️ Re-Lensing & Frame Swaps ($49)</a></li>
+              <li><a href="#dmv-section" className="hover:text-white transition">🚗 5-Min NY DMV Vision Tests ($25)</a></li>
             </ul>
           </div>
 
-          {/* Col 4: Contact & Support */}
+          {/* Col 4: Freeport Lab & Master Optician */}
           <div className="space-y-3">
             <div className="font-semibold text-white uppercase tracking-wider text-[11px]">
-              Contact & Support
+              Freeport Lab & Mauricio
             </div>
             <ul className="space-y-2.5 text-slate-400">
-              <li>
-                <a href={`tel:${SITE_INFO.phone}`} className="hover:text-white transition font-medium">
-                  +1 {SITE_INFO.phoneFormatted}
-                </a>
+              <li className="text-white font-medium">
+                Mauricio · Master Optician (20+ Yrs)
               </li>
               <li>
-                <a href={`mailto:${SITE_INFO.email}`} className="hover:text-white transition">
-                  {SITE_INFO.email}
+                <a href={`tel:${SITE_INFO.phone}`} className="hover:text-white transition font-medium text-electric-400">
+                  Direct Line: {SITE_INFO.phoneFormatted}
                 </a>
               </li>
               <li>
                 <span>{SITE_INFO.address}</span>
               </li>
-              <li className="pt-1 text-[11px] text-slate-400">
-                New York, NY 11520
+              <li className="text-[11px] text-emerald-400 font-medium">
+                ✓ Municipal Parking Directly Across Street
+              </li>
+              <li className="text-[11px] text-blue-300">
+                ✓ CareCredit & HSA/FSA Flex Accepted
+              </li>
+              <li className="text-[11px] text-slate-400">
+                ✓ Hablamos Español Fluido
               </li>
             </ul>
           </div>
 
         </div>
 
+        {/* SEO Keyword Tag Cloud & Neighborhood Index */}
+        <div className="py-6 border-t border-white/10 text-[11px] text-slate-400 leading-relaxed space-y-1">
+          <div className="font-semibold text-slate-400 uppercase tracking-wider text-[10px]">
+            Relense Optical Freeport NY · Local Search Index:
+          </div>
+          <p>
+            Same-Day Glasses Freeport NY • 24-Hour Emergency Eyeglasses Replacement • Shamir Auto Intelligence Digital Progressive Lenses • Glacier Expressions Premium Anti-Reflective Coating • Custom Magnetic Mirrored Clip-On Sunglasses • Children’s Prescription Sports Goggles • Severe Astigmatism High-Cylinder Optics • Frame Swap for Existing Lenses • CareCredit Optical Financing Long Island • Authorized NY DMV Vision Registry Walk-In • 37B Guy Lombardo Ave, Nassau County, NY 11520.
+          </p>
+        </div>
+
         {/* Bottom Bar & Socials */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            © {new Date().getFullYear()} ReLense. All rights reserved. Freeport, New York.
+            © {new Date().getFullYear()} Relense Optical Store. Master Optician Mauricio. All rights reserved. Freeport, New York.
           </div>
 
           {/* Social Links */}

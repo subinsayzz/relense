@@ -6,26 +6,26 @@ export const ReLensProcess: React.FC = () => {
   const steps = [
     {
       step: '01',
-      title: 'Inquiry & Frame Selection',
-      desc: 'Bring your beloved frames to our Freeport optical boutique, snap a photo for quick evaluation, or request a prepaid shipping box.',
+      title: 'Frame Selection & Swaps',
+      desc: 'Bring your beloved frames to 37B Guy Lombardo Ave, find new frames for existing lenses within minutes, or request a prepaid mail-in box.',
       icon: Send,
     },
     {
       step: '02',
-      title: 'Prescription Verification',
-      desc: 'Upload your Rx from your eye doctor, let our computerized lensometer read your current lenses, or take a quick vision test on-site.',
+      title: 'Rx & Lensometer Reading',
+      desc: 'Upload your Rx, let Mauricio read your power with our computerized digital lensometer, or take an official 5-minute walk-in vision test.',
       icon: FileText,
     },
     {
       step: '03',
-      title: 'In-House Optical Crafting',
-      desc: 'Master Optician Mauricio precision-cuts and hand-bevels your custom digital lenses with multi-layer Diamond AR & UV400 coats.',
+      title: 'In-House Precision Crafting',
+      desc: 'Master Optician Mauricio cuts your lenses on-site — from Shamir progressive optics to custom magnetic clip-ons and Glacier Expressions AR.',
       icon: Sparkles,
     },
     {
       step: '04',
-      title: 'Delivery or Curbside Pickup',
-      desc: 'Pick up your rejuvenated glasses in Freeport, enjoy curbside fitting, or receive your frames securely delivered nationwide.',
+      title: '24h Pickup or Delivery',
+      desc: 'Pick up your glasses in as fast as 24 hours with municipal parking right across the street, curbside fitting, or nationwide tracked shipping.',
       icon: Truck,
     },
   ];

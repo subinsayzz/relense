@@ -106,13 +106,13 @@ export const Hero: React.FC = () => {
                 DIFFERENCE
               </div>
 
-              {/* Subtitle matching screenshot */}
+              {/* Subtitle matching screenshot - enriched with SEO keywords */}
               <p className="pt-2 text-sm sm:text-base text-neutral-600 max-w-lg font-normal leading-relaxed">
-                Not just eyewear — a unique <strong className="font-semibold text-obsidian-900">blend of elegance</strong>, cutting-edge tech and affordability. Put brand-new custom lenses into your existing frames or explore our curated optics.
+                Freeport’s top-rated optical laboratory. Put brand-new custom lenses into your favorite frames, get <strong className="font-semibold text-obsidian-900">24-hour emergency glasses</strong>, or explore <strong className="font-semibold text-obsidian-900">Shamir digital progressives</strong> & custom magnetic clip-ons with Master Optician Mauricio.
               </p>
             </div>
 
-            {/* Action Buttons matching screenshot: 'Explore Glasses ►' + 'Starts From $9.99' */}
+            {/* Action Buttons matching screenshot: 'Explore Glasses ►' + 'Starts From $49' */}
             <div className="flex flex-wrap items-center gap-4 pt-1">
               <a
                 href="#relensing"
@@ -130,25 +130,25 @@ export const Hero: React.FC = () => {
                 href="#calculator"
                 className="px-5 py-3.5 rounded-full bg-white/80 hover:bg-white border border-blue-200/80 font-semibold text-xs sm:text-sm text-obsidian-900 transition shadow-xs"
               >
-                Re-Lens Calculator
+                Instant Lab Quote
               </a>
             </div>
 
-            {/* Micro Trust Pills */}
+            {/* Micro Trust Pills - Keywords Heavy */}
             <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-neutral-500">
               <span className="flex items-center space-x-1">
                 <CheckCircle2 className="w-3.5 h-3.5 text-electric-600" />
-                <span>Save Up to 70%</span>
+                <span>⚡ 24h Emergency Glasses</span>
               </span>
               <span>•</span>
               <span className="flex items-center space-x-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-electric-600" />
-                <span>20+ Yrs Freeport Lab</span>
+                <span>5.0 ★ (17 Google Reviews)</span>
               </span>
               <span>•</span>
               <span className="flex items-center space-x-1">
                 <Sparkles className="w-3.5 h-3.5 text-electric-600" />
-                <span>NY DMV Walk-Ins</span>
+                <span>CareCredit & HSA/FSA</span>
               </span>
             </div>
 
@@ -160,11 +160,11 @@ export const Hero: React.FC = () => {
         <div className="mt-16 pt-10 border-t border-blue-200/60">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* Left Box: '$9 / $49' Pill + 'Revolutionizing vision with trend setting eyewear that speaks your style. 👓' */}
+            {/* Left Box: '$49' Pill + Copy with SEO Keywords */}
             <div className="lg:col-span-5 space-y-4">
               <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white shadow-xs border border-blue-200/60 text-xs font-bold text-obsidian-900">
                 <Glasses className="w-3.5 h-3.5 text-electric-600" />
-                <span>$49</span>
+                <span>Re-Lensing from $49</span>
               </div>
 
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-obsidian-900 leading-snug">
@@ -174,8 +174,8 @@ export const Hero: React.FC = () => {
                 <span className="inline-block text-xl">👓</span>
               </h2>
 
-              <p className="text-xs sm:text-sm text-neutral-500 max-w-md leading-relaxed">
-                Handcrafted accuracy cut by Master Optician Mauricio in our Freeport lab with diamond anti-glare coatings.
+              <p className="text-xs sm:text-sm text-neutral-600 max-w-md leading-relaxed">
+                Handcrafted precision cut by Master Optician Mauricio in our Freeport lab. High-tech Shamir Auto Intelligence progressives, Glacier Expressions AR, and custom magnetic clip-ons with zero sales pressure.
               </p>
             </div>
 
