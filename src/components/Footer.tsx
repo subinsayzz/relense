@@ -1,38 +1,25 @@
-import React, { useState } from 'react';
-import { ArrowUpRight, Instagram, Facebook, Twitter, Mail, MapPin, Phone } from 'lucide-react';
+import React from 'react';
+import { ArrowUp, Phone, MapPin, ExternalLink, Calculator, Instagram, Facebook } from 'lucide-react';
 import { SITE_INFO } from '../data/content';
 
 export const Footer: React.FC = () => {
-  const [subscribed, setSubscribed] = useState(false);
-  const [email, setEmail] = useState('');
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) setSubscribed(true);
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <footer className="bg-[#0B131E] text-slate-200 pt-16 pb-12 relative overflow-hidden">
       
-      {/* Huge Subtle Watermark Typography matching Screenshot */}
-      <div className="absolute -bottom-8 left-0 right-0 flex items-center justify-center select-none pointer-events-none opacity-[0.06] overflow-hidden">
+      {/* Huge Subtle Watermark Typography */}
+      <div className="absolute -bottom-8 left-0 right-0 flex items-center justify-center select-none pointer-events-none opacity-[0.05] overflow-hidden">
         <span className="font-serif text-[180px] sm:text-[260px] font-bold tracking-widest text-white whitespace-nowrap">
           ReLense.
         </span>
       </div>
 
-      {/* Floating 3D Optical Frame Asset in Footer matching Screenshot */}
-      <div className="hidden lg:block absolute bottom-8 right-24 w-48 opacity-75 pointer-events-none animate-float-slow">
-        <img
-          src="/assets/glasses.jpg"
-          alt="Floating optical frames"
-          className="w-full h-auto object-contain rounded-2xl filter drop-shadow-2xl brightness-90"
-        />
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Top Newsletter & Brand Banner matching Screenshot */}
+        {/* Top Direct Action Banner */}
         <div className="pb-12 border-b border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           <div className="lg:col-span-6 space-y-3">
@@ -44,36 +31,47 @@ export const Footer: React.FC = () => {
               />
             </div>
             <p className="text-xs sm:text-sm text-slate-400 max-w-md leading-relaxed">
-              {SITE_INFO.taglines.hero} Freeport, New York's dedicated precision optical laboratory.
+              {SITE_INFO.taglines.hero} Freeport, New York's dedicated precision optical laboratory and boutique showroom.
             </p>
           </div>
 
-          <div className="lg:col-span-6">
-            <div className="text-xs uppercase tracking-wider text-slate-400 font-medium mb-2">
-              Your look instantly with our real-time updates
-            </div>
-            {!subscribed ? (
-              <form onSubmit={handleSubscribe} className="flex items-center gap-2 max-w-md">
-                <input
-                  type="email"
-                  required
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 rounded-full bg-white/10 border border-white/15 text-base sm:text-xs text-white placeholder-slate-400/70 focus:outline-none focus:ring-2 focus:ring-electric-500"
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3 rounded-full bg-white hover:bg-slate-100 text-obsidian-950 font-bold text-xs uppercase tracking-wider transition whitespace-nowrap shadow-sm"
-                >
-                  Subscribe
-                </button>
-              </form>
-            ) : (
-              <div className="text-xs text-blue-400 font-medium py-2">
-                Thank you for subscribing to ReLense updates!
-              </div>
-            )}
+          {/* Quick Action Buttons */}
+          <div className="lg:col-span-6 flex flex-wrap items-center gap-3 lg:justify-end">
+            <a
+              href={`tel:${SITE_INFO.phone}`}
+              className="px-5 py-3 rounded-full bg-electric-600 hover:bg-electric-500 text-white font-bold text-xs uppercase tracking-wider transition shadow-elevated flex items-center space-x-2"
+            >
+              <Phone className="w-3.5 h-3.5 text-white" />
+              <span>Call: {SITE_INFO.phoneFormatted}</span>
+            </a>
+
+            <a
+              href="https://maps.google.com/?q=37+Guy+Lombardo+Ave+Freeport+NY+11520"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-xs uppercase tracking-wider transition flex items-center space-x-2"
+            >
+              <MapPin className="w-3.5 h-3.5 text-cyan-300" />
+              <span>Directions</span>
+            </a>
+
+            <a
+              href={SITE_INFO.orderContactsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-xs uppercase tracking-wider transition flex items-center space-x-2"
+            >
+              <ExternalLink className="w-3.5 h-3.5 text-blue-300" />
+              <span>Order Contacts</span>
+            </a>
+
+            <a
+              href="#calculator"
+              className="px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-xs uppercase tracking-wider transition flex items-center space-x-2"
+            >
+              <Calculator className="w-3.5 h-3.5 text-amber-300" />
+              <span>Price Calculator</span>
+            </a>
           </div>
 
         </div>
@@ -81,51 +79,54 @@ export const Footer: React.FC = () => {
         {/* 4 Column Navigation Links */}
         <div className="py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-xs">
           
-          {/* Col 1: Resources */}
+          {/* Col 1: Core Navigation */}
           <div className="space-y-3">
             <div className="font-semibold text-white uppercase tracking-wider text-[11px]">
-              Resources
+              Explore
             </div>
             <ul className="space-y-2 text-slate-400">
-              <li><a href="#services" className="hover:text-white transition">Optical Services</a></li>
-              <li><a href="#calculator" className="hover:text-white transition">Pricing Calculator</a></li>
+              <li><a href="#services" className="hover:text-white transition">Specialized Services</a></li>
+              <li><a href="#relensing" className="hover:text-white transition">How Re-Lensing Works</a></li>
+              <li><a href="#calculator" className="hover:text-white transition">Price & Lens Calculator</a></li>
+              <li><a href="#dmv-section" className="hover:text-white transition">NY DMV Vision Exams</a></li>
+              <li><a href="#reviews" className="hover:text-white transition">Patient Google Reviews</a></li>
               <li><a href="#faq" className="hover:text-white transition">Help & FAQs</a></li>
-              <li><a href="#contact" className="hover:text-white transition">Store Location & Lab</a></li>
             </ul>
           </div>
 
-          {/* Col 2: Company */}
+          {/* Col 2: Optical Services */}
           <div className="space-y-3">
             <div className="font-semibold text-white uppercase tracking-wider text-[11px]">
-              Company
+              Lab Services
             </div>
             <ul className="space-y-2 text-slate-400">
-              <li><a href="#relensing" className="hover:text-white transition">About Us</a></li>
-              <li><a href="#relensing" className="hover:text-white transition">Why Choose Us</a></li>
-              <li><a href="#contact" className="hover:text-white transition">Careers</a></li>
-              <li><a href="#contact" className="hover:text-white transition">Press & Media</a></li>
+              <li><a href="#services" className="hover:text-white transition">Same-Day & 24h Glasses</a></li>
+              <li><a href="#calculator" className="hover:text-white transition">Shamir Digital Progressives</a></li>
+              <li><a href="#calculator" className="hover:text-white transition">Custom Magnetic Clip-Ons</a></li>
+              <li><a href="#services" className="hover:text-white transition">Children's Sports Goggles</a></li>
+              <li><a href="#relensing" className="hover:text-white transition">Re-Lensing from $49</a></li>
+              <li><a href="#services" className="hover:text-white transition">Severe Astigmatism Rx</a></li>
             </ul>
           </div>
 
-          {/* Col 3: Specialized Optical Services */}
+          {/* Col 3: Patient Benefits */}
           <div className="space-y-3">
             <div className="font-semibold text-white uppercase tracking-wider text-[11px]">
-              Specialized Services
+              Patient Care
             </div>
             <ul className="space-y-2 text-slate-400">
-              <li><a href="#services" className="hover:text-white transition">Same-Day & 24h Emergency Glasses</a></li>
-              <li><a href="#calculator" className="hover:text-white transition">Shamir Auto Intelligence™ Progressives</a></li>
-              <li><a href="#calculator" className="hover:text-white transition">Custom Magnetic Clip-On Lenses</a></li>
-              <li><a href="#reviews" className="hover:text-white transition">Children's Goggles & Astigmatism</a></li>
-              <li><a href="#relensing" className="hover:text-white transition">Re-Lensing & Frame Swaps ($49)</a></li>
-              <li><a href="#dmv-section" className="hover:text-white transition">5-Min NY DMV Vision Tests ($25)</a></li>
+              <li><a href="#dmv-section" className="hover:text-white transition">5-Minute Walk-In DMV ($25)</a></li>
+              <li><a href="#calculator" className="hover:text-white transition">CareCredit Financing</a></li>
+              <li><a href="#calculator" className="hover:text-white transition">HSA & FSA Flex Accepted</a></li>
+              <li><a href="#contact" className="hover:text-white transition">Free Municipal Parking</a></li>
+              <li><a href="#contact" className="hover:text-white transition">Hablamos Español Fluido</a></li>
             </ul>
           </div>
 
-          {/* Col 4: Freeport Lab & Master Optician */}
+          {/* Col 4: Freeport Lab & Contact */}
           <div className="space-y-3">
             <div className="font-semibold text-white uppercase tracking-wider text-[11px]">
-              Freeport Lab & Mauricio
+              Freeport Lab
             </div>
             <ul className="space-y-2.5 text-slate-400">
               <li className="text-white font-medium">
@@ -139,14 +140,11 @@ export const Footer: React.FC = () => {
               <li>
                 <span>{SITE_INFO.address}</span>
               </li>
-              <li className="text-[11px] text-emerald-400 font-medium">
-                Municipal Parking Directly Across Street
-              </li>
-              <li className="text-[11px] text-blue-300">
-                CareCredit & HSA/FSA Flex Accepted
-              </li>
               <li className="text-[11px] text-slate-400">
-                Hablamos Español Fluido
+                Open 24/7 for Inquiries
+              </li>
+              <li className="text-[11px] text-emerald-400 font-medium">
+                In-Store · Curbside · Delivery
               </li>
             </ul>
           </div>
@@ -163,20 +161,31 @@ export const Footer: React.FC = () => {
           </p>
         </div>
 
-        {/* Bottom Bar & Socials */}
+        {/* Bottom Bar: Copyright, Back to Top & Socials */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
             © {new Date().getFullYear()} Relense Optical Store. Master Optician Mauricio. All rights reserved. Freeport, New York.
           </div>
 
-          {/* Social Links */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
+            {/* Back to Top Button */}
+            <button
+              onClick={scrollToTop}
+              className="px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/15 transition flex items-center space-x-1.5 cursor-pointer text-xs"
+              title="Scroll back to top"
+            >
+              <ArrowUp className="w-3.5 h-3.5 text-cyan-300" />
+              <span>Back to Top</span>
+            </button>
+
+            {/* Social Links */}
             <a
               href={SITE_INFO.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition"
               aria-label="Instagram"
+              title="Follow ReLense on Instagram"
             >
               <Instagram className="w-4 h-4" />
             </a>
@@ -186,17 +195,9 @@ export const Footer: React.FC = () => {
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition"
               aria-label="Facebook"
+              title="Follow ReLense on Facebook"
             >
               <Facebook className="w-4 h-4" />
-            </a>
-            <a
-              href={SITE_INFO.social.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition"
-              aria-label="Twitter"
-            >
-              <Twitter className="w-4 h-4" />
             </a>
           </div>
         </div>
