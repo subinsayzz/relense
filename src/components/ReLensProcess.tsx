@@ -188,31 +188,31 @@ export const ReLensProcess: React.FC = () => {
               </div>
             </div>
 
-            {/* Real Photo 3: Mauricio DMV Exam */}
+            {/* Real Photo 3: Mauricio Precision Lens Inspection */}
             <div className="bg-white rounded-3xl overflow-hidden shadow-card border border-blue-100/80 group flex flex-col">
               <div className="aspect-[4/3] overflow-hidden bg-neutral-100 relative">
                 <img
-                  src="/assets/mauricio_dmv_exam.jpg"
-                  alt="Master Optician Mauricio conducting vision test in Freeport"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  src="/assets/mauricio_lens_craft.jpg"
+                  alt="Master Optician Mauricio inspecting prescription lenses at ReLense Optical Freeport NY"
+                  className="w-full h-full object-cover object-[center_25%] group-hover:scale-105 transition-transform duration-700"
                 />
-                <span className="absolute top-3 left-3 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-emerald-700 text-white backdrop-blur-xs flex items-center space-x-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                  <span>5-Min NY DMV Exam</span>
+                <span className="absolute top-3 left-3 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-black/70 text-white backdrop-blur-xs flex items-center space-x-1 border border-white/15">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Precision Lens Inspection</span>
                 </span>
               </div>
               <div className="p-5 space-y-1 flex-1 flex flex-col justify-between">
                 <div>
                   <h4 className="font-serif text-lg text-obsidian-900 font-semibold">
-                    Master Optician Personal Care
+                    Master Optical Hand-Beveling
                   </h4>
                   <p className="text-xs text-neutral-600 mt-1 leading-relaxed">
-                    Skip DMV lines. Mauricio conducts official 5-minute electronic vision tests and uploads instantly to NY State registry.
+                    Mauricio personally verifies optical centers, cylinder axis, and hand-bevels each prescription lens with Carl Zeiss precision standards.
                   </p>
                 </div>
                 <div className="pt-3 border-t border-neutral-100 text-[11px] font-semibold text-electric-700 flex items-center justify-between">
-                  <span>Official NY Registry Provider</span>
-                  <span>$25 Walk-In →</span>
+                  <span>Carl Zeiss Lab Standards</span>
+                  <span>Re-Lens from $49 →</span>
                 </div>
               </div>
             </div>

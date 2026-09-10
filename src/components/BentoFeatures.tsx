@@ -50,7 +50,7 @@ export const BentoFeatures: React.FC = () => {
               </div>
             </div>
 
-            {/* Center Card: Model in Striped Shirt matching Screenshot */}
+            {/* Center Card: Master Optician Mauricio */}
             <div className="md:col-span-4 flex flex-col justify-between space-y-3">
               <p className="text-xs text-neutral-600 leading-relaxed px-1">
                 See your world clearly. Master Optician Mauricio provides <strong className="text-obsidian-900">24-hour emergency glasses</strong>, severe astigmatism care, and official 5-minute NY DMV vision testing.
@@ -59,14 +59,14 @@ export const BentoFeatures: React.FC = () => {
               <div className="bg-white rounded-3xl p-3 shadow-card border border-blue-100/80 flex-1 flex flex-col justify-between">
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-cream-100">
                   <img
-                    src="/assets/striped_shirt_model.jpg"
-                    alt="4 Styles perfectly matched"
-                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                    src="/assets/mauricio_storefront_portrait.jpg"
+                    alt="Master Optician Mauricio outside ReLense Optical Freeport NY"
+                    className="w-full h-full object-cover object-[center_15%] hover:scale-105 transition-transform duration-700"
                   />
-                  {/* Bottom Pill: 4 Styles perfectly matched */}
+                  {/* Bottom Pill: Mauricio Master Optician */}
                   <div className="absolute bottom-3 inset-x-3 bg-white/95 backdrop-blur-md p-2.5 rounded-2xl border border-black/5 shadow-card flex items-center justify-center space-x-2">
-                    <span className="font-serif text-xl font-bold text-obsidian-900">4</span>
-                    <span className="text-xs font-bold text-obsidian-900">Styles perfectly matched</span>
+                    <span className="font-serif text-base font-bold text-obsidian-900">Mauricio</span>
+                    <span className="text-xs font-semibold text-neutral-600">· Master Optician (20+ Yrs)</span>
                   </div>
                 </div>
               </div>
@@ -81,15 +81,15 @@ export const BentoFeatures: React.FC = () => {
 
               <div className="flex flex-wrap items-center gap-3">
                 <a
-                  href="#best-sellers"
+                  href="#calculator"
                   className="px-6 py-3.5 rounded-full bg-obsidian-900 text-white font-semibold text-xs hover:bg-neutral-800 transition shadow-elevated flex items-center space-x-1.5 group"
                 >
-                  <span>Check Eyewear</span>
+                  <span>Price Calculator</span>
                   <Play className="w-2.5 h-2.5 fill-white text-white transition-transform group-hover:translate-x-0.5" />
                 </a>
 
                 <span className="text-xs font-semibold text-neutral-600">
-                  Get Free Shipping
+                  Walk-Ins Welcome
                 </span>
               </div>
 
@@ -131,30 +131,30 @@ export const BentoFeatures: React.FC = () => {
           {/* Bento Grid matching Screenshot */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
             
-            {/* Card 1: Instant style zero commitment (Left 3 cols) */}
+            {/* Card 1: Precision Lens Inspection & Re-Lensing */}
             <div className="md:col-span-3 bg-white rounded-3xl p-6 shadow-card border border-blue-100/80 flex flex-col justify-between">
               <div className="space-y-1">
                 <span className="text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
-                  A seamless fusion of style, innovation, & value
+                  In-House Precision Optical Lab
                 </span>
                 <h3 className="font-serif text-xl text-obsidian-900 font-medium pt-1">
-                  Instant style zero commitment
+                  Re-Lens your frames from $49
                 </h3>
               </div>
 
-              <div className="my-6 aspect-square rounded-2xl bg-[#F5F9FD] p-3 flex items-center justify-center overflow-hidden">
+              <div className="my-6 aspect-square rounded-2xl bg-[#F5F9FD] p-2 flex items-center justify-center overflow-hidden">
                 <img
-                  src="/assets/stacked_pedestals_glasses.jpg"
-                  alt="Stacked glasses on pedestals"
-                  className="w-full h-full object-cover rounded-xl"
+                  src="/assets/mauricio_lens_craft.jpg"
+                  alt="Master Optician Mauricio inspecting prescription lenses in Freeport lab"
+                  className="w-full h-full object-cover object-[center_25%] rounded-xl hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               <a
-                href="#studio-3d"
+                href="#relensing"
                 className="inline-flex items-center text-xs font-semibold text-electric-600 hover:text-electric-700 transition"
               >
-                <span>Launch 3D Studio &gt;</span>
+                <span>How Re-Lensing Works &gt;</span>
               </a>
             </div>
 

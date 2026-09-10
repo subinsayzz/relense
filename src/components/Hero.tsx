@@ -34,9 +34,9 @@ export const Hero: React.FC = () => {
               <div className="absolute -bottom-4 -left-3 sm:-left-6 z-30 bg-white/95 backdrop-blur-md px-3 py-2 rounded-2xl shadow-card border border-blue-100/80 flex items-center space-x-2 animate-float-delayed">
                 <div className="w-7 h-7 rounded-full overflow-hidden border border-black/10 flex-shrink-0">
                   <img
-                    src="/assets/mauricio_hero.jpg"
+                    src="/assets/mauricio_storefront_portrait.jpg"
                     alt="Master Optician Mauricio"
-                    className="w-full h-full object-cover object-[68%_38%]"
+                    className="w-full h-full object-cover object-[center_15%]"
                   />
                 </div>
                 <div className="text-[9px] font-mono tracking-wider text-neutral-600 uppercase font-semibold">
@@ -49,9 +49,9 @@ export const Hero: React.FC = () => {
               <div className="relative rounded-[32px] p-2 bg-gradient-to-b from-white to-blue-50/60 shadow-elevated">
                 <div className="relative overflow-hidden rounded-[26px] cut-top-left bg-neutral-100 aspect-[4/3] sm:aspect-[4/3]">
                   <img
-                    src="/assets/mauricio_hero.jpg"
-                    alt="Master Optician Mauricio fitting prescription eyewear at ReLense Optical Freeport NY"
-                    className="w-full h-full object-cover object-[60%_center] hover:scale-105 transition-transform duration-700"
+                    src="/assets/mauricio_lens_craft.jpg"
+                    alt="Master Optician Mauricio inspecting prescription eyewear at ReLense Optical Freeport NY"
+                    className="w-full h-full object-cover object-[center_25%] hover:scale-105 transition-transform duration-700"
                   />
                   {/* Soft Light Vignette */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent pointer-events-none" />
@@ -63,7 +63,7 @@ export const Hero: React.FC = () => {
                         Master Optician & Owner
                       </div>
                       <div className="text-xs font-bold text-obsidian-900">
-                        Mauricio's Precision Fitting
+                        Mauricio's Precision Lab Craft
                       </div>
                     </div>
                     <span className="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-blue-100 text-electric-700 flex items-center space-x-1">
@@ -183,22 +183,22 @@ export const Hero: React.FC = () => {
               </p>
             </div>
 
-            {/* Center Box: White Pedestals Display with 3 Pairs of Eyewear matching screenshot */}
+            {/* Center Box: Master Optician Mauricio at Storefront Entrance */}
             <div className="lg:col-span-4 flex justify-center">
               <div className="relative w-full max-w-xs rounded-3xl overflow-hidden bg-white p-2 shadow-card border border-blue-100/80 group">
                 <div className="aspect-square rounded-2xl overflow-hidden bg-[#F4F9FD]">
                   <img
-                    src="/assets/stacked_pedestals_glasses.jpg"
-                    alt="Eyewear on museum pedestals"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    src="/assets/mauricio_storefront_portrait.jpg"
+                    alt="Master Optician Mauricio at ReLense Optical Freeport storefront"
+                    className="w-full h-full object-cover object-[center_15%] transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-3 text-center">
                   <span className="text-[10px] uppercase font-bold tracking-widest text-neutral-400">
-                    Artisan Frames & Lenses
+                    Master Optician & Owner
                   </span>
                   <div className="text-xs font-bold text-obsidian-900 mt-0.5">
-                    Curated Freeport Collection
+                    Mauricio · Freeport Boutique & Lab
                   </div>
                 </div>
               </div>
