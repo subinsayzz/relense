@@ -35,12 +35,9 @@ export const Navbar: React.FC = () => {
         </a>
 
         {/* Center Minimal Navigation Links - Clear & No-Brainer */}
-        <nav className="hidden md:flex items-center space-x-7 text-[13px] font-medium tracking-wide text-neutral-700">
+        <nav className="hidden md:flex items-center space-x-8 text-[13px] font-medium tracking-wide text-neutral-700">
           <a href="#relensing" className="hover:text-electric-600 transition">
             Re-Lensing ($49)
-          </a>
-          <a href="#calculator" className="hover:text-electric-600 transition">
-            Price Calculator
           </a>
           <a href="#dmv-section" className="hover:text-electric-600 transition">
             DMV Exam ($25)
@@ -103,13 +100,6 @@ export const Navbar: React.FC = () => {
             >
               <span>Re-Lensing Process</span>
               <span className="text-xs text-electric-600 font-bold">From $49</span>
-            </a>
-            <a
-              href="#calculator"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-electric-600 transition py-1"
-            >
-              Price Calculator
             </a>
             <a
               href="#dmv-section"

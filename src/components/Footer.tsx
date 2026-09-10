@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Phone, MapPin, ExternalLink, Calculator, Instagram, Facebook } from 'lucide-react';
+import { ArrowUp, Phone, MapPin, ExternalLink, Instagram, Facebook } from 'lucide-react';
 import { SITE_INFO } from '../data/content';
 
 export const Footer: React.FC = () => {
@@ -66,11 +66,11 @@ export const Footer: React.FC = () => {
             </a>
 
             <a
-              href="#calculator"
+              href="#dmv-section"
               className="px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-xs uppercase tracking-wider transition flex items-center space-x-2"
             >
-              <Calculator className="w-3.5 h-3.5 text-amber-300" />
-              <span>Price Calculator</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              <span>DMV Exam ($25)</span>
             </a>
           </div>
 
@@ -86,7 +86,6 @@ export const Footer: React.FC = () => {
             </div>
             <ul className="space-y-2 text-slate-400">
               <li><a href="#relensing" className="hover:text-white transition">Re-Lensing from $49</a></li>
-              <li><a href="#calculator" className="hover:text-white transition">Price & Lens Calculator</a></li>
               <li><a href="#dmv-section" className="hover:text-white transition">NY DMV Vision Exams</a></li>
               <li><a href="#reviews" className="hover:text-white transition">Patient Google Reviews</a></li>
               <li><a href="#faq" className="hover:text-white transition">Help & FAQs</a></li>
@@ -101,11 +100,11 @@ export const Footer: React.FC = () => {
             </div>
             <ul className="space-y-2 text-slate-400">
               <li><a href="#relensing" className="hover:text-white transition">Same-Day & 24h Glasses</a></li>
-              <li><a href="#calculator" className="hover:text-white transition">Shamir Digital Progressives</a></li>
-              <li><a href="#calculator" className="hover:text-white transition">Custom Magnetic Clip-Ons</a></li>
-              <li><a href="#calculator" className="hover:text-white transition">Children's Sports Goggles</a></li>
+              <li><a href="#relensing" className="hover:text-white transition">Shamir Digital Progressives</a></li>
+              <li><a href="#relensing" className="hover:text-white transition">Custom Magnetic Clip-Ons</a></li>
+              <li><a href="#relensing" className="hover:text-white transition">Children's Sports Goggles</a></li>
               <li><a href="#relensing" className="hover:text-white transition">Carl Zeiss Edging & Beveling</a></li>
-              <li><a href="#calculator" className="hover:text-white transition">Severe Astigmatism Rx</a></li>
+              <li><a href="#relensing" className="hover:text-white transition">Severe Astigmatism Rx</a></li>
             </ul>
           </div>
 
@@ -116,8 +115,8 @@ export const Footer: React.FC = () => {
             </div>
             <ul className="space-y-2 text-slate-400">
               <li><a href="#dmv-section" className="hover:text-white transition">5-Minute Walk-In DMV ($25)</a></li>
-              <li><a href="#calculator" className="hover:text-white transition">CareCredit Financing</a></li>
-              <li><a href="#calculator" className="hover:text-white transition">HSA & FSA Flex Accepted</a></li>
+              <li><a href="#contact" className="hover:text-white transition">CareCredit Financing</a></li>
+              <li><a href="#contact" className="hover:text-white transition">HSA & FSA Flex Accepted</a></li>
               <li><a href="#contact" className="hover:text-white transition">Free Municipal Parking</a></li>
               <li><a href="#contact" className="hover:text-white transition">Hablamos Español Fluido</a></li>
             </ul>

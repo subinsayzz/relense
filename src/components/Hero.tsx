@@ -121,10 +121,10 @@ export const Hero: React.FC = () => {
               </a>
 
               <a
-                href="#calculator"
+                href="#contact"
                 className="px-5 py-3.5 rounded-full bg-white/80 hover:bg-white border border-blue-200/80 font-semibold text-xs sm:text-sm text-obsidian-900 transition shadow-xs"
               >
-                Instant Price Calculator
+                Visit Store & Lab
               </a>
 
               <a

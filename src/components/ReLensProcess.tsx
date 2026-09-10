@@ -71,8 +71,8 @@ export const ReLensProcess: React.FC = () => {
             </div>
             <div className="text-xs text-neutral-500 flex items-center justify-between pt-2 border-t border-neutral-100">
               <span>Why pay $400+ for designer frames when yours has years of life?</span>
-              <a href="#calculator" className="font-bold text-electric-600 hover:text-electric-700 whitespace-nowrap ml-2">
-                Quote Now →
+              <a href="#contact" className="font-bold text-electric-600 hover:text-electric-700 whitespace-nowrap ml-2">
+                Inquire Now →
               </a>
             </div>
           </div>
@@ -160,10 +160,10 @@ export const ReLensProcess: React.FC = () => {
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <a
-                href="#calculator"
+                href="#contact"
                 className="px-5 py-2.5 rounded-full bg-obsidian-900 hover:bg-neutral-800 text-white font-semibold text-xs transition shadow-elevated"
               >
-                Calculate Lens Pricing
+                Inquire & Visit Store
               </a>
               <a
                 href={`tel:${SITE_INFO.phone}`}

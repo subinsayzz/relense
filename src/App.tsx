@@ -2,13 +2,12 @@ import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ReLensProcess } from './components/ReLensProcess';
-import { ReLensCalculator } from './components/ReLensCalculator';
 import { DmvExamSection } from './components/DmvExamSection';
 import { Testimonials } from './components/Testimonials';
 import { FaqSection } from './components/FaqSection';
 import { ContactLocation } from './components/ContactLocation';
 import { Footer } from './components/Footer';
-import { Phone, MapPin, Calculator } from 'lucide-react';
+import { Phone, MapPin, Glasses } from 'lucide-react';
 import { SITE_INFO } from './data/content';
 
 export const App: React.FC = () => {
@@ -24,9 +23,6 @@ export const App: React.FC = () => {
 
         {/* 4-Step Re-Lensing & Lens Replacement Process */}
         <ReLensProcess />
-
-        {/* Transparent Interactive Pricing Calculator */}
-        <ReLensCalculator />
 
         {/* Official NY DMV Driver License Vision Exams ($25 Walk-In) */}
         <DmvExamSection />
@@ -54,11 +50,11 @@ export const App: React.FC = () => {
           <span>Call Mauricio</span>
         </a>
         <a
-          href="#calculator"
-          className="flex-1 flex items-center justify-center space-x-1.5 py-2.5 text-xs font-semibold text-cyan-300"
+          href="#relensing"
+          className="flex-1 flex items-center justify-center space-x-1.5 py-2.5 text-xs font-semibold text-cyan-300 border-r border-white/15"
         >
-          <Calculator className="w-3.5 h-3.5" />
-          <span>Price Calculator</span>
+          <Glasses className="w-3.5 h-3.5" />
+          <span>Re-Lensing $49</span>
         </a>
         <a
           href="#contact"
