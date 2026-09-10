@@ -8,8 +8,10 @@ import {
   ChevronDown,
   ChevronUp,
   ArrowUpRight,
+  Sparkles,
+  LayoutGrid,
 } from 'lucide-react';
-import { TESTIMONIALS, SITE_INFO } from '../data/content';
+import { TESTIMONIALS, SITE_INFO, Testimonial } from '../data/content';
 
 const GoogleIcon = ({ className = 'w-4 h-4' }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24">
@@ -59,8 +61,76 @@ const getInitials = (name: string) => {
   return name.slice(0, 2).toUpperCase();
 };
 
+const ReviewCard: React.FC<{ review: Testimonial; idx: number }> = ({ review, idx }) => (
+  <div className="h-full bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-blue-100/90 shadow-card flex flex-col justify-between hover:shadow-elevated hover:border-blue-300 transition-all duration-300 relative group">
+    <div>
+      {/* Reviewer Header */}
+      <div className="flex items-start justify-between gap-3 mb-3.5">
+        <div className="flex items-center space-x-3">
+          <div
+            className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs border shadow-xs flex-shrink-0 ${
+              AVATAR_COLORS[idx % AVATAR_COLORS.length]
+            }`}
+          >
+            {getInitials(review.name)}
+          </div>
+          <div>
+            <div className="font-bold text-sm text-obsidian-900 flex items-center space-x-1.5">
+              <span>{formatName(review.name)}</span>
+              <CheckCircle2 className="w-3.5 h-3.5 text-blue-500 fill-blue-500/10 flex-shrink-0" />
+            </div>
+            <div className="flex items-center space-x-1.5 text-[11px] text-neutral-400 mt-0.5">
+              {review.isLocalGuide && (
+                <span className="font-semibold text-amber-600 flex items-center space-x-0.5">
+                  <Star className="w-2.5 h-2.5 fill-amber-500 text-amber-500 inline mr-0.5" />
+                  <span>Local Guide</span>
+                  <span className="text-neutral-300 mx-1">·</span>
+                </span>
+              )}
+              <span>{review.timeAgo}</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-1.5 rounded-lg bg-neutral-50 border border-neutral-100 flex items-center justify-center group-hover:bg-blue-50/60 transition-colors">
+          <GoogleIcon className="w-4 h-4 flex-shrink-0" />
+        </div>
+      </div>
+
+      {/* Rating Stars & Service Tag */}
+      <div className="flex items-center justify-between gap-2 mb-3">
+        <div className="flex space-x-0.5">
+          {[...Array(review.rating)].map((_, i) => (
+            <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+          ))}
+        </div>
+        <span className="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-electric-700 border border-blue-100 tracking-wide">
+          {review.tag}
+        </span>
+      </div>
+
+      {/* Review Text */}
+      <p className="text-neutral-700 text-xs sm:text-sm leading-relaxed mb-4">
+        "{review.text}"
+      </p>
+    </div>
+
+    {/* Card Footer */}
+    <div className="pt-3 border-t border-neutral-100 flex items-center justify-between text-[11px] text-neutral-400">
+      <span className="flex items-center space-x-1.5">
+        <span className="w-2 h-2 rounded-full bg-emerald-500" />
+        <span className="font-medium text-neutral-500 text-[11px]">Verified Google Review</span>
+      </span>
+      <span className="text-[10px] font-medium text-neutral-400 uppercase tracking-wider">
+        Freeport, NY
+      </span>
+    </div>
+  </div>
+);
+
 export const Testimonials: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [viewMode, setViewMode] = useState<'marquee' | 'grid'>('marquee');
   const [showAll, setShowAll] = useState<boolean>(false);
 
   const categories = [
@@ -77,6 +147,23 @@ export const Testimonials: React.FC = () => {
 
   const displayedReviews = showAll ? filteredReviews : filteredReviews.slice(0, 6);
 
+  // Split reviews into dual lanes for multi-lane horizontal animation
+  const lane1Items = filteredReviews.filter((_, i) => i % 2 === 0);
+  const lane2Items = filteredReviews.filter((_, i) => i % 2 !== 0);
+
+  // Ensure enough cards for infinite 0% to -50% translateX loop
+  const buildLoopTrack = (items: typeof TESTIMONIALS) => {
+    if (items.length === 0) return [];
+    let repeated = [...items];
+    while (repeated.length < 8) {
+      repeated = [...repeated, ...items];
+    }
+    return [...repeated, ...repeated];
+  };
+
+  const lane1Loop = buildLoopTrack(lane1Items.length > 0 ? lane1Items : filteredReviews);
+  const lane2Loop = buildLoopTrack(lane2Items.length > 0 ? lane2Items : filteredReviews);
+
   const googleMapsUrl =
     'https://maps.google.com/?q=ReLense+Optical+Store+37+Guy+Lombardo+Ave+Freeport+NY+11520';
 
@@ -87,7 +174,7 @@ export const Testimonials: React.FC = () => {
       <div className="absolute top-10 left-10 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none -z-10" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-white/60 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
@@ -137,118 +224,121 @@ export const Testimonials: React.FC = () => {
           </div>
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => {
-                setSelectedCategory(cat.id);
-                setShowAll(false);
-              }}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition shadow-xs flex items-center space-x-1.5 ${
-                selectedCategory === cat.id
-                  ? 'bg-obsidian-900 text-white shadow-elevated'
-                  : 'bg-white hover:bg-neutral-50 text-neutral-700 border border-blue-100/80'
-              }`}
-            >
-              <span>{cat.label}</span>
-              <span
-                className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
+        {/* Category Filter Pills & Mode Switcher */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-2">
+          {/* Categories */}
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => {
+                  setSelectedCategory(cat.id);
+                  setShowAll(false);
+                }}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition shadow-xs flex items-center space-x-1.5 ${
                   selectedCategory === cat.id
-                    ? 'bg-white/20 text-white'
-                    : 'bg-neutral-100 text-neutral-500'
+                    ? 'bg-obsidian-900 text-white shadow-elevated'
+                    : 'bg-white hover:bg-neutral-50 text-neutral-700 border border-blue-100/80'
                 }`}
               >
-                {cat.count}
-              </span>
+                <span>{cat.label}</span>
+                <span
+                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
+                    selectedCategory === cat.id
+                      ? 'bg-white/20 text-white'
+                      : 'bg-neutral-100 text-neutral-500'
+                  }`}
+                >
+                  {cat.count}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {/* View Mode Toggle */}
+          <div className="flex items-center bg-white/90 backdrop-blur-md p-1 rounded-full border border-blue-200/80 shadow-xs shrink-0">
+            <button
+              onClick={() => setViewMode('marquee')}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold flex items-center space-x-1.5 transition ${
+                viewMode === 'marquee'
+                  ? 'bg-obsidian-900 text-white shadow-xs'
+                  : 'text-neutral-600 hover:text-obsidian-900'
+              }`}
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+              <span>Animated Stream</span>
             </button>
-          ))}
+            <button
+              onClick={() => setViewMode('grid')}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold flex items-center space-x-1.5 transition ${
+                viewMode === 'grid'
+                  ? 'bg-obsidian-900 text-white shadow-xs'
+                  : 'text-neutral-600 hover:text-obsidian-900'
+              }`}
+            >
+              <LayoutGrid className="w-3.5 h-3.5" />
+              <span>Grid View</span>
+            </button>
+          </div>
         </div>
 
-        {/* Testimonial Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {displayedReviews.map((review, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-3xl p-6 sm:p-7 border border-blue-100/90 shadow-card flex flex-col justify-between hover:shadow-elevated hover:-translate-y-1 transition-all duration-300 relative group"
-            >
-              <div>
-                {/* Reviewer Header */}
-                <div className="flex items-start justify-between gap-3 mb-4">
-                  <div className="flex items-center space-x-3">
-                    <div
-                      className={`w-11 h-11 rounded-full flex items-center justify-center font-bold text-xs border shadow-xs flex-shrink-0 ${
-                        AVATAR_COLORS[idx % AVATAR_COLORS.length]
-                      }`}
-                    >
-                      {getInitials(review.name)}
-                    </div>
-                    <div>
-                      <div className="font-bold text-sm text-obsidian-900 flex items-center space-x-1.5">
-                        <span>{formatName(review.name)}</span>
-                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-500 fill-blue-500/10 flex-shrink-0" />
-                      </div>
-                      <div className="flex items-center space-x-1.5 text-[11px] text-neutral-400 mt-0.5">
-                        {review.isLocalGuide && (
-                          <span className="font-semibold text-amber-600 flex items-center space-x-0.5">
-                            <Star className="w-2.5 h-2.5 fill-amber-500 text-amber-500 inline mr-0.5" />
-                            <span>Local Guide</span>
-                            <span className="text-neutral-300 mx-1">·</span>
-                          </span>
-                        )}
-                        <span>{review.timeAgo}</span>
-                      </div>
-                    </div>
+        {/* Dynamic Reviews Display */}
+        {viewMode === 'marquee' ? (
+          <div className="relative -mx-4 sm:-mx-6 lg:-mx-8 overflow-hidden py-3 space-y-6">
+            {/* Left & Right Edge Fade Gradients for Luxury Horizon */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-[#DFEDF8] via-[#DFEDF8]/90 to-transparent z-20" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-[#DFEDF8] via-[#DFEDF8]/90 to-transparent z-20" />
+
+            {/* Lane 1: Smooth Scrolling Left */}
+            <div className="flex overflow-hidden">
+              <div className="animate-marquee flex items-stretch gap-5 pl-5">
+                {lane1Loop.map((review, idx) => (
+                  <div key={`lane1-${idx}`} className="w-[320px] sm:w-[370px] shrink-0">
+                    <ReviewCard review={review} idx={idx} />
                   </div>
-
-                  <div className="p-1.5 rounded-lg bg-neutral-50 border border-neutral-100 flex items-center justify-center group-hover:bg-blue-50/60 transition-colors">
-                    <GoogleIcon className="w-4 h-4 flex-shrink-0" />
-                  </div>
-                </div>
-
-                {/* Rating Stars & Service Tag */}
-                <div className="flex items-center justify-between gap-2 mb-3.5">
-                  <div className="flex space-x-0.5">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <span className="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-electric-700 border border-blue-100 tracking-wide">
-                    {review.tag}
-                  </span>
-                </div>
-
-                {/* Review Text */}
-                <p className="text-neutral-700 text-sm leading-relaxed mb-4">
-                  "{review.text}"
-                </p>
-              </div>
-
-              {/* Card Footer */}
-              <div className="pt-3.5 border-t border-neutral-100 flex items-center justify-between text-[11px] text-neutral-400">
-                <span className="flex items-center space-x-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                  <span className="font-medium text-neutral-500">Verified Google Review</span>
-                </span>
-                <span className="text-[10px] font-medium text-neutral-400 uppercase tracking-wider">
-                  Freeport, NY
-                </span>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
 
-        {/* Expand / Collapse Button */}
-        {filteredReviews.length > 6 && (
-          <div className="text-center pt-2">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="px-6 py-3 rounded-full bg-white hover:bg-neutral-50 text-obsidian-900 font-semibold text-xs border border-blue-200/80 shadow-xs inline-flex items-center space-x-2 transition hover:shadow-card"
-            >
-              <span>{showAll ? 'Show Fewer Reviews' : `View All ${filteredReviews.length} Google Reviews`}</span>
-              {showAll ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-            </button>
+            {/* Lane 2: Smooth Scrolling Right */}
+            <div className="flex overflow-hidden">
+              <div className="animate-marquee-reverse flex items-stretch gap-5 pl-5">
+                {lane2Loop.map((review, idx) => (
+                  <div key={`lane2-${idx}`} className="w-[320px] sm:w-[370px] shrink-0">
+                    <ReviewCard review={review} idx={idx + 9} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Live Auto-Scroll Pause Indicator */}
+            <div className="text-center pt-2">
+              <span className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-white/80 backdrop-blur-xs text-[11px] text-neutral-500 border border-blue-100/80 shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Live Continuous Stream · Hover any review card to pause</span>
+              </span>
+            </div>
+          </div>
+        ) : (
+          /* Grid View */
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {displayedReviews.map((review, idx) => (
+                <ReviewCard key={idx} review={review} idx={idx} />
+              ))}
+            </div>
+
+            {filteredReviews.length > 6 && (
+              <div className="text-center pt-2">
+                <button
+                  onClick={() => setShowAll(!showAll)}
+                  className="px-6 py-3 rounded-full bg-white hover:bg-neutral-50 text-obsidian-900 font-semibold text-xs border border-blue-200/80 shadow-xs inline-flex items-center space-x-2 transition hover:shadow-card"
+                >
+                  <span>{showAll ? 'Show Fewer Reviews' : `View All ${filteredReviews.length} Google Reviews`}</span>
+                  {showAll ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                </button>
+              </div>
+            )}
           </div>
         )}
 
