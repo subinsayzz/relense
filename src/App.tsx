@@ -47,7 +47,7 @@ export const App: React.FC = () => {
           className="flex-1 flex items-center justify-center space-x-1.5 py-2.5 text-xs font-semibold border-r border-white/15"
         >
           <Phone className="w-3.5 h-3.5 text-electric-400" />
-          <span>Call Mauricio</span>
+          <span>Call Us</span>
         </a>
         <a
           href="#relensing"

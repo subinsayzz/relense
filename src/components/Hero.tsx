@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Sparkles, ShieldCheck, CheckCircle2, Play, Glasses, Star } from 'lucide-react';
+import { ArrowUpRight, Sparkles, ShieldCheck, CheckCircle2, Play, Glasses, Star, Phone } from 'lucide-react';
 import { SITE_INFO } from '../data/content';
 
 export const Hero: React.FC = () => {
@@ -122,16 +122,17 @@ export const Hero: React.FC = () => {
 
               <a
                 href="#contact"
-                className="px-5 py-3.5 rounded-full bg-white/80 hover:bg-white border border-blue-200/80 font-semibold text-xs sm:text-sm text-obsidian-900 transition shadow-xs"
+                className="px-5 py-3.5 rounded-full bg-white/90 hover:bg-white border border-blue-200/80 font-semibold text-xs sm:text-sm text-obsidian-900 transition shadow-xs"
               >
                 Visit Store & Lab
               </a>
 
               <a
                 href={`tel:${SITE_INFO.phone}`}
-                className="px-5 py-3.5 rounded-full bg-electric-600 hover:bg-electric-500 text-white font-bold text-xs sm:text-sm transition shadow-elevated flex items-center space-x-1.5"
+                className="px-4 py-3.5 rounded-full bg-white/90 hover:bg-white border border-blue-200/80 text-obsidian-900 font-semibold text-xs sm:text-sm transition shadow-xs flex items-center space-x-1.5"
               >
-                <span>Call Mauricio</span>
+                <Phone className="w-3.5 h-3.5 text-electric-600" />
+                <span>{SITE_INFO.phoneFormatted}</span>
               </a>
             </div>
 

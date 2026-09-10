@@ -50,7 +50,7 @@ export const Navbar: React.FC = () => {
           </a>
         </nav>
 
-        {/* Right Actions: Order Contacts + Call Mauricio */}
+        {/* Right Actions: Order Contacts + Call Store */}
         <div className="hidden sm:flex items-center space-x-3">
           <a
             href={SITE_INFO.orderContactsUrl}
@@ -132,7 +132,7 @@ export const Navbar: React.FC = () => {
               className="w-full text-center py-2.5 rounded-full bg-obsidian-900 text-white font-semibold text-xs flex items-center justify-center space-x-2"
             >
               <Phone className="w-3.5 h-3.5 text-accent-gold" />
-              <span>Call Mauricio ({SITE_INFO.phoneFormatted})</span>
+              <span>Call Store: {SITE_INFO.phoneFormatted}</span>
             </a>
             <a
               href={SITE_INFO.orderContactsUrl}

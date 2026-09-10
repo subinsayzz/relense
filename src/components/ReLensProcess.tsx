@@ -1,5 +1,5 @@
 import React from 'react';
-import { Send, FileText, Sparkles, Truck, ArrowRight, ShieldCheck, HeartHandshake, Leaf, PackageCheck } from 'lucide-react';
+import { Send, FileText, Sparkles, Truck, ArrowRight, ShieldCheck, HeartHandshake, Leaf, PackageCheck, Phone } from 'lucide-react';
 import { SITE_INFO } from '../data/content';
 
 export const ReLensProcess: React.FC = () => {
@@ -167,9 +167,10 @@ export const ReLensProcess: React.FC = () => {
               </a>
               <a
                 href={`tel:${SITE_INFO.phone}`}
-                className="px-5 py-2.5 rounded-full bg-white border border-neutral-300 hover:border-neutral-400 text-obsidian-900 font-semibold text-xs transition shadow-xs"
+                className="px-5 py-2.5 rounded-full bg-white border border-neutral-300 hover:border-neutral-400 text-obsidian-900 font-semibold text-xs transition shadow-xs flex items-center space-x-1.5"
               >
-                Call Mauricio: {SITE_INFO.phoneFormatted}
+                <Phone className="w-3.5 h-3.5 text-electric-600" />
+                <span>Call: {SITE_INFO.phoneFormatted}</span>
               </a>
             </div>
           </div>

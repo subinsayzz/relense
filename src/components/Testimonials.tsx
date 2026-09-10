@@ -211,7 +211,7 @@ export const Testimonials: React.FC = () => {
                 className="px-6 py-3 rounded-full bg-obsidian-900 hover:bg-neutral-800 text-white font-semibold text-xs transition shadow-elevated flex items-center space-x-2"
               >
                 <Phone className="w-3.5 h-3.5 text-blue-200" />
-                <span>Call or Text Mauricio: {SITE_INFO.phoneFormatted}</span>
+                <span>Call or Text: {SITE_INFO.phoneFormatted}</span>
               </a>
 
               <a

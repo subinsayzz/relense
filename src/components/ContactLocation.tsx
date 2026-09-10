@@ -149,7 +149,7 @@ export const ContactLocation: React.FC = () => {
                   className="px-5 py-2.5 rounded-full bg-electric-600 hover:bg-electric-500 text-white text-xs font-bold transition shadow-elevated flex items-center space-x-1.5"
                 >
                   <Phone className="w-3.5 h-3.5" />
-                  <span>Call Mauricio: {SITE_INFO.phoneFormatted}</span>
+                  <span>Call Store: {SITE_INFO.phoneFormatted}</span>
                 </a>
                 <a
                   href="https://maps.google.com/?q=37+Guy+Lombardo+Ave+Freeport+NY+11520"
@@ -291,7 +291,7 @@ export const ContactLocation: React.FC = () => {
             <div className="p-3 rounded-2xl bg-blue-50/80 border border-blue-200/60 flex items-center justify-between">
               <div className="text-left">
                 <div className="text-xs font-bold text-obsidian-900">Need Immediate Help?</div>
-                <div className="text-[11px] text-neutral-600">Call or text Mauricio directly</div>
+                <div className="text-[11px] text-neutral-600">Call or text our optical desk</div>
               </div>
               <a
                 href={`tel:${SITE_INFO.phone}`}
