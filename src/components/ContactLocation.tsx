@@ -1,68 +1,15 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, ExternalLink, MessageSquare, Sparkles, Eye, ShieldCheck, Camera } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, ExternalLink } from 'lucide-react';
 import { SITE_INFO } from '../data/content';
 
 export const ContactLocation: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [activeStoreView, setActiveStoreView] = useState<'storefront' | 'showroom' | 'dmv'>('storefront');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: '',
   });
-
-  const STORE_VIEWS = [
-    {
-      id: 'storefront',
-      title: 'Storefront & Exterior',
-      badge: 'Authentic 37B Guy Lombardo Ave',
-      image: '/assets/relense_storefront_real.jpg',
-      aspect: 'aspect-[6/7] sm:aspect-[4/5] max-h-[580px]',
-      tagline: 'Signature Blue Canopy & Illuminated Window',
-      desc: 'The official storefront of ReLense Optical at 37B Guy Lombardo Avenue in Freeport, NY. Featuring our signature royal blue awning, illuminated overhead canopy, luminous green LED window perimeter, red OPEN beacon, custom blue neon "Relense" sign, and Carl Zeiss precision optical certification.',
-      highlights: [
-        'Signature Royal Blue Overhead Awning',
-        'Warm Illuminated Canopy & Street Entrance',
-        'Luminous Green LED Window Perimeter',
-        'Handcrafted Blue Neon "Relense" Insignia',
-        'Carl Zeiss Authorized Optical Partner',
-        'Direct Phone: (347) 878-5064 (Hablamos Español)',
-      ],
-    },
-    {
-      id: 'showroom',
-      title: 'Interior Showroom Counter',
-      badge: 'Dispensing & Fitting Desk',
-      image: '/assets/relense_store_counter.jpg',
-      aspect: 'aspect-[4/3] sm:aspect-[16/10] max-h-[580px]',
-      tagline: 'Personalized Eyewear Consultations',
-      desc: 'Inside the boutique showroom featuring personalized eyewear styling, custom tortoise frame displays, computerized lensometer prescription reading, and personal consultations with Master Optician Mauricio.',
-      highlights: [
-        'Personalized Frame Styling Desk',
-        'Custom Acetate Frame Adjustments',
-        'Ultrasonic Frame Deep Cleaning',
-        'In-House Lensometer Verification',
-      ],
-    },
-    {
-      id: 'dmv',
-      title: 'In-Store DMV Vision Lab',
-      badge: 'Official NY State Registry',
-      image: '/assets/mauricio_dmv_exam.jpg',
-      aspect: 'aspect-[16/10] max-h-[580px]',
-      tagline: '5-Minute Official Vision Testing',
-      desc: 'Master Optician Mauricio personally conducting official 5-minute New York State Driver License vision tests with instant electronic submission to the NY DMV registry database.',
-      highlights: [
-        '5-Minute Walk-In Vision Test',
-        '$25 Official Examination Fee',
-        'Direct Electronic NY DMV Upload',
-        'Skip the Long DMV Lines',
-      ],
-    },
-  ];
-
-  const currentView = STORE_VIEWS.find((v) => v.id === activeStoreView) || STORE_VIEWS[0];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -91,15 +38,15 @@ export const ContactLocation: React.FC = () => {
           </p>
         </div>
 
-        {/* Authentic Interactive Storefront & Shop Showcase */}
+        {/* Authentic Storefront Showcase */}
         <div className="mb-14 rounded-3xl overflow-hidden border border-blue-100/80 shadow-elevated bg-[#0B131E] text-white group relative">
           
           {/* Ambient Glows matching real neon colors: electric cyan and vibrant emerald */}
           <div className="absolute -top-24 -left-24 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
 
-          {/* Top Bar: Live Badge & View Selector Tabs */}
-          <div className="p-4 sm:p-6 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
+          {/* Top Bar: Live Location Info */}
+          <div className="p-4 sm:p-6 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 relative z-10">
             <div>
               <div className="flex items-center space-x-2 text-xs text-blue-200">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -111,59 +58,42 @@ export const ContactLocation: React.FC = () => {
                 37B Guy Lombardo Ave · Freeport, NY
               </h3>
             </div>
-
-            {/* View Switching Tabs */}
-            <div className="flex flex-wrap items-center gap-2">
-              {STORE_VIEWS.map((view) => (
-                <button
-                  key={view.id}
-                  onClick={() => setActiveStoreView(view.id as any)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition flex items-center space-x-1.5 ${
-                    activeStoreView === view.id
-                      ? 'bg-white text-obsidian-900 shadow-md'
-                      : 'bg-white/10 hover:bg-white/20 text-blue-100/80 border border-white/10'
-                  }`}
-                >
-                  <Camera className="w-3 h-3 text-cyan-400" />
-                  <span>{view.title}</span>
-                </button>
-              ))}
+            <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs text-blue-100/90 self-start sm:self-auto">
+              <MapPin className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Downtown Freeport, Long Island</span>
             </div>
           </div>
 
           {/* Main Display Area */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-4 sm:p-8 items-center relative z-10">
             
-            {/* Left: Authentic Real Photo with Dreamy Neon Glow Vignette */}
-            <div className="lg:col-span-7 flex justify-center items-center">
-              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-black/40 group/img w-full max-w-lg">
-                <div className={`${currentView.aspect} overflow-hidden bg-black/30 flex items-center justify-center`}>
-                  <img
-                    key={currentView.id}
-                    src={currentView.image}
-                    alt={currentView.title}
-                    className="w-full h-full object-cover object-center group-hover/img:scale-102 transition-transform duration-700 animate-in fade-in"
-                  />
-                </div>
+            {/* Left: Authentic Real Photo with Exact Proportional Border */}
+            <div className="lg:col-span-6 flex justify-center items-center">
+              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl group/img w-full max-w-[430px] aspect-[875/1024] bg-neutral-900">
+                <img
+                  src="/assets/relense_storefront_real.jpg"
+                  alt="Authentic ReLense Storefront at 37B Guy Lombardo Ave in Freeport NY"
+                  className="w-full h-full object-cover object-center group-hover/img:scale-102 transition-transform duration-700"
+                />
                 {/* Floating Real-World Tag */}
                 <div className="absolute top-3 left-3 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-white border border-white/20 flex items-center space-x-1.5 shadow-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>{currentView.badge}</span>
+                  <span>Authentic 37B Guy Lombardo Ave</span>
                 </div>
               </div>
             </div>
 
             {/* Right: Rich Authentic Details */}
-            <div className="lg:col-span-5 space-y-5">
+            <div className="lg:col-span-6 space-y-5">
               <div className="space-y-2">
                 <span className="text-[10px] font-mono tracking-widest text-cyan-300 uppercase">
-                  {currentView.tagline}
+                  Signature Blue Canopy & Illuminated Window
                 </span>
-                <h4 className="font-serif text-2xl sm:text-3xl text-white font-medium leading-snug">
-                  {currentView.title}
+                <h4 className="font-serif text-3xl text-white font-medium leading-snug">
+                  Storefront & Main Entrance
                 </h4>
                 <p className="text-xs sm:text-sm text-blue-100/80 leading-relaxed">
-                  {currentView.desc}
+                  The official storefront of ReLense Optical at 37B Guy Lombardo Avenue in Freeport, NY. Featuring our signature royal blue awning, illuminated overhead canopy, luminous green LED window perimeter, red OPEN beacon, custom blue neon "Relense" sign, and Carl Zeiss precision optical certification.
                 </p>
               </div>
 
@@ -173,12 +103,30 @@ export const ContactLocation: React.FC = () => {
                   Verified Real-World Details
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-blue-100/90">
-                  {currentView.highlights.map((item, i) => (
-                    <div key={i} className="flex items-center space-x-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
+                  <div className="flex items-center space-x-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
+                    <span>Signature Royal Blue Overhead Awning</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
+                    <span>Warm Illuminated Canopy & Street Entrance</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
+                    <span>Luminous Green LED Window Perimeter</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
+                    <span>Handcrafted Blue Neon "Relense" Insignia</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
+                    <span>Carl Zeiss Authorized Optical Partner</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
+                    <span>Direct Phone: (347) 878-5064 (Hablamos Español)</span>
+                  </div>
                 </div>
               </div>
 
