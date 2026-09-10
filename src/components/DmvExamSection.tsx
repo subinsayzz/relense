@@ -128,7 +128,7 @@ export const DmvExamSection: React.FC = () => {
                       placeholder="Jane Doe"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-neutral-200 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-electric-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-neutral-200 text-sm text-obsidian-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-electric-500"
                     />
                   </div>
 
@@ -142,7 +142,7 @@ export const DmvExamSection: React.FC = () => {
                       placeholder="(347) 000-0000"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-neutral-200 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-electric-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-neutral-200 text-sm text-obsidian-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-electric-500"
                     />
                   </div>
 
@@ -153,7 +153,7 @@ export const DmvExamSection: React.FC = () => {
                     <select
                       value={preferredTime}
                       onChange={(e) => setPreferredTime(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-neutral-200 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-electric-500 bg-white"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-neutral-200 text-sm text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-electric-500 bg-white cursor-pointer"
                     >
                       <option>Today / Walk-In</option>
                       <option>Tomorrow Morning (10am - 1pm)</option>
@@ -164,7 +164,7 @@ export const DmvExamSection: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl bg-obsidian-900 hover:bg-neutral-800 text-white font-semibold text-xs uppercase tracking-wider transition shadow-elevated flex items-center justify-center space-x-1.5"
+                    className="w-full py-3.5 rounded-xl bg-obsidian-900 hover:bg-neutral-800 text-white font-bold text-xs uppercase tracking-wider transition shadow-elevated flex items-center justify-center space-x-1.5 cursor-pointer"
                   >
                     <span>Confirm DMV Check-In ($25)</span>
                     <ArrowRight className="w-3.5 h-3.5 text-blue-200" />

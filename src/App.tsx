@@ -1,7 +1,6 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { BentoFeatures } from './components/BentoFeatures';
 import { ReLensProcess } from './components/ReLensProcess';
 import { ReLensCalculator } from './components/ReLensCalculator';
 import { DmvExamSection } from './components/DmvExamSection';
@@ -22,9 +21,6 @@ export const App: React.FC = () => {
       <main className="flex-grow">
         {/* Editorial Hero with Master Optician Mauricio & Store Branding */}
         <Hero />
-
-        {/* Specialized Optical Services & Lab Technology */}
-        <BentoFeatures />
 
         {/* 4-Step Re-Lensing & Lens Replacement Process */}
         <ReLensProcess />

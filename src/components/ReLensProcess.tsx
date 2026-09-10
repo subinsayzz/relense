@@ -115,108 +115,65 @@ export const ReLensProcess: React.FC = () => {
           })}
         </div>
 
-        {/* Real Freeport Lab & Showroom Gallery */}
-        <div className="mt-16 space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
-            <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-electric-600">
-                Inside Our Freeport Shop
+        {/* Master Optician Craftsmanship Feature Card */}
+        <div className="mt-16 bg-white rounded-3xl overflow-hidden shadow-elevated border border-blue-100/80 grid grid-cols-1 lg:grid-cols-12 items-center">
+          
+          {/* Photo: Mauricio Inspecting Prescription Lenses */}
+          <div className="lg:col-span-5 aspect-[4/3] lg:aspect-auto lg:h-full bg-neutral-100 relative overflow-hidden">
+            <img
+              src="/assets/mauricio_lens_craft.jpg"
+              alt="Master Optician Mauricio inspecting prescription lenses at ReLense Optical Freeport NY"
+              className="w-full h-full object-cover object-[center_25%] hover:scale-105 transition-transform duration-700"
+            />
+            <span className="absolute top-3 left-3 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-black/75 text-white backdrop-blur-xs flex items-center space-x-1.5 border border-white/15">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>In-House Precision Lab</span>
+            </span>
+          </div>
+
+          {/* Details & Re-Lensing Guarantee */}
+          <div className="lg:col-span-7 p-7 sm:p-10 space-y-4">
+            <div className="space-y-1.5">
+              <span className="text-xs font-bold uppercase tracking-wider text-electric-600">
+                Master Optician Hands-On Care
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl text-obsidian-900 font-medium">
-                Authentic Craftsmanship & Care
+                Precision Hand-Beveling & Lens Edging
               </h3>
             </div>
-            <p className="text-xs text-neutral-500 max-w-md sm:text-right">
-              Every frame is inspected and hand-beveled right here at 37 Guy Lombardo Ave in Freeport, Long Island.
+
+            <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
+              Every pair of lenses is custom-measured, cut, and hand-inspected on-site by Master Optician Mauricio at 37B Guy Lombardo Ave in Freeport. Whether you are re-lensing your beloved vintage frames from $49, upgrading to Shamir Auto Intelligence™ digital progressives, or need urgent 24-hour emergency lenses, we guarantee exact prescription fidelity with zero edge distortion.
             </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Real Photo 1: Freeport Showroom */}
-            <div className="bg-white rounded-3xl overflow-hidden shadow-card border border-blue-100/80 group flex flex-col">
-              <div className="aspect-[4/3] overflow-hidden bg-neutral-100 relative">
-                <img
-                  src="/assets/relense_store_counter.jpg"
-                  alt="ReLense Optical Boutique Showroom in Freeport NY"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                />
-                <span className="absolute top-3 left-3 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-black/60 text-white backdrop-blur-xs">
-                  Showroom Counter
-                </span>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
+              <div className="p-2.5 rounded-xl bg-blue-50/60 border border-blue-100 text-obsidian-900 font-medium text-center">
+                Carl Zeiss Standards
               </div>
-              <div className="p-5 space-y-1 flex-1 flex flex-col justify-between">
-                <div>
-                  <h4 className="font-serif text-lg text-obsidian-900 font-semibold">
-                    Freeport Boutique & Studio
-                  </h4>
-                  <p className="text-xs text-neutral-600 mt-1 leading-relaxed">
-                    Walk in for in-person consultation, custom frame adjustments, and same-day optical fittings with Mauricio.
-                  </p>
-                </div>
-                <div className="pt-3 border-t border-neutral-100 text-[11px] font-semibold text-electric-700 flex items-center justify-between">
-                  <span>37 Guy Lombardo Ave Unit 1</span>
-                  <span>Walk-Ins Welcome →</span>
-                </div>
+              <div className="p-2.5 rounded-xl bg-blue-50/60 border border-blue-100 text-obsidian-900 font-medium text-center">
+                24h Emergency Service
+              </div>
+              <div className="p-2.5 rounded-xl bg-blue-50/60 border border-blue-100 text-obsidian-900 font-medium text-center">
+                Zero Sales Pressure
               </div>
             </div>
 
-            {/* Real Photo 2: Lens Swatch Kit */}
-            <div className="bg-white rounded-3xl overflow-hidden shadow-card border border-blue-100/80 group flex flex-col">
-              <div className="aspect-[4/3] overflow-hidden bg-neutral-100 relative">
-                <img
-                  src="/assets/relense_lens_kit.jpg"
-                  alt="ReLense Lens Tint Swatch Kit and Optical Cleaners"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                />
-                <span className="absolute top-3 left-3 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-black/60 text-white backdrop-blur-xs">
-                  Lens Swatches & Care
-                </span>
-              </div>
-              <div className="p-5 space-y-1 flex-1 flex flex-col justify-between">
-                <div>
-                  <h4 className="font-serif text-lg text-obsidian-900 font-semibold">
-                    Custom Tints & Diamond Coatings
-                  </h4>
-                  <p className="text-xs text-neutral-600 mt-1 leading-relaxed">
-                    Explore our physical tint swatch library (emerald, sapphire, vintage amber, gradient) and Peeps carbon care tools.
-                  </p>
-                </div>
-                <div className="pt-3 border-t border-neutral-100 text-[11px] font-semibold text-electric-700 flex items-center justify-between">
-                  <span>UV400 & Polarized Swatches</span>
-                  <span>From $49 →</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Real Photo 3: Mauricio Precision Lens Inspection */}
-            <div className="bg-white rounded-3xl overflow-hidden shadow-card border border-blue-100/80 group flex flex-col">
-              <div className="aspect-[4/3] overflow-hidden bg-neutral-100 relative">
-                <img
-                  src="/assets/mauricio_lens_craft.jpg"
-                  alt="Master Optician Mauricio inspecting prescription lenses at ReLense Optical Freeport NY"
-                  className="w-full h-full object-cover object-[center_25%] group-hover:scale-105 transition-transform duration-700"
-                />
-                <span className="absolute top-3 left-3 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-black/70 text-white backdrop-blur-xs flex items-center space-x-1 border border-white/15">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Precision Lens Inspection</span>
-                </span>
-              </div>
-              <div className="p-5 space-y-1 flex-1 flex flex-col justify-between">
-                <div>
-                  <h4 className="font-serif text-lg text-obsidian-900 font-semibold">
-                    Master Optical Hand-Beveling
-                  </h4>
-                  <p className="text-xs text-neutral-600 mt-1 leading-relaxed">
-                    Mauricio personally verifies optical centers, cylinder axis, and hand-bevels each prescription lens with Carl Zeiss precision standards.
-                  </p>
-                </div>
-                <div className="pt-3 border-t border-neutral-100 text-[11px] font-semibold text-electric-700 flex items-center justify-between">
-                  <span>Carl Zeiss Lab Standards</span>
-                  <span>Re-Lens from $49 →</span>
-                </div>
-              </div>
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <a
+                href="#calculator"
+                className="px-5 py-2.5 rounded-full bg-obsidian-900 hover:bg-neutral-800 text-white font-semibold text-xs transition shadow-elevated"
+              >
+                Calculate Lens Pricing
+              </a>
+              <a
+                href={`tel:${SITE_INFO.phone}`}
+                className="px-5 py-2.5 rounded-full bg-white border border-neutral-300 hover:border-neutral-400 text-obsidian-900 font-semibold text-xs transition shadow-xs"
+              >
+                Call Mauricio: {SITE_INFO.phoneFormatted}
+              </a>
             </div>
           </div>
+
         </div>
 
         {/* Store Trust & Guarantees Ribbon */}

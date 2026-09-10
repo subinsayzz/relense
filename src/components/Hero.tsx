@@ -30,31 +30,24 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
 
-              {/* Floating Badge: Lower-Left Circular Avatar 'PRECISION IN MOTION, FREEPORT OPTICAL LAB.' */}
-              <div className="absolute -bottom-4 -left-3 sm:-left-6 z-30 bg-white/95 backdrop-blur-md px-3 py-2 rounded-2xl shadow-card border border-blue-100/80 flex items-center space-x-2 animate-float-delayed">
-                <div className="w-7 h-7 rounded-full overflow-hidden border border-black/10 flex-shrink-0">
-                  <img
-                    src="/assets/mauricio_storefront_portrait.jpg"
-                    alt="Master Optician Mauricio"
-                    className="w-full h-full object-cover object-[center_15%]"
-                  />
-                </div>
-                <div className="text-[9px] font-mono tracking-wider text-neutral-600 uppercase font-semibold">
-                  PRECISION IN MOTION, <br />
-                  FREEPORT OPTICAL LAB.
+              {/* Floating Badge: Lower-Left Status Badge */}
+              <div className="absolute -bottom-4 -left-3 sm:-left-6 z-30 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-card border border-blue-100/80 flex items-center space-x-2 animate-float-delayed">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="text-[10px] font-mono tracking-wider text-neutral-700 uppercase font-bold">
+                  Freeport Flagship Lab · 37B Guy Lombardo
                 </div>
               </div>
 
-              {/* Main Photo: Master Optician Mauricio with Chamfered Top-Left Cut Corner */}
+              {/* Main Photo: Master Optician Mauricio at Storefront Entrance */}
               <div className="relative rounded-[32px] p-2 bg-gradient-to-b from-white to-blue-50/60 shadow-elevated">
-                <div className="relative overflow-hidden rounded-[26px] cut-top-left bg-neutral-100 aspect-[4/3] sm:aspect-[4/3]">
+                <div className="relative overflow-hidden rounded-[26px] cut-top-left bg-neutral-100 aspect-[4/5] sm:aspect-[4/5]">
                   <img
-                    src="/assets/mauricio_lens_craft.jpg"
-                    alt="Master Optician Mauricio inspecting prescription eyewear at ReLense Optical Freeport NY"
-                    className="w-full h-full object-cover object-[center_25%] hover:scale-105 transition-transform duration-700"
+                    src="/assets/mauricio_storefront_portrait.jpg"
+                    alt="Master Optician Mauricio outside ReLense Optical at 37B Guy Lombardo Ave Freeport NY"
+                    className="w-full h-full object-cover object-[center_18%] hover:scale-105 transition-transform duration-700"
                   />
                   {/* Soft Light Vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
                   {/* Overlaid Bottom Card Badge */}
                   <div className="absolute bottom-3 inset-x-3 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-black/5 shadow-card flex items-center justify-between">
@@ -63,7 +56,7 @@ export const Hero: React.FC = () => {
                         Master Optician & Owner
                       </div>
                       <div className="text-xs font-bold text-obsidian-900">
-                        Mauricio's Precision Lab Craft
+                        Mauricio · 20+ Yrs Freeport
                       </div>
                     </div>
                     <span className="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-blue-100 text-electric-700 flex items-center space-x-1">
@@ -84,10 +77,10 @@ export const Hero: React.FC = () => {
           {/* Right Column: Headlines & Actions matching screenshot */}
           <div className="lg:col-span-6 space-y-6 z-10">
             
-            {/* Tag: 'EYE HEALTH IN YOUR 30S' */}
+            {/* Tag: 'IN-HOUSE OPTICAL LAB & BOUTIQUE' */}
             <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-blue-200/60 shadow-xs text-xs font-semibold tracking-wider uppercase text-obsidian-900">
               <Sparkles className="w-3 h-3 text-electric-600" />
-              <span>EYE HEALTH IN YOUR 30S</span>
+              <span>IN-HOUSE PRECISION LAB & RE-LENSING</span>
             </div>
 
             {/* Giant Headline: 'SEE THE DIFFERENCE' */}
@@ -118,24 +111,27 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-1">
+            <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
                 href="#relensing"
                 className="px-6 py-3.5 rounded-full bg-obsidian-900 text-white font-semibold text-xs sm:text-sm hover:bg-neutral-800 transition shadow-elevated flex items-center space-x-2 group"
               >
-                <span>Explore Glasses</span>
+                <span>Explore Re-Lensing</span>
                 <Play className="w-3 h-3 fill-white text-white transition-transform group-hover:translate-x-0.5" />
               </a>
-
-              <div className="text-xs sm:text-sm text-neutral-500 font-medium">
-                Starts From <span className="font-bold text-obsidian-900 text-sm sm:text-base">$49</span>
-              </div>
 
               <a
                 href="#calculator"
                 className="px-5 py-3.5 rounded-full bg-white/80 hover:bg-white border border-blue-200/80 font-semibold text-xs sm:text-sm text-obsidian-900 transition shadow-xs"
               >
-                Instant Lab Quote
+                Instant Price Calculator
+              </a>
+
+              <a
+                href={`tel:${SITE_INFO.phone}`}
+                className="px-5 py-3.5 rounded-full bg-electric-600 hover:bg-electric-500 text-white font-bold text-xs sm:text-sm transition shadow-elevated flex items-center space-x-1.5"
+              >
+                <span>Call Mauricio</span>
               </a>
             </div>
 
@@ -161,69 +157,23 @@ export const Hero: React.FC = () => {
 
         </div>
 
-        {/* Mid-Hero Banner Section */}
-        <div className="mt-16 pt-10 border-t border-blue-200/60">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            {/* Left Box: '$49' Pill + Copy with SEO Keywords */}
-            <div className="lg:col-span-5 space-y-4">
-              <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white shadow-xs border border-blue-200/60 text-xs font-bold text-obsidian-900">
-                <Glasses className="w-3.5 h-3.5 text-electric-600" />
-                <span>Re-Lensing from $49</span>
-              </div>
-
-              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-obsidian-900 leading-snug">
-                Revolutionizing vision with <br />
-                trend setting eyewear that <br />
-                speaks your style.
-              </h2>
-
-              <p className="text-xs sm:text-sm text-neutral-600 max-w-md leading-relaxed">
-                Handcrafted precision cut by Master Optician Mauricio in our Freeport lab. High-tech Shamir Auto Intelligence progressives, Glacier Expressions AR, and custom magnetic clip-ons with zero sales pressure.
-              </p>
-            </div>
-
-            {/* Center Box: Master Optician Mauricio at Storefront Entrance */}
-            <div className="lg:col-span-4 flex justify-center">
-              <div className="relative w-full max-w-xs rounded-3xl overflow-hidden bg-white p-2 shadow-card border border-blue-100/80 group">
-                <div className="aspect-square rounded-2xl overflow-hidden bg-[#F4F9FD]">
-                  <img
-                    src="/assets/mauricio_storefront_portrait.jpg"
-                    alt="Master Optician Mauricio at ReLense Optical Freeport storefront"
-                    className="w-full h-full object-cover object-[center_15%] transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-3 text-center">
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-neutral-400">
-                    Master Optician & Owner
-                  </span>
-                  <div className="text-xs font-bold text-obsidian-900 mt-0.5">
-                    Mauricio · Freeport Boutique & Lab
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Box: 'Eye Protecting & Lab Tools' with Authentic ReLense Lens Swatches Kit */}
-            <div className="lg:col-span-3 flex justify-center lg:justify-end">
-              <div className="w-full max-w-[230px] bg-white rounded-3xl p-4 shadow-card border border-blue-100/80 space-y-3 group">
-                <div className="text-xs font-bold text-neutral-800 flex items-center justify-between">
-                  <span>Eye Protecting & Lab Tools</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-electric-600 animate-pulse" />
-                </div>
-                <div className="aspect-[4/3] rounded-xl overflow-hidden bg-blue-50/50">
-                  <img
-                    src="/assets/relense_lens_kit.jpg"
-                    alt="Authentic ReLense Lens Tint Swatch Kit & Optical Care"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="text-[11px] text-neutral-500 text-center leading-tight">
-                  Custom lens swatches, Peeps carbon cleaner & Diamond AR care
-                </div>
-              </div>
-            </div>
-
+        {/* Streamlined Services Ribbon */}
+        <div className="mt-14 pt-8 border-t border-blue-200/60 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="bg-white/80 backdrop-blur-xs p-4 rounded-2xl border border-blue-100/80 shadow-xs space-y-1">
+            <div className="text-xs font-bold text-obsidian-900">Same-Day & 24h Service</div>
+            <div className="text-[11px] text-neutral-500">Emergency lens cut & frame repairs</div>
+          </div>
+          <div className="bg-white/80 backdrop-blur-xs p-4 rounded-2xl border border-blue-100/80 shadow-xs space-y-1">
+            <div className="text-xs font-bold text-obsidian-900">Re-Lens from $49</div>
+            <div className="text-[11px] text-neutral-500">New lenses in your existing frames</div>
+          </div>
+          <div className="bg-white/80 backdrop-blur-xs p-4 rounded-2xl border border-blue-100/80 shadow-xs space-y-1">
+            <div className="text-xs font-bold text-obsidian-900">Shamir Digital Progressives</div>
+            <div className="text-[11px] text-neutral-500">Auto Intelligence™ & custom clip-ons</div>
+          </div>
+          <div className="bg-white/80 backdrop-blur-xs p-4 rounded-2xl border border-blue-100/80 shadow-xs space-y-1">
+            <div className="text-xs font-bold text-obsidian-900">5-Min NY DMV Exam ($25)</div>
+            <div className="text-[11px] text-neutral-500">Walk-in with instant registry upload</div>
           </div>
         </div>
 

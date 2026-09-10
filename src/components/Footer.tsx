@@ -85,12 +85,12 @@ export const Footer: React.FC = () => {
               Explore
             </div>
             <ul className="space-y-2 text-slate-400">
-              <li><a href="#services" className="hover:text-white transition">Specialized Services</a></li>
-              <li><a href="#relensing" className="hover:text-white transition">How Re-Lensing Works</a></li>
+              <li><a href="#relensing" className="hover:text-white transition">Re-Lensing from $49</a></li>
               <li><a href="#calculator" className="hover:text-white transition">Price & Lens Calculator</a></li>
               <li><a href="#dmv-section" className="hover:text-white transition">NY DMV Vision Exams</a></li>
               <li><a href="#reviews" className="hover:text-white transition">Patient Google Reviews</a></li>
               <li><a href="#faq" className="hover:text-white transition">Help & FAQs</a></li>
+              <li><a href="#contact" className="hover:text-white transition">Store & Contact Desk</a></li>
             </ul>
           </div>
 
@@ -100,12 +100,12 @@ export const Footer: React.FC = () => {
               Lab Services
             </div>
             <ul className="space-y-2 text-slate-400">
-              <li><a href="#services" className="hover:text-white transition">Same-Day & 24h Glasses</a></li>
+              <li><a href="#relensing" className="hover:text-white transition">Same-Day & 24h Glasses</a></li>
               <li><a href="#calculator" className="hover:text-white transition">Shamir Digital Progressives</a></li>
               <li><a href="#calculator" className="hover:text-white transition">Custom Magnetic Clip-Ons</a></li>
-              <li><a href="#services" className="hover:text-white transition">Children's Sports Goggles</a></li>
-              <li><a href="#relensing" className="hover:text-white transition">Re-Lensing from $49</a></li>
-              <li><a href="#services" className="hover:text-white transition">Severe Astigmatism Rx</a></li>
+              <li><a href="#calculator" className="hover:text-white transition">Children's Sports Goggles</a></li>
+              <li><a href="#relensing" className="hover:text-white transition">Carl Zeiss Edging & Beveling</a></li>
+              <li><a href="#calculator" className="hover:text-white transition">Severe Astigmatism Rx</a></li>
             </ul>
           </div>
 

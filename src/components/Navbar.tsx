@@ -36,23 +36,20 @@ export const Navbar: React.FC = () => {
 
         {/* Center Minimal Navigation Links - Clear & No-Brainer */}
         <nav className="hidden md:flex items-center space-x-7 text-[13px] font-medium tracking-wide text-neutral-700">
-          <a href="#services" className="hover:text-electric-600 transition">
-            Services
-          </a>
           <a href="#relensing" className="hover:text-electric-600 transition">
             Re-Lensing ($49)
           </a>
           <a href="#calculator" className="hover:text-electric-600 transition">
-            Pricing
+            Price Calculator
           </a>
           <a href="#dmv-section" className="hover:text-electric-600 transition">
-            DMV Exam
+            DMV Exam ($25)
           </a>
           <a href="#reviews" className="hover:text-electric-600 transition">
             Reviews
           </a>
           <a href="#contact" className="hover:text-electric-600 transition">
-            Visit & Contact
+            Store & Contact
           </a>
         </nav>
 
@@ -100,20 +97,12 @@ export const Navbar: React.FC = () => {
         <div className="md:hidden bg-[#EBF3FA] border-b border-blue-200/60 px-6 py-6 space-y-4 shadow-elevated animate-in fade-in slide-in-from-top-2">
           <nav className="flex flex-col space-y-3 text-sm font-medium text-neutral-800">
             <a
-              href="#services"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-electric-600 transition py-1 flex items-center justify-between"
-            >
-              <span>Services & Lab Repairs</span>
-              <span className="text-xs text-electric-600 font-bold">24h</span>
-            </a>
-            <a
               href="#relensing"
               onClick={() => setMobileMenuOpen(false)}
               className="hover:text-electric-600 transition py-1 flex items-center justify-between"
             >
               <span>Re-Lensing Process</span>
-              <span className="text-xs text-neutral-500">From $49</span>
+              <span className="text-xs text-electric-600 font-bold">From $49</span>
             </a>
             <a
               href="#calculator"

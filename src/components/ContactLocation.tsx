@@ -8,12 +8,24 @@ export const ContactLocation: React.FC = () => {
     name: '',
     email: '',
     phone: '',
+    service: 'Re-Lensing Existing Frames (From $49)',
     message: '',
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+  };
+
+  const handleReset = () => {
+    setSubmitted(false);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      service: 'Re-Lensing Existing Frames (From $49)',
+      message: '',
+    });
   };
 
   return (
@@ -262,21 +274,36 @@ export const ContactLocation: React.FC = () => {
           </div>
 
           {/* Right Column: Interactive Contact Form */}
-          <div className="lg:col-span-6 bg-white rounded-3xl p-8 border border-blue-100/80 shadow-card space-y-6">
+          <div className="lg:col-span-6 bg-white rounded-3xl p-8 border border-blue-100/80 shadow-card space-y-5">
             <div className="space-y-1">
               <span className="text-xs font-bold uppercase tracking-wider text-electric-600">
-                Send a Direct Message
+                Direct Optical Desk
               </span>
               <h3 className="font-serif text-2xl text-obsidian-900">
-                Contact Mauricio & The Lab
+                Message Master Optician Mauricio
               </h3>
               <p className="text-xs text-neutral-500">
                 Inquire about custom lenses, mail-in frame shipping, or ask a question about your prescription.
               </p>
             </div>
 
+            {/* Direct Phone Call Strip */}
+            <div className="p-3 rounded-2xl bg-blue-50/80 border border-blue-200/60 flex items-center justify-between">
+              <div className="text-left">
+                <div className="text-xs font-bold text-obsidian-900">Need Immediate Help?</div>
+                <div className="text-[11px] text-neutral-600">Call or text Mauricio directly</div>
+              </div>
+              <a
+                href={`tel:${SITE_INFO.phone}`}
+                className="px-3.5 py-1.5 rounded-full bg-electric-600 hover:bg-electric-500 text-white text-xs font-bold transition flex items-center space-x-1.5 shadow-xs"
+              >
+                <Phone className="w-3 h-3 text-white" />
+                <span>{SITE_INFO.phoneFormatted}</span>
+              </a>
+            </div>
+
             {!submitted ? (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4 pt-1">
                 <div>
                   <label className="block text-xs font-semibold text-neutral-700 mb-1">
                     Your Name <span className="text-red-500">*</span>
@@ -287,7 +314,7 @@ export const ContactLocation: React.FC = () => {
                     placeholder="Jane Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAFD] border border-neutral-200 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-electric-500"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAFD] border border-neutral-200 text-sm text-obsidian-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-electric-500"
                   />
                 </div>
 
@@ -302,7 +329,7 @@ export const ContactLocation: React.FC = () => {
                       placeholder="jane@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#F8FAFD] border border-neutral-200 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-electric-500"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F8FAFD] border border-neutral-200 text-sm text-obsidian-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-electric-500"
                     />
                   </div>
 
@@ -315,44 +342,82 @@ export const ContactLocation: React.FC = () => {
                       placeholder="(347) 000-0000"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#F8FAFD] border border-neutral-200 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-electric-500"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F8FAFD] border border-neutral-200 text-sm text-obsidian-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-electric-500"
                     />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-xs font-semibold text-neutral-700 mb-1">
-                    How can we help? (Frame details, prescription, etc.)
+                    Service You Need <span className="text-red-500">*</span>
+                  </label>
+                  <select
+                    value={formData.service}
+                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAFD] border border-neutral-200 text-sm text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-electric-500 cursor-pointer"
+                  >
+                    <option>Re-Lensing Existing Frames (From $49)</option>
+                    <option>Same-Day or 24h Emergency Glasses</option>
+                    <option>Shamir Auto Intelligence™ Digital Progressives</option>
+                    <option>Custom Magnetic Clip-On Sunglasses</option>
+                    <option>Official 5-Minute NY DMV Vision Test ($25)</option>
+                    <option>Children's Sports Goggles / Astigmatism</option>
+                    <option>Frame Repair & Urgent Adjustment</option>
+                    <option>General Question / Prescription Inquiry</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-neutral-700 mb-1">
+                    Your Message / Frame Details
                   </label>
                   <textarea
-                    rows={4}
+                    rows={3}
                     required
                     placeholder="Tell us about your frames or what kind of lenses you are looking for..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAFD] border border-neutral-200 text-base sm:text-xs text-obsidian-900 focus:outline-none focus:ring-2 focus:ring-electric-500"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAFD] border border-neutral-200 text-sm text-obsidian-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-electric-500"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-xl bg-obsidian-900 text-white font-semibold text-xs uppercase tracking-wider hover:bg-neutral-800 transition shadow-elevated flex items-center justify-center space-x-2"
+                  className="w-full py-3.5 rounded-xl bg-obsidian-900 hover:bg-neutral-800 text-white font-bold text-xs uppercase tracking-wider transition shadow-elevated flex items-center justify-center space-x-2 cursor-pointer"
                 >
                   <Send className="w-3.5 h-3.5 text-blue-200" />
-                  <span>Submit Message to Mauricio</span>
+                  <span>Send Message to Mauricio</span>
                 </button>
               </form>
             ) : (
-              <div className="py-12 text-center space-y-3 bg-blue-50/50 rounded-2xl border border-blue-200/60 p-6 animate-in fade-in">
+              <div className="py-8 text-center space-y-4 bg-blue-50/50 rounded-2xl border border-blue-200/60 p-6 animate-in fade-in">
                 <div className="w-12 h-12 rounded-full bg-blue-100 text-electric-600 mx-auto flex items-center justify-center">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
-                <h4 className="font-serif text-2xl text-obsidian-900">
-                  Your message was sent successfully!
-                </h4>
-                <p className="text-xs text-neutral-600 max-w-sm mx-auto">
-                  Thank you, {formData.name}. Mauricio will review your inquiry and get back to you shortly at {formData.email}.
-                </p>
+                <div className="space-y-1">
+                  <h4 className="font-serif text-2xl text-obsidian-900">
+                    Message Sent Successfully!
+                  </h4>
+                  <p className="text-xs text-neutral-600 max-w-sm mx-auto">
+                    Thank you, {formData.name}. Mauricio will review your request for <strong>{formData.service}</strong> and reply to {formData.email} shortly.
+                  </p>
+                </div>
+
+                <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+                  <a
+                    href={`tel:${SITE_INFO.phone}`}
+                    className="px-4 py-2 rounded-full bg-electric-600 hover:bg-electric-500 text-white font-bold text-xs transition flex items-center space-x-1.5"
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                    <span>Call Directly: {SITE_INFO.phoneFormatted}</span>
+                  </a>
+                  <button
+                    onClick={handleReset}
+                    className="px-4 py-2 rounded-full bg-white border border-neutral-200 hover:border-neutral-300 text-obsidian-900 text-xs font-semibold transition"
+                  >
+                    Send Another Message
+                  </button>
+                </div>
               </div>
             )}
 
