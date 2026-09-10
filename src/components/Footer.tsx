@@ -87,10 +87,10 @@ export const Footer: React.FC = () => {
               Resources
             </div>
             <ul className="space-y-2 text-slate-400">
-              <li><a href="#relensing" className="hover:text-white transition">Blog & News</a></li>
-              <li><a href="#calculator" className="hover:text-white transition">Insurance Calculator</a></li>
-              <li><a href="#vision-shield" className="hover:text-white transition">Help Center</a></li>
-              <li><a href="#contact" className="hover:text-white transition">Glossary of Terms</a></li>
+              <li><a href="#services" className="hover:text-white transition">Optical Services</a></li>
+              <li><a href="#calculator" className="hover:text-white transition">Pricing Calculator</a></li>
+              <li><a href="#faq" className="hover:text-white transition">Help & FAQs</a></li>
+              <li><a href="#contact" className="hover:text-white transition">Store Location & Lab</a></li>
             </ul>
           </div>
 

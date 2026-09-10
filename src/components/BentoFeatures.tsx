@@ -3,7 +3,7 @@ import { Sparkles, Eye, ShieldCheck, Plus, ArrowUpRight, Play, Laptop, Sun, Chec
 
 export const BentoFeatures: React.FC = () => {
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-b from-[#E2EFF8] via-[#EBF3FA] to-[#DFEDF8] relative">
+    <section id="services" className="py-16 sm:py-20 bg-gradient-to-b from-[#E2EFF8] via-[#EBF3FA] to-[#DFEDF8] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
         
         {/* Section 1 matching Bottom of Left Page: 'Take a closer look at your eyes' */}

@@ -297,32 +297,8 @@ export const ContactLocation: React.FC = () => {
 
             </div>
 
-            {/* Authentic Freeport Showroom Photo */}
-            <div className="rounded-3xl overflow-hidden border border-blue-100/80 shadow-card bg-white relative group">
-              <div className="aspect-[16/10] overflow-hidden bg-neutral-100 relative">
-                <img
-                  src="/assets/relense_store_counter.jpg"
-                  alt="ReLense Optical Boutique Showroom Counter in Freeport NY"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent flex items-end p-4">
-                  <div className="text-white space-y-0.5">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-blue-200 bg-white/20 backdrop-blur-xs px-2 py-0.5 rounded-full">
-                      Freeport Boutique & Lab Showroom
-                    </span>
-                    <h4 className="font-serif text-lg font-medium text-white">
-                      In-Person Styling & Dispensing Counter
-                    </h4>
-                    <p className="text-[11px] text-blue-100/80">
-                      Walk-ins welcome · 37 Guy Lombardo Ave Unit 1, Freeport NY
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* Google Maps Visual Embed */}
-            <div className="rounded-3xl overflow-hidden border border-blue-100/80 shadow-card h-52 relative">
+            <div className="rounded-3xl overflow-hidden border border-blue-100/80 shadow-card h-64 relative">
               <iframe
                 title="ReLense Freeport Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.854580556132!2d-73.58280622346618!3d40.63584807140513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c27b0ea7ee2885%3A0xc3b8fb359a35e709!2s37%20Guy%20Lombardo%20Ave%2C%20Freeport%2C%20NY%2011520!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"

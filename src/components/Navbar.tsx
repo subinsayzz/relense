@@ -34,26 +34,29 @@ export const Navbar: React.FC = () => {
           <span className="sr-only">ReLense</span>
         </a>
 
-        {/* Center Minimal Navigation Links matching Screenshot */}
-        <nav className="hidden md:flex items-center space-x-9 text-[13px] font-medium tracking-wide text-neutral-700">
-          <a href="#best-sellers" className="hover:text-electric-600 transition">
-            Shop
-          </a>
-          <a href="#relensing" className="hover:text-electric-600 transition">
+        {/* Center Minimal Navigation Links - Clear & No-Brainer */}
+        <nav className="hidden md:flex items-center space-x-7 text-[13px] font-medium tracking-wide text-neutral-700">
+          <a href="#services" className="hover:text-electric-600 transition">
             Services
           </a>
-          <a href="#studio-3d" className="hover:text-electric-600 transition">
-            Eyewear
+          <a href="#relensing" className="hover:text-electric-600 transition">
+            Re-Lensing ($49)
           </a>
-          <a href="#vision-shield" className="hover:text-electric-600 transition">
-            Glasses
+          <a href="#calculator" className="hover:text-electric-600 transition">
+            Pricing
+          </a>
+          <a href="#dmv-section" className="hover:text-electric-600 transition">
+            DMV Exam
           </a>
           <a href="#reviews" className="hover:text-electric-600 transition">
-            About
+            Reviews
+          </a>
+          <a href="#contact" className="hover:text-electric-600 transition">
+            Visit & Contact
           </a>
         </nav>
 
-        {/* Right Actions matching Screenshot: 'Customize +' pill + circle icon */}
+        {/* Right Actions: Order Contacts + Call Mauricio */}
         <div className="hidden sm:flex items-center space-x-3">
           <a
             href={SITE_INFO.orderContactsUrl}
@@ -66,27 +69,18 @@ export const Navbar: React.FC = () => {
 
           <div className="flex items-center space-x-2">
             <a
+              href={`tel:${SITE_INFO.phone}`}
+              className="px-4 py-2 text-xs font-semibold rounded-full bg-obsidian-900 text-white hover:bg-neutral-800 transition tracking-wide shadow-xs flex items-center space-x-1.5"
+            >
+              <Phone className="w-3.5 h-3.5 text-electric-400" />
+              <span>(347) 878-5064</span>
+            </a>
+
+            <a
               href="#contact"
-              className="px-5 py-2 text-xs font-semibold rounded-full border border-black/15 bg-white text-obsidian-900 hover:border-black/40 hover:bg-neutral-50 transition tracking-wide shadow-xs"
+              className="px-4 py-2 text-xs font-semibold rounded-full border border-black/15 bg-white text-obsidian-900 hover:border-black/40 hover:bg-neutral-50 transition tracking-wide shadow-xs"
             >
-              Contact
-            </a>
-
-            <a
-              href={`mailto:${SITE_INFO.email}`}
-              className="w-8 h-8 rounded-full bg-obsidian-900 text-white flex items-center justify-center hover:bg-neutral-800 transition shadow-sm"
-              title={`Email Mauricio: ${SITE_INFO.email}`}
-            >
-              <Mail className="w-3.5 h-3.5 text-white" />
-            </a>
-
-            <a
-              href="#best-sellers"
-              className="px-3.5 py-2 rounded-full bg-white border border-blue-200/80 hover:border-blue-300 transition flex items-center space-x-1.5 shadow-xs text-xs font-semibold text-obsidian-900 ml-1"
-              title="Store Cart"
-            >
-              <ShoppingBag className="w-3.5 h-3.5 text-electric-600" />
-              <span className="text-[11px] font-mono">0</span>
+              Visit Store
             </a>
           </div>
         </div>
@@ -106,60 +100,50 @@ export const Navbar: React.FC = () => {
         <div className="md:hidden bg-[#EBF3FA] border-b border-blue-200/60 px-6 py-6 space-y-4 shadow-elevated animate-in fade-in slide-in-from-top-2">
           <nav className="flex flex-col space-y-3 text-sm font-medium text-neutral-800">
             <a
-              href="#best-sellers"
+              href="#services"
               onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-electric-600 transition py-1"
+              className="hover:text-electric-600 transition py-1 flex items-center justify-between"
             >
-              Shop Eyewear
+              <span>Services & Lab Repairs</span>
+              <span className="text-xs text-electric-600 font-bold">24h</span>
             </a>
             <a
               href="#relensing"
               onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-electric-600 transition py-1"
+              className="hover:text-electric-600 transition py-1 flex items-center justify-between"
             >
-              Services & Re-Lensing
-            </a>
-            <a
-              href="#studio-3d"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-electric-600 transition py-1"
-            >
-              3D Eyewear Studio
-            </a>
-            <a
-              href="#vision-shield"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-electric-600 transition py-1"
-            >
-              Eye Protect Tech
+              <span>Re-Lensing Process</span>
+              <span className="text-xs text-neutral-500">From $49</span>
             </a>
             <a
               href="#calculator"
               onClick={() => setMobileMenuOpen(false)}
               className="hover:text-electric-600 transition py-1"
             >
-              Prescription & Pricing Calculator
+              Price Calculator
             </a>
             <a
               href="#dmv-section"
               onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-electric-600 transition py-1"
+              className="hover:text-electric-600 transition py-1 flex items-center justify-between"
             >
-              NY DMV Vision Exams
+              <span>NY DMV Vision Exams</span>
+              <span className="text-xs text-emerald-600 font-bold">$25 Walk-In</span>
             </a>
             <a
               href="#reviews"
               onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-electric-600 transition py-1"
+              className="hover:text-electric-600 transition py-1 flex items-center justify-between"
             >
-              Patient Reviews
+              <span>Google Reviews</span>
+              <span className="text-xs text-amber-500 font-bold">5.0 ★ (17)</span>
             </a>
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
               className="hover:text-electric-600 transition py-1"
             >
-              Contact & Location
+              Visit Store & Contact
             </a>
           </nav>
 

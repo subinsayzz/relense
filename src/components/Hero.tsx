@@ -34,9 +34,9 @@ export const Hero: React.FC = () => {
               <div className="absolute -bottom-4 -left-3 sm:-left-6 z-30 bg-white/95 backdrop-blur-md px-3 py-2 rounded-2xl shadow-card border border-blue-100/80 flex items-center space-x-2 animate-float-delayed">
                 <div className="w-7 h-7 rounded-full overflow-hidden border border-black/10 flex-shrink-0">
                   <img
-                    src="/assets/mauricio_dmv_exam.jpg"
+                    src="/assets/mauricio_hero.jpg"
                     alt="Master Optician Mauricio"
-                    className="w-full h-full object-cover object-[75%_25%]"
+                    className="w-full h-full object-cover object-[68%_38%]"
                   />
                 </div>
                 <div className="text-[9px] font-mono tracking-wider text-neutral-600 uppercase font-semibold">
@@ -49,12 +49,12 @@ export const Hero: React.FC = () => {
               <div className="relative rounded-[32px] p-2 bg-gradient-to-b from-white to-blue-50/60 shadow-elevated">
                 <div className="relative overflow-hidden rounded-[26px] cut-top-left bg-neutral-100 aspect-[4/3] sm:aspect-[4/3]">
                   <img
-                    src="/assets/mauricio_dmv_exam.jpg"
-                    alt="Master Optician Mauricio conducting precision optical vision examination at ReLense"
-                    className="w-full h-full object-cover object-[65%_center] hover:scale-105 transition-transform duration-700"
+                    src="/assets/mauricio_hero.jpg"
+                    alt="Master Optician Mauricio fitting prescription eyewear at ReLense Optical Freeport NY"
+                    className="w-full h-full object-cover object-[60%_center] hover:scale-105 transition-transform duration-700"
                   />
                   {/* Soft Light Vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent pointer-events-none" />
 
                   {/* Overlaid Bottom Card Badge */}
                   <div className="absolute bottom-3 inset-x-3 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-black/5 shadow-card flex items-center justify-between">
