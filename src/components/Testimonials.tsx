@@ -259,15 +259,15 @@ export const Testimonials: React.FC = () => {
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100/40 rounded-full blur-3xl pointer-events-none" />
 
           {/* Mauricio Patient Care Photo */}
-          <div className="w-full sm:w-60 md:w-68 aspect-[4/3] rounded-2xl overflow-hidden border border-blue-200/80 shadow-card flex-shrink-0 relative group bg-neutral-100">
+          <div className="w-full sm:w-72 md:w-80 aspect-[4/3] sm:aspect-[3/2] rounded-2xl overflow-hidden border border-blue-200/80 shadow-card flex-shrink-0 relative group bg-neutral-100">
             <img
-              src="/assets/mauricio_hero.jpg"
-              alt="Master Optician Mauricio fitting prescription eyewear at ReLense Optical Freeport NY"
-              className="w-full h-full object-cover object-[60%_center] group-hover:scale-105 transition-transform duration-700"
+              src="/assets/mauricio_fitting_patient.jpg"
+              alt="Master Optician Mauricio performing precision eyewear fitting and temple adjustment on patient at ReLense Optical Freeport NY"
+              className="w-full h-full object-cover object-[center_25%] group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute bottom-3 inset-x-3 bg-black/75 backdrop-blur-md px-3 py-1.5 rounded-xl text-center border border-white/15">
-              <div className="text-[11px] font-bold text-white leading-tight">Personal Fitting & Care</div>
-              <div className="text-[9px] text-blue-200">Master Optician Mauricio</div>
+              <div className="text-[11px] font-bold text-white leading-tight">Precision Frame Fitting & Adjustment</div>
+              <div className="text-[9px] text-blue-200">Master Optician Mauricio · ReLense Freeport</div>
             </div>
           </div>
 
