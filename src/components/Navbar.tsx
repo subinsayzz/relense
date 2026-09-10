@@ -136,7 +136,7 @@ export const Navbar: React.FC = () => {
               className="hover:text-electric-600 transition py-1 flex items-center justify-between"
             >
               <span>Google Reviews</span>
-              <span className="text-xs text-amber-500 font-bold">5.0 ★ (17)</span>
+              <span className="text-xs text-amber-600 font-bold">5.0 (17 Reviews)</span>
             </a>
             <a
               href="#contact"

@@ -8,10 +8,10 @@ export const Testimonials: React.FC = () => {
 
   const categories = [
     { id: 'all', label: 'All Reviews (17)' },
-    { id: 'speed', label: '⚡ 24h & Emergency (6)' },
-    { id: 'care', label: '👓 Mauricio\'s Care (6)' },
-    { id: 'optics', label: '🔬 Shamir & Custom Optics (2)' },
-    { id: 'family', label: '👶 Family & Kids (3)' },
+    { id: 'speed', label: '24h & Emergency (6)' },
+    { id: 'care', label: "Mauricio's Care (6)" },
+    { id: 'optics', label: 'Shamir & Custom Optics (2)' },
+    { id: 'family', label: 'Family & Kids (3)' },
   ];
 
   const filteredReviews = selectedCategory === 'all'
@@ -122,7 +122,7 @@ export const Testimonials: React.FC = () => {
                   </div>
                   <div className="text-[11px] text-neutral-400 flex items-center space-x-1 mt-0.5">
                     {review.isLocalGuide && (
-                      <span className="font-semibold text-amber-600 mr-1">★ Local Guide ·</span>
+                      <span className="font-semibold text-amber-600 mr-1">Local Guide ·</span>
                     )}
                     <span>{review.timeAgo}</span>
                   </div>

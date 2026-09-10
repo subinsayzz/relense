@@ -94,7 +94,7 @@ export const ReLensCalculator: React.FC = () => {
                   Step 1 · Frame Selection
                 </span>
                 <span className="text-xs font-semibold text-electric-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200/60">
-                  {frameOption === 'existing' ? '★ Most Popular: $0 Frame Fee' : 'Boutique Handcrafted Frame'}
+                  {frameOption === 'existing' ? 'Most Popular: $0 Frame Fee' : 'Boutique Handcrafted Frame'}
                 </span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

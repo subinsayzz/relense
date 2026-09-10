@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Sparkles, ShieldCheck, CheckCircle2, Play, Glasses } from 'lucide-react';
+import { ArrowUpRight, Sparkles, ShieldCheck, CheckCircle2, Play, Glasses, Star } from 'lucide-react';
 import { SITE_INFO } from '../data/content';
 
 export const Hero: React.FC = () => {
@@ -66,8 +66,13 @@ export const Hero: React.FC = () => {
                         Mauricio's Precision Fitting
                       </div>
                     </div>
-                    <span className="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-blue-100 text-electric-700">
-                      Freeport, NY · 5.0 ★
+                    <span className="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-blue-100 text-electric-700 flex items-center space-x-1">
+                      <span>Freeport, NY</span>
+                      <span>•</span>
+                      <span className="flex items-center">
+                        <Star className="w-2.5 h-2.5 fill-electric-700 text-electric-700 mr-0.5" />
+                        5.0
+                      </span>
                     </span>
                   </div>
                 </div>
@@ -79,19 +84,19 @@ export const Hero: React.FC = () => {
           {/* Right Column: Headlines & Actions matching screenshot */}
           <div className="lg:col-span-6 space-y-6 z-10">
             
-            {/* Tag matching screenshot: '✦ EYE HEALTH AT 30'S' */}
+            {/* Tag: 'EYE HEALTH IN YOUR 30S' */}
             <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-blue-200/60 shadow-xs text-xs font-semibold tracking-wider uppercase text-obsidian-900">
-              <span className="text-electric-600 font-bold">✦</span>
-              <span>EYE HEALTH AT 30'S</span>
+              <Sparkles className="w-3 h-3 text-electric-600" />
+              <span>EYE HEALTH IN YOUR 30S</span>
             </div>
 
-            {/* Giant Headline matching screenshot: 'SEE THE 👓 DIFFERENCE' */}
+            {/* Giant Headline: 'SEE THE DIFFERENCE' */}
             <div className="relative space-y-2">
               <div className="flex items-center gap-4">
                 <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight text-obsidian-900 leading-[1.05]">
                   SEE THE
                 </h1>
-                {/* Minimalist Wireframe Glasses Vector Accent matching screenshot */}
+                {/* Minimalist Wireframe Glasses Vector Accent */}
                 <div className="hidden sm:inline-flex items-center justify-center px-2 py-1 rounded-full border border-obsidian-900/40 text-obsidian-900">
                   <svg className="w-12 h-6 text-obsidian-900" viewBox="0 0 48 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <circle cx="14" cy="12" r="8" />
@@ -106,13 +111,13 @@ export const Hero: React.FC = () => {
                 DIFFERENCE
               </div>
 
-              {/* Subtitle matching screenshot - enriched with SEO keywords */}
+              {/* Subtitle - enriched with SEO keywords */}
               <p className="pt-2 text-sm sm:text-base text-neutral-600 max-w-lg font-normal leading-relaxed">
                 Freeport’s top-rated optical laboratory. Put brand-new custom lenses into your favorite frames, get <strong className="font-semibold text-obsidian-900">24-hour emergency glasses</strong>, or explore <strong className="font-semibold text-obsidian-900">Shamir digital progressives</strong> & custom magnetic clip-ons with Master Optician Mauricio.
               </p>
             </div>
 
-            {/* Action Buttons matching screenshot: 'Explore Glasses ►' + 'Starts From $49' */}
+            {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-1">
               <a
                 href="#relensing"
@@ -134,16 +139,16 @@ export const Hero: React.FC = () => {
               </a>
             </div>
 
-            {/* Micro Trust Pills - Keywords Heavy */}
+            {/* Micro Trust Pills */}
             <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-neutral-500">
               <span className="flex items-center space-x-1">
                 <CheckCircle2 className="w-3.5 h-3.5 text-electric-600" />
-                <span>⚡ 24h Emergency Glasses</span>
+                <span>24h Emergency Glasses</span>
               </span>
               <span>•</span>
               <span className="flex items-center space-x-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-electric-600" />
-                <span>5.0 ★ (17 Google Reviews)</span>
+                <span>5.0 Star Rated (17 Reviews)</span>
               </span>
               <span>•</span>
               <span className="flex items-center space-x-1">
@@ -156,7 +161,7 @@ export const Hero: React.FC = () => {
 
         </div>
 
-        {/* Mid-Hero Banner Section matching screenshot */}
+        {/* Mid-Hero Banner Section */}
         <div className="mt-16 pt-10 border-t border-blue-200/60">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
@@ -170,8 +175,7 @@ export const Hero: React.FC = () => {
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-obsidian-900 leading-snug">
                 Revolutionizing vision with <br />
                 trend setting eyewear that <br />
-                speaks your style.{' '}
-                <span className="inline-block text-xl">👓</span>
+                speaks your style.
               </h2>
 
               <p className="text-xs sm:text-sm text-neutral-600 max-w-md leading-relaxed">

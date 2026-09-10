@@ -63,7 +63,7 @@ export const BentoFeatures: React.FC = () => {
                     alt="4 Styles perfectly matched"
                     className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
                   />
-                  {/* Bottom Pill matching screenshot: '[⛶] 4 Styles perfectly matched' */}
+                  {/* Bottom Pill: 4 Styles perfectly matched */}
                   <div className="absolute bottom-3 inset-x-3 bg-white/95 backdrop-blur-md p-2.5 rounded-2xl border border-black/5 shadow-card flex items-center justify-center space-x-2">
                     <span className="font-serif text-xl font-bold text-obsidian-900">4</span>
                     <span className="text-xs font-bold text-obsidian-900">Styles perfectly matched</span>

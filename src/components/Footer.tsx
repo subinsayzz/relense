@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
               </form>
             ) : (
               <div className="text-xs text-blue-400 font-medium py-2">
-                ✓ Thank you for subscribing to ReLense updates!
+                Thank you for subscribing to ReLense updates!
               </div>
             )}
           </div>
@@ -113,12 +113,12 @@ export const Footer: React.FC = () => {
               Specialized Services
             </div>
             <ul className="space-y-2 text-slate-400">
-              <li><a href="#relensing" className="hover:text-white transition">⚡ Same-Day & 24h Emergency Glasses</a></li>
-              <li><a href="#calculator" className="hover:text-white transition">🔬 Shamir Auto Intelligence™ Progressives</a></li>
-              <li><a href="#calculator" className="hover:text-white transition">🕶️ Custom Magnetic Clip-On Lenses</a></li>
-              <li><a href="#reviews" className="hover:text-white transition">👶 Children's Goggles & Astigmatism</a></li>
-              <li><a href="#relensing" className="hover:text-white transition">♻️ Re-Lensing & Frame Swaps ($49)</a></li>
-              <li><a href="#dmv-section" className="hover:text-white transition">🚗 5-Min NY DMV Vision Tests ($25)</a></li>
+              <li><a href="#services" className="hover:text-white transition">Same-Day & 24h Emergency Glasses</a></li>
+              <li><a href="#calculator" className="hover:text-white transition">Shamir Auto Intelligence™ Progressives</a></li>
+              <li><a href="#calculator" className="hover:text-white transition">Custom Magnetic Clip-On Lenses</a></li>
+              <li><a href="#reviews" className="hover:text-white transition">Children's Goggles & Astigmatism</a></li>
+              <li><a href="#relensing" className="hover:text-white transition">Re-Lensing & Frame Swaps ($49)</a></li>
+              <li><a href="#dmv-section" className="hover:text-white transition">5-Min NY DMV Vision Tests ($25)</a></li>
             </ul>
           </div>
 
@@ -140,13 +140,13 @@ export const Footer: React.FC = () => {
                 <span>{SITE_INFO.address}</span>
               </li>
               <li className="text-[11px] text-emerald-400 font-medium">
-                ✓ Municipal Parking Directly Across Street
+                Municipal Parking Directly Across Street
               </li>
               <li className="text-[11px] text-blue-300">
-                ✓ CareCredit & HSA/FSA Flex Accepted
+                CareCredit & HSA/FSA Flex Accepted
               </li>
               <li className="text-[11px] text-slate-400">
-                ✓ Hablamos Español Fluido
+                Hablamos Español Fluido
               </li>
             </ul>
           </div>
